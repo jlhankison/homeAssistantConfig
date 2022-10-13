@@ -1,0 +1,4171 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {
+        "entity_id": "person.jordan_hankison",
+        "state": "unknown",
+        "attributes": {
+          "editable": false,
+          "id": "jordan_hankison",
+          "user_id": "94e5688bbe0941a6b92c3a02c5db079e",
+          "friendly_name": "Jordan Hankison"
+        },
+        "last_changed": "2022-10-12T22:26:16.952631+00:00",
+        "last_updated": "2022-10-12T22:26:32.448669+00:00",
+        "context": {
+          "id": "01GF74WXW0C80RX87XHC5Q3750",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "person.airbnb",
+        "state": "home",
+        "attributes": {
+          "editable": false,
+          "id": "airbnb",
+          "latitude": 43.061358800412364,
+          "longitude": -87.9041891978765,
+          "gps_accuracy": 138,
+          "source": "device_tracker.2356_thermostat_terminal",
+          "user_id": "10e3c5fcec4246db852dcfdd95692a3b",
+          "friendly_name": "Airbnb"
+        },
+        "last_changed": "2022-10-12T22:26:16.953065+00:00",
+        "last_updated": "2022-10-12T22:26:32.449364+00:00",
+        "context": {
+          "id": "01GF74WXW187ERTKYBKRAZWYCH",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "update.home_assistant_supervisor_update",
+        "state": "off",
+        "attributes": {
+          "auto_update": true,
+          "installed_version": "2022.10.0",
+          "in_progress": false,
+          "latest_version": "2022.10.0",
+          "release_summary": null,
+          "release_url": "https://github.com/home-assistant/supervisor/releases/tag/2022.10.0",
+          "skipped_version": null,
+          "title": "Home Assistant Supervisor",
+          "entity_picture": "https://brands.home-assistant.io/hassio/icon.png",
+          "friendly_name": "Home Assistant Supervisor Update",
+          "supported_features": 1
+        },
+        "last_changed": "2022-10-12T22:26:22.834732+00:00",
+        "last_updated": "2022-10-12T22:26:22.834732+00:00",
+        "context": {
+          "id": "01GF74WMFJJEY55XZB0C49K5E5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "update.home_assistant_core_update",
+        "state": "on",
+        "attributes": {
+          "auto_update": false,
+          "installed_version": "2022.9.4",
+          "in_progress": false,
+          "latest_version": "2022.10.3",
+          "release_summary": null,
+          "release_url": "https://www.home-assistant.io/latest-release-notes/",
+          "skipped_version": null,
+          "title": "Home Assistant Core",
+          "entity_picture": "https://brands.home-assistant.io/homeassistant/icon.png",
+          "friendly_name": "Home Assistant Core Update",
+          "supported_features": 11
+        },
+        "last_changed": "2022-10-12T22:26:22.837047+00:00",
+        "last_updated": "2022-10-12T22:26:22.837047+00:00",
+        "context": {
+          "id": "01GF74WMFNHWK2QVHDVBY9R4EN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "update.studio_code_server_update",
+        "state": "off",
+        "attributes": {
+          "auto_update": false,
+          "installed_version": "5.4.0",
+          "in_progress": false,
+          "latest_version": "5.4.0",
+          "release_summary": "## What’s changed\n\n## ⬆️ Dependency updates\n\n- ⬆️ Upgrades esbenp.prettier-vscode to 9.8.0 @frenck (#488)\n- Bump esphome from 2022.8.0 to 2022.8.2 in /vscode @dependabot (#492)\n- Bump esphome from 2022.8.2 to 2022.8.3 in /vscode @dependabot (#493)\n- ⬆️ Up",
+          "release_url": null,
+          "skipped_version": null,
+          "title": "Studio Code Server",
+          "entity_picture": "/api/hassio/addons/a0d7b954_vscode/icon",
+          "friendly_name": "Studio Code Server Update",
+          "supported_features": 25
+        },
+        "last_changed": "2022-10-12T22:26:22.838034+00:00",
+        "last_updated": "2022-10-12T22:26:22.838034+00:00",
+        "context": {
+          "id": "01GF74WMFPNEY7JX4X53G22CZX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "update.ssh_web_terminal_update",
+        "state": "off",
+        "attributes": {
+          "auto_update": true,
+          "installed_version": "12.0.2",
+          "in_progress": false,
+          "latest_version": "12.0.2",
+          "release_summary": "## What’s changed\n\n## ⬆️ Dependency updates\n\n- ⬆️ Upgrades zlib-dev to 1.2.12-r3 @frenck (#430)\n- ⬆️ Upgrades Home Assistant CLI to v4.19.0 @frenck (#431)\n- ⬆️ Upgrades ttyd to 1.7.1 @frenck (#432)\n",
+          "release_url": null,
+          "skipped_version": null,
+          "title": "SSH & Web Terminal",
+          "entity_picture": "/api/hassio/addons/a0d7b954_ssh/icon",
+          "friendly_name": "SSH & Web Terminal Update",
+          "supported_features": 25
+        },
+        "last_changed": "2022-10-12T22:26:22.838841+00:00",
+        "last_updated": "2022-10-12T22:26:22.838841+00:00",
+        "context": {
+          "id": "01GF74WMFPY8JYV92GTR33FX06",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "update.home_assistant_operating_system_update",
+        "state": "on",
+        "attributes": {
+          "auto_update": false,
+          "installed_version": "9.0",
+          "in_progress": false,
+          "latest_version": "9.2",
+          "release_summary": null,
+          "release_url": "https://github.com/home-assistant/operating-system/releases/tag/9.2",
+          "skipped_version": null,
+          "title": "Home Assistant Operating System",
+          "entity_picture": "https://brands.home-assistant.io/homeassistant/icon.png",
+          "friendly_name": "Home Assistant Operating System Update",
+          "supported_features": 3
+        },
+        "last_changed": "2022-10-12T22:26:22.841048+00:00",
+        "last_updated": "2022-10-12T22:26:22.841048+00:00",
+        "context": {
+          "id": "01GF74WMFSV60ZXM2CD1DV219E",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.new_scene",
+        "state": "2022-09-20T04:43:25.923356+00:00",
+        "attributes": {
+          "entity_id": [
+            "cover.garage_door"
+          ],
+          "id": "1663044584846",
+          "friendly_name": "Garage"
+        },
+        "last_changed": "2022-10-12T22:26:23.733042+00:00",
+        "last_updated": "2022-10-12T22:26:23.733042+00:00",
+        "context": {
+          "id": "01GF74WNBNCZW857X862FWN3KK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.2354_manual_climate",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:toggle-switch-off-outline",
+          "friendly_name": "2354 Manual Climate"
+        },
+        "last_changed": "2022-10-12T22:26:24.649208+00:00",
+        "last_updated": "2022-10-12T22:26:24.649208+00:00",
+        "context": {
+          "id": "01GF74WP89CRMCHEYKJMAX17M5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.set_temp_modifier_heat",
+        "state": "3.0",
+        "attributes": {
+          "initial": null,
+          "editable": true,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "icon": "mdi:thermometer-plus",
+          "friendly_name": "Set Temp Modifier Heat"
+        },
+        "last_changed": "2022-10-12T22:26:24.649888+00:00",
+        "last_updated": "2022-10-12T22:26:24.649888+00:00",
+        "context": {
+          "id": "01GF74WP897130RKXB9QSTH96K",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.2354_e_hp_set_temp",
+        "state": "69.0",
+        "attributes": {
+          "initial": null,
+          "editable": true,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "friendly_name": "2354 E HP Set Temp"
+        },
+        "last_changed": "2022-10-13T04:21:11.435242+00:00",
+        "last_updated": "2022-10-13T04:21:11.435242+00:00",
+        "context": {
+          "id": "01GF7S6A34QSZBMZ48NZD97XAY",
+          "parent_id": "01GF7S6A2QXWTW0DNQGKK6TNTM",
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.2354_w_hp_set_temp",
+        "state": "72.0",
+        "attributes": {
+          "initial": null,
+          "editable": true,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "friendly_name": "2354 W HP Set Temp"
+        },
+        "last_changed": "2022-10-13T15:15:00.060654+00:00",
+        "last_updated": "2022-10-13T15:15:00.060654+00:00",
+        "context": {
+          "id": "01GF8YKF92DEVY24P0E4775Z5A",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.2354_boiler_temp_helper",
+        "state": "70.0",
+        "attributes": {
+          "initial": null,
+          "editable": true,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "friendly_name": "2354 Boiler Temp Helper"
+        },
+        "last_changed": "2022-10-12T22:26:24.650856+00:00",
+        "last_updated": "2022-10-12T22:26:24.650856+00:00",
+        "context": {
+          "id": "01GF74WP8AKAKN1TBQZH57FKTT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_text.2354_current_hvac_setting",
+        "state": "heat",
+        "attributes": {
+          "editable": true,
+          "min": 0,
+          "max": 100,
+          "pattern": null,
+          "mode": "text",
+          "friendly_name": "2354 Current HVAC Setting"
+        },
+        "last_changed": "2022-10-12T22:26:52.906473+00:00",
+        "last_updated": "2022-10-12T22:26:52.906473+00:00",
+        "context": {
+          "id": "01GF74XHQ36ZMQRNJMG095PZ8W",
+          "parent_id": "01GF74XHPPTQAB7DGQR00Y1Y70",
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.use_heat_pump",
+        "state": "on",
+        "attributes": {
+          "friendly_name": "use_heat_pump"
+        },
+        "last_changed": "2022-10-12T22:26:32.469768+00:00",
+        "last_updated": "2022-10-12T22:26:32.469768+00:00",
+        "context": {
+          "id": "01GF74WXWNXP6SHEXGMPXBSDWG",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "climate.climate_controller",
+        "state": "auto",
+        "attributes": {
+          "hvac_modes": [
+            "auto",
+            "off"
+          ],
+          "min_temp": 65,
+          "max_temp": 85,
+          "target_temp_step": 1.0,
+          "current_temperature": 69,
+          "temperature": 69,
+          "current_humidity": 58.0,
+          "friendly_name": "climate_controller",
+          "supported_features": 1
+        },
+        "last_changed": "2022-10-12T22:26:52.761295+00:00",
+        "last_updated": "2022-10-13T19:46:20.727507+00:00",
+        "context": {
+          "id": "01GF9E4ADF7WXJKSFYSBGJQJF4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_kitchen_t_h_sensor_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "2354 Kitchen T/H Sensor Battery"
+        },
+        "last_changed": "2022-10-12T22:26:25.805498+00:00",
+        "last_updated": "2022-10-12T23:35:17.603858+00:00",
+        "context": {
+          "id": "01GF78TTB3QCZX5STVWZE42EJF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_kitchen_t_h_sensor_humid",
+        "state": "63.5",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "humidity",
+          "friendly_name": "2354 Kitchen T/H Sensor Humidity"
+        },
+        "last_changed": "2022-10-13T18:28:34.974566+00:00",
+        "last_updated": "2022-10-13T18:28:34.974566+00:00",
+        "context": {
+          "id": "01GF99NY0Y5PNPN9GXCNY3HBWW",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_kitchen_t_h_sensor_temp",
+        "state": "70.2",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "friendly_name": "2354 Kitchen T/H Sensor Temperature"
+        },
+        "last_changed": "2022-10-13T17:54:57.434902+00:00",
+        "last_updated": "2022-10-13T17:54:57.434902+00:00",
+        "context": {
+          "id": "01GF97RBRTAP7DM5T1Y3MY1KY9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_e_bedroom_t_h_sensor_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "2354 E Bedroom T/H Sensor Battery"
+        },
+        "last_changed": "2022-10-12T22:26:25.823599+00:00",
+        "last_updated": "2022-10-13T01:06:20.955586+00:00",
+        "context": {
+          "id": "01GF7E1HMVNA13DJTRWKKZN9ZP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_e_bedroom_t_h_sensor_humidity",
+        "state": "47.5",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "humidity",
+          "friendly_name": "2354 E Bedroom T/H Sensor Humidity"
+        },
+        "last_changed": "2022-10-13T16:50:07.213619+00:00",
+        "last_updated": "2022-10-13T16:50:07.213619+00:00",
+        "context": {
+          "id": "01GF941MQDT6MK9SGH05N8D36K",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_e_bedroom_t_h_sensor_temp",
+        "state": "72.3",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "friendly_name": "2354 E Bedroom T/H Sensor Temperature"
+        },
+        "last_changed": "2022-10-13T16:50:07.214438+00:00",
+        "last_updated": "2022-10-13T16:50:07.214438+00:00",
+        "context": {
+          "id": "01GF941MQE2RA32P699SD07XTX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_dining_room_t_h_sensor_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "2354 Dining Room T/H Sensor Battery"
+        },
+        "last_changed": "2022-10-12T22:26:25.824958+00:00",
+        "last_updated": "2022-10-12T22:38:58.955556+00:00",
+        "context": {
+          "id": "01GF75KPWBMBBAB55CPAMT7N47",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_dining_room_t_h_sensor_humid",
+        "state": "67.0",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "humidity",
+          "friendly_name": "2354 Dining Room T/H Sensor Humidity"
+        },
+        "last_changed": "2022-10-13T19:46:20.715380+00:00",
+        "last_updated": "2022-10-13T19:46:20.715380+00:00",
+        "context": {
+          "id": "01GF9E4ADBKP8KBP4TRMX4KZTX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_dining_room_t_h_sensor_temp",
+        "state": "66.4",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "friendly_name": "2354 Dining Room T/H Sensor Temperature"
+        },
+        "last_changed": "2022-10-13T21:12:50.658354+00:00",
+        "last_updated": "2022-10-13T21:12:50.658354+00:00",
+        "context": {
+          "id": "01GF9K2PQ221TA62ZBJ5V19R0Q",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_living_room_t_h_sensor_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "2354 Living Room T/H Sensor Battery"
+        },
+        "last_changed": "2022-10-12T22:26:25.826257+00:00",
+        "last_updated": "2022-10-13T00:49:09.216584+00:00",
+        "context": {
+          "id": "01GF7D22306497RR3FG5ARDSQ5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_living_room_t_h_sensor_humid",
+        "state": "53.0",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "humidity",
+          "friendly_name": "2354 Living Room T/H Sensor Humidity"
+        },
+        "last_changed": "2022-10-13T19:20:09.251869+00:00",
+        "last_updated": "2022-10-13T19:20:09.251869+00:00",
+        "context": {
+          "id": "01GF9CMBS34H09M83S87X86JCC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_living_room_t_h_sensor_temp",
+        "state": "67.3",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "friendly_name": "2354 Living Room T/H Sensor Temperature"
+        },
+        "last_changed": "2022-10-13T19:20:09.252470+00:00",
+        "last_updated": "2022-10-13T19:20:09.252470+00:00",
+        "context": {
+          "id": "01GF9CMBS4YT68BGEMWSNBSXAP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.2354_thermostat_terminal_kiosk_restart_browser",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "restart",
+          "friendly_name": "2354 Thermostat Terminal Kiosk Restart browser"
+        },
+        "last_changed": "2022-10-12T22:26:53.069568+00:00",
+        "last_updated": "2022-10-12T22:26:53.069568+00:00",
+        "context": {
+          "id": "01GF74XJ0DWKVZHT567HR8Y4A2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.2354_thermostat_terminal_kiosk_reboot_device",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "restart",
+          "friendly_name": "2354 Thermostat Terminal Kiosk Reboot device"
+        },
+        "last_changed": "2022-10-12T22:26:53.070149+00:00",
+        "last_updated": "2022-10-12T22:26:53.070149+00:00",
+        "context": {
+          "id": "01GF74XJ0E5FRDJCGTMBB0R7MM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.2354_thermostat_terminal_kiosk_bring_to_foreground",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "2354 Thermostat Terminal Kiosk Bring to foreground"
+        },
+        "last_changed": "2022-10-12T22:26:53.070465+00:00",
+        "last_updated": "2022-10-12T22:26:53.070465+00:00",
+        "context": {
+          "id": "01GF74XJ0EP1J4X0V7Z9SBJYJ3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.2354_thermostat_terminal_kiosk_send_to_background",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "2354 Thermostat Terminal Kiosk Send to background"
+        },
+        "last_changed": "2022-10-12T22:26:53.070747+00:00",
+        "last_updated": "2022-10-12T22:26:53.070747+00:00",
+        "context": {
+          "id": "01GF74XJ0E2XKH4XSFF68V4ZS4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.2354_thermostat_terminal_kiosk_load_start_url",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "2354 Thermostat Terminal Kiosk Load start URL"
+        },
+        "last_changed": "2022-10-12T22:26:53.071022+00:00",
+        "last_updated": "2022-10-12T22:26:53.071022+00:00",
+        "context": {
+          "id": "01GF74XJ0FE6CYW7J05Q7CNM0C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pixel_5a_battery_level",
+        "state": "29",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-20",
+          "friendly_name": "Pixel 5a Battery Level"
+        },
+        "last_changed": "2022-10-13T16:52:18.093158+00:00",
+        "last_updated": "2022-10-13T16:52:18.093158+00:00",
+        "context": {
+          "id": "01GF945MHDSKDN0FJ9RTXS2FKE",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 29,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pixel_5a_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "Pixel 5a Battery State"
+        },
+        "last_changed": "2022-10-13T04:20:48.334397+00:00",
+        "last_updated": "2022-10-13T04:20:48.334397+00:00",
+        "context": {
+          "id": "01GF7S5KJEV35FA7H09KQT4AN8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pixel_5a_charger_type",
+        "state": "none",
+        "attributes": {
+          "icon": "mdi:battery",
+          "friendly_name": "Pixel 5a Charger Type"
+        },
+        "last_changed": "2022-10-13T04:20:48.301734+00:00",
+        "last_updated": "2022-10-13T04:20:48.301734+00:00",
+        "context": {
+          "id": "01GF7S5KHD61Q81CSJE5A3YVPC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pixel_5a_battery_health",
+        "state": "good",
+        "attributes": {
+          "icon": "mdi:battery-heart-variant",
+          "friendly_name": "Pixel 5a Battery Health"
+        },
+        "last_changed": "2022-10-12T22:26:28.687681+00:00",
+        "last_updated": "2022-10-12T22:26:28.687681+00:00",
+        "context": {
+          "id": "01GF74WT6FYNMYZWHJTSNYEFNY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "good",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pixel_5a_battery_temperature",
+        "state": "77.5",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "icon": "mdi:battery",
+          "friendly_name": "Pixel 5a Battery Temperature"
+        },
+        "last_changed": "2022-10-13T21:03:46.554857+00:00",
+        "last_updated": "2022-10-13T21:03:46.554857+00:00",
+        "context": {
+          "id": "01GF9JJ3BT25VQ8S33CSGW5DMG",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 25.3,
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pixel_5a_battery_power",
+        "state": "-0.03",
+        "attributes": {
+          "state_class": "measurement",
+          "current": -0.00885,
+          "voltage": 3.743,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "icon": "mdi:battery-minus",
+          "friendly_name": "Pixel 5a Battery Power"
+        },
+        "last_changed": "2022-10-13T21:03:47.009830+00:00",
+        "last_updated": "2022-10-13T21:03:47.009830+00:00",
+        "context": {
+          "id": "01GF9JJ3T1KY50BWQ9TG9BVDGT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": -0.03,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.pixel_5a_is_charging",
+        "state": "off",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug-off",
+          "friendly_name": "Pixel 5a Is Charging"
+        },
+        "last_changed": "2022-10-13T04:20:47.805299+00:00",
+        "last_updated": "2022-10-13T04:20:47.805299+00:00",
+        "context": {
+          "id": "01GF7S5K1XDTM4C9F8DE1X10WA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_app_importance",
+        "state": "visible",
+        "attributes": {
+          "icon": "mdi:android",
+          "friendly_name": "2354 Thermostat Terminal App Importance"
+        },
+        "last_changed": "2022-10-12T22:26:28.689163+00:00",
+        "last_updated": "2022-10-12T22:26:28.689163+00:00",
+        "context": {
+          "id": "01GF74WT6H00WRDFRWBJVGF49Y",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "visible",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_app_memory",
+        "state": "0.024",
+        "attributes": {
+          "free_memory": 0.004,
+          "total_memory": 0.028,
+          "unit_of_measurement": "GB",
+          "icon": "mdi:memory",
+          "friendly_name": "2354 Thermostat Terminal App Memory"
+        },
+        "last_changed": "2022-10-13T22:41:08.752886+00:00",
+        "last_updated": "2022-10-13T22:41:08.752886+00:00",
+        "context": {
+          "id": "01GF9R4CMGMNNP6VDGM0ZTTH5V",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.024,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_app_rx_gb",
+        "state": "0.075",
+        "attributes": {
+          "state_class": "total_increasing",
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2354 Thermostat Terminal App Rx GB"
+        },
+        "last_changed": "2022-10-13T22:36:00.669323+00:00",
+        "last_updated": "2022-10-13T22:36:00.669323+00:00",
+        "context": {
+          "id": "01GF9QTZRXDZ5BV3T4HPP2W0Q4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.075,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_app_tx_gb",
+        "state": "0.0216",
+        "attributes": {
+          "state_class": "total_increasing",
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2354 Thermostat Terminal App Tx GB"
+        },
+        "last_changed": "2022-10-13T22:23:07.814064+00:00",
+        "last_updated": "2022-10-13T22:23:07.814064+00:00",
+        "context": {
+          "id": "01GF9Q3D169AP04XWMQY5A9DK2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.0216,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_audio_mode",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:volume-high",
+          "friendly_name": "2354 Thermostat Terminal Audio Mode"
+        },
+        "last_changed": "2022-10-12T22:26:28.691615+00:00",
+        "last_updated": "2022-10-12T22:26:28.691615+00:00",
+        "context": {
+          "id": "01GF74WT6K3B3JNWET0T37Y9D5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_ble_transmitter",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:bluetooth-off",
+          "friendly_name": "2354 Thermostat Terminal BLE Transmitter"
+        },
+        "last_changed": "2022-10-12T22:26:28.691928+00:00",
+        "last_updated": "2022-10-12T22:26:28.691928+00:00",
+        "context": {
+          "id": "01GF74WT6KEQJGS0WWKBX9X2PZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_battery_health",
+        "state": "good",
+        "attributes": {
+          "icon": "mdi:battery-heart-variant",
+          "friendly_name": "2354 Thermostat Terminal Battery Health"
+        },
+        "last_changed": "2022-10-12T22:26:28.692228+00:00",
+        "last_updated": "2022-10-12T22:26:28.692228+00:00",
+        "context": {
+          "id": "01GF74WT6MXF9G5WP51BVTMF8M",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "good",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_battery_level",
+        "state": "100",
+        "attributes": {
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-charging",
+          "friendly_name": "2354 Thermostat Terminal Battery Level"
+        },
+        "last_changed": "2022-10-13T22:17:06.769329+00:00",
+        "last_updated": "2022-10-13T22:17:06.769329+00:00",
+        "context": {
+          "id": "01GF9PRCEH9AN883VYNFMJK884",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 100,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_battery_power",
+        "state": "0.0",
+        "attributes": {
+          "state_class": "measurement",
+          "current": 0.0,
+          "voltage": 4.238,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "icon": "mdi:battery-minus",
+          "friendly_name": "2354 Thermostat Terminal Battery Power"
+        },
+        "last_changed": "2022-10-12T22:26:28.692875+00:00",
+        "last_updated": "2022-10-13T22:37:08.326913+00:00",
+        "context": {
+          "id": "01GF9QX1V617DQE3Q5WWPF4VYD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.0,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_battery_state",
+        "state": "full",
+        "attributes": {
+          "icon": "mdi:battery-charging",
+          "friendly_name": "2354 Thermostat Terminal Battery State"
+        },
+        "last_changed": "2022-10-12T22:26:28.693233+00:00",
+        "last_updated": "2022-10-12T22:26:28.693233+00:00",
+        "context": {
+          "id": "01GF74WT6N1EJH91RTCA9CPG2Y",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "full",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_battery_temperature",
+        "state": "69.8",
+        "attributes": {
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "icon": "mdi:battery",
+          "friendly_name": "2354 Thermostat Terminal Battery Temperature"
+        },
+        "last_changed": "2022-10-13T21:46:04.637956+00:00",
+        "last_updated": "2022-10-13T21:46:04.637956+00:00",
+        "context": {
+          "id": "01GF9MZHYXYSFD94DSG0DYVKZA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 21.0,
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_bluetooth_connection",
+        "state": "unknown",
+        "attributes": {
+          "unit_of_measurement": "connection(s)",
+          "icon": "mdi:bluetooth",
+          "friendly_name": "2354 Thermostat Terminal Bluetooth Connection"
+        },
+        "last_changed": "2022-10-12T22:26:28.694209+00:00",
+        "last_updated": "2022-10-12T22:26:28.694209+00:00",
+        "context": {
+          "id": "01GF74WT6P29KZ3HRE4G60PMFK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": "connection(s)"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_charger_type",
+        "state": "ac",
+        "attributes": {
+          "icon": "mdi:power-plug",
+          "friendly_name": "2354 Thermostat Terminal Charger Type"
+        },
+        "last_changed": "2022-10-12T22:26:28.694582+00:00",
+        "last_updated": "2022-10-12T22:26:28.694582+00:00",
+        "context": {
+          "id": "01GF74WT6P3AD1KP173XPCAH45",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "ac",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_current_time_zone",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:map-clock",
+          "friendly_name": "2354 Thermostat Terminal Current Time Zone"
+        },
+        "last_changed": "2022-10-12T22:26:28.695037+00:00",
+        "last_updated": "2022-10-12T22:26:28.695037+00:00",
+        "context": {
+          "id": "01GF74WT6QAK6ATKHP9TBSTQCF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_current_version",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:android",
+          "friendly_name": "2354 Thermostat Terminal Current Version"
+        },
+        "last_changed": "2022-10-12T22:26:28.695619+00:00",
+        "last_updated": "2022-10-12T22:26:28.695619+00:00",
+        "context": {
+          "id": "01GF74WT6QJQRHX8QDKRX0ZTWA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_detected_activity",
+        "state": "still",
+        "attributes": {
+          "in_vehicle": 9,
+          "on_bicycle": 3,
+          "on_foot": 5,
+          "still": 78,
+          "unknown": 1,
+          "walking": 5,
+          "icon": "mdi:sleep",
+          "friendly_name": "2354 Thermostat Terminal Detected Activity"
+        },
+        "last_changed": "2022-10-12T22:26:28.695937+00:00",
+        "last_updated": "2022-10-12T22:26:28.695937+00:00",
+        "context": {
+          "id": "01GF74WT6QD91K53DE2XC7G416",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "still",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_external_storage",
+        "state": "89",
+        "attributes": {
+          "free_external_storage": "106GB",
+          "total_external_storage": "119GB",
+          "unit_of_measurement": "%",
+          "icon": "mdi:micro-sd",
+          "friendly_name": "2354 Thermostat Terminal External Storage"
+        },
+        "last_changed": "2022-10-12T22:26:28.696244+00:00",
+        "last_updated": "2022-10-12T22:26:28.696244+00:00",
+        "context": {
+          "id": "01GF74WT6R291DSHPCJGYCZJ5H",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 89,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_geocoded_location",
+        "state": "",
+        "attributes": {
+          "icon": "mdi:map",
+          "friendly_name": "2354 Thermostat Terminal Geocoded Location"
+        },
+        "last_changed": "2022-10-12T22:26:28.696574+00:00",
+        "last_updated": "2022-10-12T22:26:28.696574+00:00",
+        "context": {
+          "id": "01GF74WT6R2QRVC7V2VFM3RS3T",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_high_accuracy_update_interval",
+        "state": "unknown",
+        "attributes": {
+          "unit_of_measurement": "seconds",
+          "icon": "mdi:timer",
+          "friendly_name": "2354 Thermostat Terminal High Accuracy Update Interval"
+        },
+        "last_changed": "2022-10-12T22:26:28.696867+00:00",
+        "last_updated": "2022-10-12T22:26:28.696867+00:00",
+        "context": {
+          "id": "01GF74WT6R91N2SQHXEZ1475W9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": "seconds"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_internal_storage",
+        "state": "unknown",
+        "attributes": {
+          "unit_of_measurement": "%",
+          "icon": "mdi:harddisk",
+          "friendly_name": "2354 Thermostat Terminal Internal Storage"
+        },
+        "last_changed": "2022-10-12T22:26:28.697167+00:00",
+        "last_updated": "2022-10-12T22:26:28.697167+00:00",
+        "context": {
+          "id": "01GF74WT6SPP0W9BWSHFKPJFFB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_last_notification",
+        "state": "",
+        "attributes": {
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2354 Thermostat Terminal Last Notification"
+        },
+        "last_changed": "2022-10-12T22:26:28.697546+00:00",
+        "last_updated": "2022-10-12T22:26:28.697546+00:00",
+        "context": {
+          "id": "01GF74WT6S4TR10HQHSMJDHK6Y",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_last_reboot",
+        "state": "2022-10-10T15:03:56+00:00",
+        "attributes": {
+          "Local Time": "Mon Oct 10 10:03:56 CDT 2022",
+          "Time in Milliseconds": 1665414236632,
+          "device_class": "timestamp",
+          "icon": "mdi:restart",
+          "friendly_name": "2354 Thermostat Terminal Last Reboot"
+        },
+        "last_changed": "2022-10-12T22:26:28.697913+00:00",
+        "last_updated": "2022-10-12T22:26:28.697913+00:00",
+        "context": {
+          "id": "01GF74WT6S534RET0W1RZMACSK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'datetime.datetime'>",
+          "isoformat": "2022-10-10T15:03:56+00:00"
+        },
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_last_removed_notification",
+        "state": "",
+        "attributes": {
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2354 Thermostat Terminal Last Removed Notification"
+        },
+        "last_changed": "2022-10-12T22:26:28.698255+00:00",
+        "last_updated": "2022-10-12T22:26:28.698255+00:00",
+        "context": {
+          "id": "01GF74WT6TMR1PCZ8F77V49XNV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_light_sensor",
+        "state": "2",
+        "attributes": {
+          "unit_of_measurement": "lx",
+          "device_class": "illuminance",
+          "icon": "mdi:brightness-5",
+          "friendly_name": "2354 Thermostat Terminal Light Sensor"
+        },
+        "last_changed": "2022-10-13T22:32:08.000632+00:00",
+        "last_updated": "2022-10-13T22:32:08.000632+00:00",
+        "context": {
+          "id": "01GF9QKWJ01BX3JHB9CC3XBWBY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "2",
+        "native_unit_of_measurement": "lx"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_media_session",
+        "state": "Unknown",
+        "attributes": {
+          "album_amazon.alexa.tablet": "null",
+          "artist_amazon.alexa.tablet": "null",
+          "duration_amazon.alexa.tablet": "null",
+          "media_id_amazon.alexa.tablet": "null",
+          "playback_position_amazon.alexa.tablet": "null",
+          "playback_state_amazon.alexa.tablet": "Unknown",
+          "title_amazon.alexa.tablet": "null",
+          "total_media_session_count": 1,
+          "icon": "mdi:play-circle",
+          "friendly_name": "2354 Thermostat Terminal Media Session"
+        },
+        "last_changed": "2022-10-12T22:26:28.698881+00:00",
+        "last_updated": "2022-10-12T22:26:28.698881+00:00",
+        "context": {
+          "id": "01GF74WT6T6R0PN6F0B2H5T5SZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Unknown",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_next_alarm",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "timestamp",
+          "icon": "mdi:alarm",
+          "friendly_name": "2354 Thermostat Terminal Next Alarm"
+        },
+        "last_changed": "2022-10-12T22:26:28.699162+00:00",
+        "last_updated": "2022-10-12T22:26:28.699162+00:00",
+        "context": {
+          "id": "01GF74WT6V28QQ3898KEDTZA05",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_public_ip_address",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:ip",
+          "friendly_name": "2354 Thermostat Terminal Public IP Address"
+        },
+        "last_changed": "2022-10-12T22:26:28.699440+00:00",
+        "last_updated": "2022-10-12T22:26:28.699440+00:00",
+        "context": {
+          "id": "01GF74WT6VT5B233V7XB1SD1VA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_ringer_mode",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:volume-high",
+          "friendly_name": "2354 Thermostat Terminal Ringer Mode"
+        },
+        "last_changed": "2022-10-12T22:26:28.699755+00:00",
+        "last_updated": "2022-10-12T22:26:28.699755+00:00",
+        "context": {
+          "id": "01GF74WT6VQ4VN7D9RQS3TBRPB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_total_rx_gb",
+        "state": "0.292",
+        "attributes": {
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2354 Thermostat Terminal Total Rx GB"
+        },
+        "last_changed": "2022-10-13T22:37:08.334463+00:00",
+        "last_updated": "2022-10-13T22:37:08.334463+00:00",
+        "context": {
+          "id": "01GF9QX1VEKSTAS6N5DAF81ANM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.292,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_total_tx_gb",
+        "state": "0.117",
+        "attributes": {
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2354 Thermostat Terminal Total Tx GB"
+        },
+        "last_changed": "2022-10-13T22:23:07.822239+00:00",
+        "last_updated": "2022-10-13T22:23:07.822239+00:00",
+        "context": {
+          "id": "01GF9Q3D1E8TGTSPE8D9NYT24R",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.117,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_alarm",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:alarm",
+          "friendly_name": "2354 Thermostat Terminal Volume Level Alarm"
+        },
+        "last_changed": "2022-10-12T22:26:28.700948+00:00",
+        "last_updated": "2022-10-12T22:26:28.700948+00:00",
+        "context": {
+          "id": "01GF74WT6WVAB8NXQC9VRJ23FV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_call",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:phone",
+          "friendly_name": "2354 Thermostat Terminal Volume Level Call"
+        },
+        "last_changed": "2022-10-12T22:26:28.701272+00:00",
+        "last_updated": "2022-10-12T22:26:28.701272+00:00",
+        "context": {
+          "id": "01GF74WT6XZECP23HHVEFVZWBH",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_dtmf",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:volume-high",
+          "friendly_name": "2354 Thermostat Terminal Volume Level DTMF"
+        },
+        "last_changed": "2022-10-12T22:26:28.701634+00:00",
+        "last_updated": "2022-10-12T22:26:28.701634+00:00",
+        "context": {
+          "id": "01GF74WT6X3XS4CEYZGS30H5JD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_music",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:music",
+          "friendly_name": "2354 Thermostat Terminal Volume Level Music"
+        },
+        "last_changed": "2022-10-12T22:26:28.701937+00:00",
+        "last_updated": "2022-10-12T22:26:28.701937+00:00",
+        "context": {
+          "id": "01GF74WT6XA0AT2KNKN5GN5V1V",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_notification",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2354 Thermostat Terminal Volume Level Notification"
+        },
+        "last_changed": "2022-10-12T22:26:28.702219+00:00",
+        "last_updated": "2022-10-12T22:26:28.702219+00:00",
+        "context": {
+          "id": "01GF74WT6Y1V73AB5RHYDATQ69",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_ringer",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:phone-ring",
+          "friendly_name": "2354 Thermostat Terminal Volume Level Ringer"
+        },
+        "last_changed": "2022-10-12T22:26:28.702499+00:00",
+        "last_updated": "2022-10-12T22:26:28.702499+00:00",
+        "context": {
+          "id": "01GF74WT6YVEAPYQ1NV0RKE8Q0",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_volume_level_system",
+        "state": "unknown",
+        "attributes": {
+          "icon": "mdi:cellphone-sound",
+          "friendly_name": "2354 Thermostat Terminal Volume Level System"
+        },
+        "last_changed": "2022-10-12T22:26:28.702813+00:00",
+        "last_updated": "2022-10-12T22:26:28.702813+00:00",
+        "context": {
+          "id": "01GF74WT6Y5TB3M8G3FY3NCVGN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": null,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_wifi_bssid",
+        "state": "3c:28:6d:5a:88:62",
+        "attributes": {
+          "icon": "mdi:wifi",
+          "friendly_name": "2354 Thermostat Terminal WiFi BSSID"
+        },
+        "last_changed": "2022-10-12T22:26:28.703118+00:00",
+        "last_updated": "2022-10-12T22:26:28.703118+00:00",
+        "context": {
+          "id": "01GF74WT6Z16P519EHABTB0699",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "3c:28:6d:5a:88:62",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_wifi_connection",
+        "state": "Personal Wifi",
+        "attributes": {
+          "is_hidden": false,
+          "icon": "mdi:wifi",
+          "friendly_name": "2354 Thermostat Terminal WiFi Connection"
+        },
+        "last_changed": "2022-10-12T22:26:28.703400+00:00",
+        "last_updated": "2022-10-12T22:26:28.703400+00:00",
+        "context": {
+          "id": "01GF74WT6Z6MME67889T5A4XGB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Personal Wifi",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_wifi_frequency",
+        "state": "2437",
+        "attributes": {
+          "unit_of_measurement": "MHz",
+          "icon": "mdi:wifi",
+          "friendly_name": "2354 Thermostat Terminal WiFi Frequency"
+        },
+        "last_changed": "2022-10-12T22:59:48.872158+00:00",
+        "last_updated": "2022-10-12T22:59:48.872158+00:00",
+        "context": {
+          "id": "01GF76SVG8KDGEQ5B9V82BKPN7",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 2437,
+        "native_unit_of_measurement": "MHz"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_wifi_ip_address",
+        "state": "192.168.86.37",
+        "attributes": {
+          "icon": "mdi:ip",
+          "friendly_name": "2354 Thermostat Terminal WiFi IP Address"
+        },
+        "last_changed": "2022-10-12T22:26:28.703990+00:00",
+        "last_updated": "2022-10-12T22:26:28.703990+00:00",
+        "context": {
+          "id": "01GF74WT6ZX19SQVKFACWDED4P",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "192.168.86.37",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_wifi_link_speed",
+        "state": "65",
+        "attributes": {
+          "unit_of_measurement": "Mbps",
+          "icon": "mdi:wifi-strength-3",
+          "friendly_name": "2354 Thermostat Terminal WiFi Link Speed"
+        },
+        "last_changed": "2022-10-12T22:59:48.869663+00:00",
+        "last_updated": "2022-10-12T22:59:48.869663+00:00",
+        "context": {
+          "id": "01GF76SVG53XC59TG7G36F0DCN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 65,
+        "native_unit_of_measurement": "Mbps"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_wifi_signal_strength",
+        "state": "-58",
+        "attributes": {
+          "unit_of_measurement": "dBm",
+          "device_class": "signal_strength",
+          "icon": "mdi:wifi-strength-3",
+          "friendly_name": "2354 Thermostat Terminal WiFi Signal Strength"
+        },
+        "last_changed": "2022-10-13T22:40:07.440506+00:00",
+        "last_updated": "2022-10-13T22:40:07.440506+00:00",
+        "context": {
+          "id": "01GF9R2GRGXT36726B3G9JSQJK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": -58,
+        "native_unit_of_measurement": "dBm"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2354_thermostat_terminal_active_notif_count",
+        "state": "4",
+        "attributes": {
+          "android.bigText_com.android.vending": "You've earned enough Play Points to keep Gold level for another year",
+          "android.icon_com.android.vending": 2131231469,
+          "android.icon_de.ozerov.fully": 2131230855,
+          "android.icon_io.homeassistant.companion.android": 2131230997,
+          "android.infoText_com.android.vending": "null",
+          "android.infoText_de.ozerov.fully": "null",
+          "android.infoText_io.homeassistant.companion.android": "null",
+          "android.largeIcon_com.android.vending": "android.graphics.Bitmap@3976bfa4",
+          "android.originatingUserId_com.android.vending": 0,
+          "android.originatingUserId_de.ozerov.fully": 0,
+          "android.originatingUserId_io.homeassistant.companion.android": 0,
+          "android.progressIndeterminate_com.android.vending": false,
+          "android.progressIndeterminate_de.ozerov.fully": false,
+          "android.progressIndeterminate_io.homeassistant.companion.android": false,
+          "android.progressMax_com.android.vending": 0,
+          "android.progressMax_de.ozerov.fully": 0,
+          "android.progressMax_io.homeassistant.companion.android": 0,
+          "android.progress_com.android.vending": 0,
+          "android.progress_de.ozerov.fully": 0,
+          "android.progress_io.homeassistant.companion.android": 0,
+          "android.rebuild.applicationInfo_com.android.vending": "ApplicationInfo{1fc0ce37 com.android.vending}",
+          "android.rebuild.applicationInfo_de.ozerov.fully": "ApplicationInfo{31da68d1 de.ozerov.fully}",
+          "android.rebuild.applicationInfo_io.homeassistant.companion.android": "ApplicationInfo{28947f36 io.homeassistant.companion.android}",
+          "android.rebuild.bigViewActionCount_io.homeassistant.companion.android": 44,
+          "android.rebuild.contentViewActionCount_de.ozerov.fully": 39,
+          "android.rebuild.contentViewActionCount_io.homeassistant.companion.android": 38,
+          "android.rebuild.hudViewActionCount_io.homeassistant.companion.android": 44,
+          "android.showChronometer_com.android.vending": false,
+          "android.showChronometer_de.ozerov.fully": false,
+          "android.showChronometer_io.homeassistant.companion.android": false,
+          "android.showWhen_com.android.vending": true,
+          "android.showWhen_de.ozerov.fully": true,
+          "android.showWhen_io.homeassistant.companion.android": true,
+          "android.subText_com.android.vending": "null",
+          "android.subText_de.ozerov.fully": "null",
+          "android.subText_io.homeassistant.companion.android": "null",
+          "android.support.v4.app.extra.COMPAT_TEMPLATE_com.android.vending": "androidx.core.app.NotificationCompat$BigTextStyle",
+          "android.template_com.android.vending": "android.app.Notification$BigTextStyle",
+          "android.text_com.android.vending": "You've earned enough Play Points to keep Gold level for another year",
+          "android.text_de.ozerov.fully": "Running in Priority Mode",
+          "android.text_io.homeassistant.companion.android": "null",
+          "android.title.big_com.android.vending": "Congrats! You unlocked Gold for 2023",
+          "android.title_com.android.vending": "Congrats! You unlocked Gold for 2023",
+          "android.title_de.ozerov.fully": "Fully Kiosk Browser",
+          "android.title_io.homeassistant.companion.android": "Connected to Home Assistant",
+          "com.android.vending_-1630820310_category": "status",
+          "com.android.vending_-1630820310_group_id": "null",
+          "com.android.vending_-1630820310_is_clearable": true,
+          "com.android.vending_-1630820310_is_ongoing": false,
+          "com.android.vending_-1630820310_post_time": 1665431114920,
+          "de.ozerov.fully_8989_category": "null",
+          "de.ozerov.fully_8989_group_id": "null",
+          "de.ozerov.fully_8989_is_clearable": false,
+          "de.ozerov.fully_8989_is_ongoing": true,
+          "de.ozerov.fully_8989_post_time": 1665414277341,
+          "io.homeassistant.companion.android_65423_category": "null",
+          "io.homeassistant.companion.android_65423_group_id": "Websocket",
+          "io.homeassistant.companion.android_65423_is_clearable": false,
+          "io.homeassistant.companion.android_65423_is_ongoing": true,
+          "io.homeassistant.companion.android_65423_post_time": 1665614001051,
+          "io.homeassistant.companion.android_65424_category": "null",
+          "io.homeassistant.companion.android_65424_group_id": "null",
+          "io.homeassistant.companion.android_65424_is_clearable": true,
+          "io.homeassistant.companion.android_65424_is_ongoing": false,
+          "io.homeassistant.companion.android_65424_post_time": 1665414268884,
+          "unit_of_measurement": "notifications",
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2354 Thermostat Terminal Active Notification Count"
+        },
+        "last_changed": "2022-10-13T22:41:08.761146+00:00",
+        "last_updated": "2022-10-13T22:41:08.761146+00:00",
+        "context": {
+          "id": "01GF9R4CMSDZE54DG042K95MDX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 4,
+        "native_unit_of_measurement": "notifications"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_bluetooth_state",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:bluetooth-off",
+          "friendly_name": "2354 Thermostat Terminal Bluetooth State"
+        },
+        "last_changed": "2022-10-12T22:26:28.705259+00:00",
+        "last_updated": "2022-10-12T22:26:28.705259+00:00",
+        "context": {
+          "id": "01GF74WT71B7YXMTZFWXEAG561",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_device_locked",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2354 Thermostat Terminal Device Locked"
+        },
+        "last_changed": "2022-10-12T22:26:28.705673+00:00",
+        "last_updated": "2022-10-12T22:26:28.705673+00:00",
+        "context": {
+          "id": "01GF74WT716FPJ9J5X7V2S364N",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_headphones",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:headphones-off",
+          "friendly_name": "2354 Thermostat Terminal Headphones"
+        },
+        "last_changed": "2022-10-12T22:26:28.705981+00:00",
+        "last_updated": "2022-10-12T22:26:28.705981+00:00",
+        "context": {
+          "id": "01GF74WT71965JSPSJYP6HXWX3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_high_accuracy_mode",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:crosshairs-gps",
+          "friendly_name": "2354 Thermostat Terminal High Accuracy Mode"
+        },
+        "last_changed": "2022-10-12T22:26:28.706286+00:00",
+        "last_updated": "2022-10-12T22:26:28.706286+00:00",
+        "context": {
+          "id": "01GF74WT72FG60QD3T329J9YED",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_interactive",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone-off",
+          "friendly_name": "2354 Thermostat Terminal Interactive"
+        },
+        "last_changed": "2022-10-13T22:09:22.319705+00:00",
+        "last_updated": "2022-10-13T22:09:22.319705+00:00",
+        "context": {
+          "id": "01GF9PA6WFGVZJB8DB14BY985K",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_is_charging",
+        "state": "on",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug",
+          "friendly_name": "2354 Thermostat Terminal Is Charging"
+        },
+        "last_changed": "2022-10-12T22:26:28.706838+00:00",
+        "last_updated": "2022-10-12T22:26:28.706838+00:00",
+        "context": {
+          "id": "01GF74WT72D4TGQ9GVZT15AJSP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_keyguard_locked",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2354 Thermostat Terminal Keyguard Locked"
+        },
+        "last_changed": "2022-10-12T22:26:28.707143+00:00",
+        "last_updated": "2022-10-12T22:26:28.707143+00:00",
+        "context": {
+          "id": "01GF74WT7372EYQZH9YFJ70J9V",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_keyguard_secure",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2354 Thermostat Terminal Keyguard Secure"
+        },
+        "last_changed": "2022-10-12T22:26:28.707401+00:00",
+        "last_updated": "2022-10-12T22:26:28.707401+00:00",
+        "context": {
+          "id": "01GF74WT73SFJRGCF7H1P3W5Y4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_mic_muted",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:microphone",
+          "friendly_name": "2354 Thermostat Terminal Mic Muted"
+        },
+        "last_changed": "2022-10-12T22:26:28.707669+00:00",
+        "last_updated": "2022-10-12T22:26:28.707669+00:00",
+        "context": {
+          "id": "01GF74WT73MR2ZYTMDYQ5QYAEY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_music_active",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:music-off",
+          "friendly_name": "2354 Thermostat Terminal Music Active"
+        },
+        "last_changed": "2022-10-12T22:26:28.707947+00:00",
+        "last_updated": "2022-10-12T22:26:28.707947+00:00",
+        "context": {
+          "id": "01GF74WT73MRSHX3F8EQ6V04ZC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_power_save",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:battery-plus",
+          "friendly_name": "2354 Thermostat Terminal Power Save"
+        },
+        "last_changed": "2022-10-12T22:26:28.708202+00:00",
+        "last_updated": "2022-10-12T22:26:28.708202+00:00",
+        "context": {
+          "id": "01GF74WT74C3PS90DS9TA3H8M3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_speakerphone",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:volume-off",
+          "friendly_name": "2354 Thermostat Terminal Speakerphone"
+        },
+        "last_changed": "2022-10-12T22:26:28.708467+00:00",
+        "last_updated": "2022-10-12T22:26:28.708467+00:00",
+        "context": {
+          "id": "01GF74WT74PBZTGVC1F2GZK432",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2354_thermostat_terminal_wifi_state",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:wifi",
+          "friendly_name": "2354 Thermostat Terminal WiFi State"
+        },
+        "last_changed": "2022-10-12T22:26:28.708749+00:00",
+        "last_updated": "2022-10-12T22:26:28.708749+00:00",
+        "context": {
+          "id": "01GF74WT74NQ58SXN7EC61483Z",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.leeza_battery_level",
+        "state": "28",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-20",
+          "friendly_name": "Leeza Phone Battery Level"
+        },
+        "last_changed": "2022-10-13T22:26:31.596483+00:00",
+        "last_updated": "2022-10-13T22:26:31.596483+00:00",
+        "context": {
+          "id": "01GF9Q9M1CQPPEQ0QJ69HWZP8S",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 28,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.leeza_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "Leeza Phone Battery State"
+        },
+        "last_changed": "2022-10-13T21:18:10.675942+00:00",
+        "last_updated": "2022-10-13T21:18:10.675942+00:00",
+        "context": {
+          "id": "01GF9KCF7K7YFEBSHQD66JTS2Q",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.leeza_charger_type",
+        "state": "none",
+        "attributes": {
+          "icon": "mdi:battery",
+          "friendly_name": "Leeza Phone Charger Type"
+        },
+        "last_changed": "2022-10-13T21:18:10.768945+00:00",
+        "last_updated": "2022-10-13T21:18:10.768945+00:00",
+        "context": {
+          "id": "01GF9KCFAGTWC6SK1RC3VG4D8C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.leeza_battery_health",
+        "state": "good",
+        "attributes": {
+          "icon": "mdi:battery-heart-variant",
+          "friendly_name": "Leeza Phone Battery Health"
+        },
+        "last_changed": "2022-10-12T22:26:28.710182+00:00",
+        "last_updated": "2022-10-12T22:26:28.710182+00:00",
+        "context": {
+          "id": "01GF74WT76X2H8YPA7ZV865C4R",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "good",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.leeza_battery_temperature",
+        "state": "85.6",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "icon": "mdi:battery",
+          "friendly_name": "Leeza Phone Battery Temperature"
+        },
+        "last_changed": "2022-10-13T22:26:31.598730+00:00",
+        "last_updated": "2022-10-13T22:26:31.598730+00:00",
+        "context": {
+          "id": "01GF9Q9M1E7SRKD2PYWCNH9M1J",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 29.8,
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.leeza_battery_power",
+        "state": "0.0",
+        "attributes": {
+          "state_class": "measurement",
+          "current": -0.001003,
+          "voltage": 3.783,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "icon": "mdi:battery-minus",
+          "friendly_name": "Leeza Phone Battery Power"
+        },
+        "last_changed": "2022-10-13T22:26:31.600205+00:00",
+        "last_updated": "2022-10-13T22:26:31.600205+00:00",
+        "context": {
+          "id": "01GF9Q9M1GR4ZXZPKJ0Q2PYW5H",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.0,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.leeza_is_charging",
+        "state": "off",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug-off",
+          "friendly_name": "Leeza Phone Is Charging"
+        },
+        "last_changed": "2022-10-13T21:18:10.716827+00:00",
+        "last_updated": "2022-10-13T21:18:10.716827+00:00",
+        "context": {
+          "id": "01GF9KCF8W6X11T8JFEATQ7EHN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_active_notification_count",
+        "state": "2",
+        "attributes": {
+          "android.appInfo_android_0": "ApplicationInfo{d197f2 android}",
+          "android.appInfo_de.ozerov.fully_8989": "ApplicationInfo{f85befd de.ozerov.fully}",
+          "android.bigText_android_0": "If you don’t want Fully Kiosk Browser to use this feature, tap to open settings and turn it off.",
+          "android.foregroundApps_android_0": [
+            "de.ozerov.fully"
+          ],
+          "android.icon_android_0": 17301708,
+          "android.icon_de.ozerov.fully_8989": 2131230855,
+          "android.largeIcon_android_0": "android.graphics.Bitmap@cb59e43",
+          "android.reduced.images_android_0": true,
+          "android.reduced.images_de.ozerov.fully_8989": true,
+          "android.template_android_0": "android.app.Notification$BigTextStyle",
+          "android.text_android_0": "If you don’t want Fully Kiosk Browser to use this feature, tap to open settings and turn it off.",
+          "android.text_de.ozerov.fully_8989": "Running in Priority Mode",
+          "android.title_android_0": "Fully Kiosk Browser is displaying over other apps",
+          "android.title_de.ozerov.fully_8989": "Fully Kiosk Browser",
+          "android_0_category": "null",
+          "android_0_channel_id": "com.android.server.wm.AlertWindowNotification - de.ozerov.fully",
+          "android_0_group_id": "null",
+          "android_0_is_clearable": false,
+          "android_0_is_ongoing": true,
+          "android_0_post_time": 1664394551133,
+          "de.ozerov.fully_8989_category": "null",
+          "de.ozerov.fully_8989_channel_id": "4565",
+          "de.ozerov.fully_8989_group_id": "null",
+          "de.ozerov.fully_8989_is_clearable": false,
+          "de.ozerov.fully_8989_is_ongoing": true,
+          "de.ozerov.fully_8989_post_time": 1664395708115,
+          "unit_of_measurement": "notifications",
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2356 Thermostat Terminal Active Notification Count"
+        },
+        "last_changed": "2022-10-13T22:28:56.902840+00:00",
+        "last_updated": "2022-10-13T22:28:56.902840+00:00",
+        "context": {
+          "id": "01GF9QE1Y618X2YEBE385T75HB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 2,
+        "native_unit_of_measurement": "notifications"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_app_importance",
+        "state": "foreground_service",
+        "attributes": {
+          "icon": "mdi:android",
+          "friendly_name": "2356 Thermostat Terminal App Importance"
+        },
+        "last_changed": "2022-10-12T22:26:28.711881+00:00",
+        "last_updated": "2022-10-12T22:26:28.711881+00:00",
+        "context": {
+          "id": "01GF74WT77BSPWKPAK49C30DCF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "foreground_service",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_app_memory",
+        "state": "0.009",
+        "attributes": {
+          "state_class": "measurement",
+          "free_memory": 0.005,
+          "total_memory": 0.014,
+          "unit_of_measurement": "GB",
+          "icon": "mdi:memory",
+          "friendly_name": "2356 Thermostat Terminal App Memory"
+        },
+        "last_changed": "2022-10-13T22:40:57.908760+00:00",
+        "last_updated": "2022-10-13T22:40:57.908760+00:00",
+        "context": {
+          "id": "01GF9R421M7QPS8DBDXDKTS05D",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.009,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_app_rx_gb",
+        "state": "0.3346",
+        "attributes": {
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2356 Thermostat Terminal App Rx GB"
+        },
+        "last_changed": "2022-10-13T22:35:57.496090+00:00",
+        "last_updated": "2022-10-13T22:35:57.496090+00:00",
+        "context": {
+          "id": "01GF9QTWNRZF1AWJJM0890HE3Q",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.3346,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_audio_mode",
+        "state": "normal",
+        "attributes": {
+          "icon": "mdi:volume-high",
+          "friendly_name": "2356 Thermostat Terminal Audio Mode"
+        },
+        "last_changed": "2022-10-12T22:26:28.713764+00:00",
+        "last_updated": "2022-10-12T22:26:28.713764+00:00",
+        "context": {
+          "id": "01GF74WT79WCVTDVN5MYSVCDK4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "normal",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_ble_transmitter",
+        "state": "Bluetooth is turned off",
+        "attributes": {
+          "Advertise mode": "lowPower",
+          "Measured power": -59,
+          "Supports transmitter": false,
+          "Transmitting power": "ultraLow",
+          "id": "2438c8d3-a2d3-4f0b-89ed-a62f8d59c2e3_100_1",
+          "icon": "mdi:bluetooth-off",
+          "friendly_name": "2356 Thermostat Terminal BLE Transmitter"
+        },
+        "last_changed": "2022-10-12T22:26:28.714145+00:00",
+        "last_updated": "2022-10-12T22:26:28.714145+00:00",
+        "context": {
+          "id": "01GF74WT7AV6145VQMZHY2JTBQ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Bluetooth is turned off",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_battery_health",
+        "state": "good",
+        "attributes": {
+          "icon": "mdi:battery-heart-variant",
+          "friendly_name": "2356 Thermostat Terminal Battery Health"
+        },
+        "last_changed": "2022-10-12T22:26:28.714446+00:00",
+        "last_updated": "2022-10-12T22:26:28.714446+00:00",
+        "context": {
+          "id": "01GF74WT7AWVJTMN7DBWZNAV9J",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "good",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_battery_level",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-charging",
+          "friendly_name": "2356 Thermostat Terminal Battery Level"
+        },
+        "last_changed": "2022-10-12T22:26:28.714827+00:00",
+        "last_updated": "2022-10-12T22:26:28.714827+00:00",
+        "context": {
+          "id": "01GF74WT7AA0SRY8YVDB46B7Q8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 100,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_battery_power",
+        "state": "0.0",
+        "attributes": {
+          "state_class": "measurement",
+          "current": 0.0,
+          "voltage": 4.225,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "icon": "mdi:battery-minus",
+          "friendly_name": "2356 Thermostat Terminal Battery Power"
+        },
+        "last_changed": "2022-10-13T22:40:57.910809+00:00",
+        "last_updated": "2022-10-13T22:40:57.910809+00:00",
+        "context": {
+          "id": "01GF9R421PCSAR1DRJ0C7GXRKA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.0,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_battery_state",
+        "state": "full",
+        "attributes": {
+          "icon": "mdi:battery-charging",
+          "friendly_name": "2356 Thermostat Terminal Battery State"
+        },
+        "last_changed": "2022-10-12T22:26:28.715525+00:00",
+        "last_updated": "2022-10-12T22:26:28.715525+00:00",
+        "context": {
+          "id": "01GF74WT7BN87W7H2HG8JAM2KW",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "full",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_battery_temperature",
+        "state": "68.0",
+        "attributes": {
+          "unit_of_measurement": "°F",
+          "device_class": "temperature",
+          "icon": "mdi:battery",
+          "friendly_name": "2356 Thermostat Terminal Battery Temperature"
+        },
+        "last_changed": "2022-10-13T08:01:59.407041+00:00",
+        "last_updated": "2022-10-13T08:01:59.407041+00:00",
+        "context": {
+          "id": "01GF85TKKFE0W1E6QZ6B6ZF33W",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 20.0,
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_bluetooth_connection",
+        "state": "0",
+        "attributes": {
+          "state_class": "measurement",
+          "connected_not_paired_devices": [],
+          "connected_paired_devices": [],
+          "paired_devices": [],
+          "unit_of_measurement": "connection(s)",
+          "icon": "mdi:bluetooth",
+          "friendly_name": "2356 Thermostat Terminal Bluetooth Connection"
+        },
+        "last_changed": "2022-10-12T22:26:28.716265+00:00",
+        "last_updated": "2022-10-12T22:26:28.716265+00:00",
+        "context": {
+          "id": "01GF74WT7CN3VD72A3YY1M581B",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0,
+        "native_unit_of_measurement": "connection(s)"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_charger_type",
+        "state": "ac",
+        "attributes": {
+          "icon": "mdi:power-plug",
+          "friendly_name": "2356 Thermostat Terminal Charger Type"
+        },
+        "last_changed": "2022-10-12T22:26:28.716570+00:00",
+        "last_updated": "2022-10-12T22:26:28.716570+00:00",
+        "context": {
+          "id": "01GF74WT7CJTD4D75222FZ25MZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "ac",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_current_time_zone",
+        "state": "Central Daylight Time",
+        "attributes": {
+          "in_daylight_time": true,
+          "time_zone_id": "America/Chicago",
+          "time_zone_short": "CDT",
+          "uses_daylight_time": true,
+          "utc_offset": -18000000,
+          "icon": "mdi:map-clock",
+          "friendly_name": "2356 Thermostat Terminal Current Time Zone"
+        },
+        "last_changed": "2022-10-12T22:26:28.716861+00:00",
+        "last_updated": "2022-10-12T22:26:28.716861+00:00",
+        "context": {
+          "id": "01GF74WT7C9WPGG81D6XC89MA1",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Central Daylight Time",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_current_version",
+        "state": "2022.10.0-full",
+        "attributes": {
+          "icon": "mdi:android",
+          "friendly_name": "2356 Thermostat Terminal Current Version"
+        },
+        "last_changed": "2022-10-12T22:26:28.717218+00:00",
+        "last_updated": "2022-10-12T22:26:28.717218+00:00",
+        "context": {
+          "id": "01GF74WT7DJ0MQHZJRQH7Y5B8C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "2022.10.0-full",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_do_not_disturb_sensor",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:minus-circle",
+          "friendly_name": "2356 Thermostat Terminal Do Not Disturb Sensor"
+        },
+        "last_changed": "2022-10-12T22:26:28.717572+00:00",
+        "last_updated": "2022-10-12T22:26:28.717572+00:00",
+        "context": {
+          "id": "01GF74WT7D27P9H7867GW757TF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "off",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_geocoded_location",
+        "state": "Unknown",
+        "attributes": {
+          "icon": "mdi:map",
+          "friendly_name": "2356 Thermostat Terminal Geocoded Location"
+        },
+        "last_changed": "2022-10-12T22:26:28.717869+00:00",
+        "last_updated": "2022-10-12T22:26:28.717869+00:00",
+        "context": {
+          "id": "01GF74WT7DNK9RBVS3MAZSAC0D",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Unknown",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_internal_storage",
+        "state": "89",
+        "attributes": {
+          "Free internal storage": "21GB",
+          "Total internal storage": "24GB",
+          "unit_of_measurement": "%",
+          "icon": "mdi:harddisk",
+          "friendly_name": "2356 Thermostat Terminal Internal Storage"
+        },
+        "last_changed": "2022-10-13T20:13:05.548025+00:00",
+        "last_updated": "2022-10-13T20:13:05.548025+00:00",
+        "context": {
+          "id": "01GF9FN9MC4XX1Y10WQSTVWB8F",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 89,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_last_notification",
+        "state": "",
+        "attributes": {
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2356 Thermostat Terminal Last Notification"
+        },
+        "last_changed": "2022-10-12T22:26:28.718514+00:00",
+        "last_updated": "2022-10-12T22:26:28.718514+00:00",
+        "context": {
+          "id": "01GF74WT7EQWHZBMC0T40HSBB3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_last_reboot",
+        "state": "2022-09-28T19:46:39+00:00",
+        "attributes": {
+          "Local Time": "Wed Sep 28 14:46:39 CDT 2022",
+          "Time in Milliseconds": 1664394399258,
+          "device_class": "timestamp",
+          "icon": "mdi:restart",
+          "friendly_name": "2356 Thermostat Terminal Last Reboot"
+        },
+        "last_changed": "2022-10-12T22:26:28.718888+00:00",
+        "last_updated": "2022-10-12T22:26:28.718888+00:00",
+        "context": {
+          "id": "01GF74WT7E2SD91AVJMF69Z75J",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'datetime.datetime'>",
+          "isoformat": "2022-09-28T19:46:39+00:00"
+        },
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_last_removed_notification",
+        "state": "",
+        "attributes": {
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2356 Thermostat Terminal Last Removed Notification"
+        },
+        "last_changed": "2022-10-12T22:26:28.719271+00:00",
+        "last_updated": "2022-10-12T22:26:28.719271+00:00",
+        "context": {
+          "id": "01GF74WT7FD8KC4QSP7X01PV1E",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_last_update_trigger",
+        "state": "android.intent.action.TIME_TICK",
+        "attributes": {
+          "icon": "mdi:update",
+          "friendly_name": "2356 Thermostat Terminal Last Update Trigger"
+        },
+        "last_changed": "2022-10-13T22:28:56.897264+00:00",
+        "last_updated": "2022-10-13T22:28:56.897264+00:00",
+        "context": {
+          "id": "01GF9QE1Y1KJDWD8E9ENF3XKWR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "android.intent.action.TIME_TICK",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_last_used_app",
+        "state": "io.homeassistant.companion.android",
+        "attributes": {
+          "Label": "Home Assistant",
+          "icon": "mdi:android",
+          "friendly_name": "2356 Thermostat Terminal Last Used App"
+        },
+        "last_changed": "2022-10-13T20:28:11.986847+00:00",
+        "last_updated": "2022-10-13T20:28:11.986847+00:00",
+        "context": {
+          "id": "01GF9GGYTJF5HX20T7V6WQ21GZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "io.homeassistant.companion.android",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_light_sensor",
+        "state": "0",
+        "attributes": {
+          "unit_of_measurement": "lx",
+          "device_class": "illuminance",
+          "icon": "mdi:brightness-5",
+          "friendly_name": "2356 Thermostat Terminal Light Sensor"
+        },
+        "last_changed": "2022-10-13T21:56:04.256910+00:00",
+        "last_updated": "2022-10-13T21:56:04.256910+00:00",
+        "context": {
+          "id": "01GF9NHVH0W3F61JJBJQ8WPE59",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "lx"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_media_session",
+        "state": "Unavailable",
+        "attributes": {
+          "total_media_session_count": 0,
+          "icon": "mdi:play-circle",
+          "friendly_name": "2356 Thermostat Terminal Media Session"
+        },
+        "last_changed": "2022-10-12T22:26:28.720715+00:00",
+        "last_updated": "2022-10-12T22:26:28.720715+00:00",
+        "context": {
+          "id": "01GF74WT7GTND071S1R973D4YS",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Unavailable",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_network_type",
+        "state": "wifi",
+        "attributes": {
+          "metered": false,
+          "icon": "mdi:wifi",
+          "friendly_name": "2356 Thermostat Terminal Network Type"
+        },
+        "last_changed": "2022-10-12T22:26:28.721000+00:00",
+        "last_updated": "2022-10-12T22:26:28.721000+00:00",
+        "context": {
+          "id": "01GF74WT7H87567G5JB0B42J3H",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "wifi",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_next_alarm",
+        "state": "unavailable",
+        "attributes": {
+          "device_class": "timestamp",
+          "icon": "mdi:alarm",
+          "friendly_name": "2356 Thermostat Terminal Next Alarm"
+        },
+        "last_changed": "2022-10-12T22:26:28.721286+00:00",
+        "last_updated": "2022-10-12T22:26:28.721286+00:00",
+        "context": {
+          "id": "01GF74WT7HZCYEBAKCERST8W91",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "unavailable",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_public_ip_address",
+        "state": "108.215.216.20",
+        "attributes": {
+          "icon": "mdi:ip",
+          "friendly_name": "2356 Thermostat Terminal Public IP Address"
+        },
+        "last_changed": "2022-10-12T22:26:28.721619+00:00",
+        "last_updated": "2022-10-12T22:26:28.721619+00:00",
+        "context": {
+          "id": "01GF74WT7H0EHRX8ZSMY6S1BT0",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "108.215.216.20",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_ringer_mode",
+        "state": "normal",
+        "attributes": {
+          "icon": "mdi:volume-high",
+          "friendly_name": "2356 Thermostat Terminal Ringer Mode"
+        },
+        "last_changed": "2022-10-12T22:26:28.721912+00:00",
+        "last_updated": "2022-10-12T22:26:28.721912+00:00",
+        "context": {
+          "id": "01GF74WT7H3165BVPQSSGPD01S",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "normal",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_total_rx_gb",
+        "state": "2.761",
+        "attributes": {
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2356 Thermostat Terminal Total Rx GB"
+        },
+        "last_changed": "2022-10-13T21:49:03.695295+00:00",
+        "last_updated": "2022-10-13T21:49:03.695295+00:00",
+        "context": {
+          "id": "01GF9N50TFW7RCNGZNARRDKNVV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 2.761,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_total_tx_gb",
+        "state": "0.184",
+        "attributes": {
+          "unit_of_measurement": "GB",
+          "icon": "mdi:radio-tower",
+          "friendly_name": "2356 Thermostat Terminal Total Tx GB"
+        },
+        "last_changed": "2022-10-13T22:05:01.068677+00:00",
+        "last_updated": "2022-10-13T22:05:01.068677+00:00",
+        "context": {
+          "id": "01GF9P27RCRFVDX23M5ZPPHTJT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.184,
+        "native_unit_of_measurement": "GB"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_alarm",
+        "state": "21",
+        "attributes": {
+          "icon": "mdi:alarm",
+          "friendly_name": "2356 Thermostat Terminal Volume Level Alarm"
+        },
+        "last_changed": "2022-10-12T22:26:28.722937+00:00",
+        "last_updated": "2022-10-12T22:26:28.722937+00:00",
+        "context": {
+          "id": "01GF74WT7JED3MX89QP6WSFV3D",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 21,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_call",
+        "state": "20",
+        "attributes": {
+          "icon": "mdi:phone",
+          "friendly_name": "2356 Thermostat Terminal Volume Level Call"
+        },
+        "last_changed": "2022-10-12T22:26:28.723219+00:00",
+        "last_updated": "2022-10-12T22:26:28.723219+00:00",
+        "context": {
+          "id": "01GF74WT7KS14CZNRCCZ3D20T2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 20,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_dtmf",
+        "state": "5",
+        "attributes": {
+          "icon": "mdi:volume-high",
+          "friendly_name": "2356 Thermostat Terminal Volume Level DTMF"
+        },
+        "last_changed": "2022-10-12T22:26:28.723526+00:00",
+        "last_updated": "2022-10-12T22:26:28.723526+00:00",
+        "context": {
+          "id": "01GF74WT7KF4RAM9CN709KWBTB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 5,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_music",
+        "state": "8",
+        "attributes": {
+          "icon": "mdi:music",
+          "friendly_name": "2356 Thermostat Terminal Volume Level Music"
+        },
+        "last_changed": "2022-10-12T22:26:28.723829+00:00",
+        "last_updated": "2022-10-12T22:26:28.723829+00:00",
+        "context": {
+          "id": "01GF74WT7KKVATW1XYZHJFZNQV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 8,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_notification",
+        "state": "17",
+        "attributes": {
+          "icon": "mdi:bell-ring",
+          "friendly_name": "2356 Thermostat Terminal Volume Level Notification"
+        },
+        "last_changed": "2022-10-12T22:26:28.724145+00:00",
+        "last_updated": "2022-10-12T22:26:28.724145+00:00",
+        "context": {
+          "id": "01GF74WT7MFJ7S9X00E9E02SY6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 17,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_ringer",
+        "state": "17",
+        "attributes": {
+          "icon": "mdi:phone-ring",
+          "friendly_name": "2356 Thermostat Terminal Volume Level Ringer"
+        },
+        "last_changed": "2022-10-12T22:26:28.724762+00:00",
+        "last_updated": "2022-10-12T22:26:28.724762+00:00",
+        "context": {
+          "id": "01GF74WT7MBXF1TKFYEHQ26ECK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 17,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_volume_level_system",
+        "state": "5",
+        "attributes": {
+          "icon": "mdi:cellphone-sound",
+          "friendly_name": "2356 Thermostat Terminal Volume Level System"
+        },
+        "last_changed": "2022-10-12T22:26:28.725220+00:00",
+        "last_updated": "2022-10-12T22:26:28.725220+00:00",
+        "context": {
+          "id": "01GF74WT7N9F5BVX06FRMCM7ZZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 5,
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_wifi_bssid",
+        "state": "3c:28:6d:5a:88:5e",
+        "attributes": {
+          "icon": "mdi:wifi",
+          "friendly_name": "2356 Thermostat Terminal WiFi BSSID"
+        },
+        "last_changed": "2022-10-13T19:13:32.922967+00:00",
+        "last_updated": "2022-10-13T19:13:32.922967+00:00",
+        "context": {
+          "id": "01GF9C88QTFV3EHH78VPYD5MWV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "3c:28:6d:5a:88:5e",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_wifi_connection",
+        "state": "Personal Wifi",
+        "attributes": {
+          "is_hidden": false,
+          "icon": "mdi:wifi",
+          "friendly_name": "2356 Thermostat Terminal WiFi Connection"
+        },
+        "last_changed": "2022-10-12T22:26:28.725988+00:00",
+        "last_updated": "2022-10-12T22:26:28.725988+00:00",
+        "context": {
+          "id": "01GF74WT7NARXSB2MZ4N3QGFNN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "Personal Wifi",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_wifi_frequency",
+        "state": "5745",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "MHz",
+          "icon": "mdi:wifi",
+          "friendly_name": "2356 Thermostat Terminal WiFi Frequency"
+        },
+        "last_changed": "2022-10-12T22:26:28.726318+00:00",
+        "last_updated": "2022-10-12T22:26:28.726318+00:00",
+        "context": {
+          "id": "01GF74WT7PSF2D64G3ESZXRBMQ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 5745,
+        "native_unit_of_measurement": "MHz"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_wifi_ip_address",
+        "state": "192.168.86.35",
+        "attributes": {
+          "icon": "mdi:ip",
+          "friendly_name": "2356 Thermostat Terminal WiFi IP Address"
+        },
+        "last_changed": "2022-10-12T22:26:28.726612+00:00",
+        "last_updated": "2022-10-12T22:26:28.726612+00:00",
+        "context": {
+          "id": "01GF74WT7PBWXYD0X89KVQC06Q",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "192.168.86.35",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_wifi_link_speed",
+        "state": "433",
+        "attributes": {
+          "unit_of_measurement": "Mbps",
+          "icon": "mdi:wifi-strength-2",
+          "friendly_name": "2356 Thermostat Terminal WiFi Link Speed"
+        },
+        "last_changed": "2022-10-12T22:26:28.726901+00:00",
+        "last_updated": "2022-10-13T18:39:03.745307+00:00",
+        "context": {
+          "id": "01GF9A9421NDRGQMFCV7B74NST",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 433,
+        "native_unit_of_measurement": "Mbps"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.2356_thermostat_terminal_wifi_signal_strength",
+        "state": "-67",
+        "attributes": {
+          "unit_of_measurement": "dBm",
+          "device_class": "signal_strength",
+          "icon": "mdi:wifi-strength-2",
+          "friendly_name": "2356 Thermostat Terminal WiFi Signal Strength"
+        },
+        "last_changed": "2022-10-13T22:33:57.329521+00:00",
+        "last_updated": "2022-10-13T22:33:57.329521+00:00",
+        "context": {
+          "id": "01GF9QQ7AHV6S0M9SWJKZ9MC2C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": -67,
+        "native_unit_of_measurement": "dBm"
+      },
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_app_inactive",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:timer-outline",
+          "friendly_name": "2356 Thermostat Terminal App Inactive"
+        },
+        "last_changed": "2022-10-12T22:26:28.727503+00:00",
+        "last_updated": "2022-10-12T22:26:28.727503+00:00",
+        "context": {
+          "id": "01GF74WT7Q497Y3MTFC2KBE30C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_bluetooth_state",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:bluetooth-off",
+          "friendly_name": "2356 Thermostat Terminal Bluetooth State"
+        },
+        "last_changed": "2022-10-12T22:26:28.727766+00:00",
+        "last_updated": "2022-10-12T22:26:28.727766+00:00",
+        "context": {
+          "id": "01GF74WT7QPYPX3AR74QAV8MMW",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_device_locked",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2356 Thermostat Terminal Device Locked"
+        },
+        "last_changed": "2022-10-12T22:26:28.728021+00:00",
+        "last_updated": "2022-10-12T22:26:28.728021+00:00",
+        "context": {
+          "id": "01GF74WT7R94EAMV7PRVHY38F7",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_device_secure",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2356 Thermostat Terminal Device Secure"
+        },
+        "last_changed": "2022-10-12T22:26:28.728289+00:00",
+        "last_updated": "2022-10-12T22:26:28.728289+00:00",
+        "context": {
+          "id": "01GF74WT7R60T0S4SM9V5WNFG4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_doze_mode",
+        "state": "off",
+        "attributes": {
+          "ignoring_battery_optimizations": true,
+          "icon": "mdi:sleep-off",
+          "friendly_name": "2356 Thermostat Terminal Doze Mode"
+        },
+        "last_changed": "2022-10-12T22:26:28.728545+00:00",
+        "last_updated": "2022-10-12T22:26:28.728545+00:00",
+        "context": {
+          "id": "01GF74WT7RN3C8DXB88MSZZHQQ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_headphones",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:headphones-off",
+          "friendly_name": "2356 Thermostat Terminal Headphones"
+        },
+        "last_changed": "2022-10-12T22:26:28.728795+00:00",
+        "last_updated": "2022-10-12T22:26:28.728795+00:00",
+        "context": {
+          "id": "01GF74WT7R4XPH68F58PWAFBM9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_interactive",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone-off",
+          "friendly_name": "2356 Thermostat Terminal Interactive"
+        },
+        "last_changed": "2022-10-13T20:19:54.116387+00:00",
+        "last_updated": "2022-10-13T20:19:54.116387+00:00",
+        "context": {
+          "id": "01GF9G1RM4WF3A8BJK33EFSCGZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_is_charging",
+        "state": "on",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug",
+          "friendly_name": "2356 Thermostat Terminal Is Charging"
+        },
+        "last_changed": "2022-10-12T22:26:28.729317+00:00",
+        "last_updated": "2022-10-12T22:26:28.729317+00:00",
+        "context": {
+          "id": "01GF74WT7SX8H1EXSQH1D5MTE9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_keyguard_locked",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2356 Thermostat Terminal Keyguard Locked"
+        },
+        "last_changed": "2022-10-12T22:26:28.729849+00:00",
+        "last_updated": "2022-10-12T22:26:28.729849+00:00",
+        "context": {
+          "id": "01GF74WT7SY817WQSZMRHWTAKB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_keyguard_secure",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:cellphone",
+          "friendly_name": "2356 Thermostat Terminal Keyguard Secure"
+        },
+        "last_changed": "2022-10-12T22:26:28.730130+00:00",
+        "last_updated": "2022-10-12T22:26:28.730130+00:00",
+        "context": {
+          "id": "01GF74WT7T8KT8Z0DG6VXJK7ND",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_mic_muted",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:microphone",
+          "friendly_name": "2356 Thermostat Terminal Mic Muted"
+        },
+        "last_changed": "2022-10-12T22:26:28.730942+00:00",
+        "last_updated": "2022-10-12T22:26:28.730942+00:00",
+        "context": {
+          "id": "01GF74WT7TJB7FEN08A8K2N43C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_music_active",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:music-off",
+          "friendly_name": "2356 Thermostat Terminal Music Active"
+        },
+        "last_changed": "2022-10-12T22:26:28.731360+00:00",
+        "last_updated": "2022-10-12T22:26:28.731360+00:00",
+        "context": {
+          "id": "01GF74WT7V73VGYFD666W4HX1G",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_power_save",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:battery-plus",
+          "friendly_name": "2356 Thermostat Terminal Power Save"
+        },
+        "last_changed": "2022-10-12T22:26:28.731682+00:00",
+        "last_updated": "2022-10-12T22:26:28.731682+00:00",
+        "context": {
+          "id": "01GF74WT7V3PZQX8WP5V3SDBFD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_speakerphone",
+        "state": "off",
+        "attributes": {
+          "icon": "mdi:volume-off",
+          "friendly_name": "2356 Thermostat Terminal Speakerphone"
+        },
+        "last_changed": "2022-10-12T22:26:28.732015+00:00",
+        "last_updated": "2022-10-12T22:26:28.732015+00:00",
+        "context": {
+          "id": "01GF74WT7WQBGNXJ1KBRYTXJ83",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.2356_thermostat_terminal_wifi_state",
+        "state": "on",
+        "attributes": {
+          "icon": "mdi:wifi",
+          "friendly_name": "2356 Thermostat Terminal WiFi State"
+        },
+        "last_changed": "2022-10-12T22:26:28.732328+00:00",
+        "last_updated": "2022-10-12T22:26:28.732328+00:00",
+        "context": {
+          "id": "01GF74WT7WYDEE6FS1KVBMK6E1",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.pixel_5a",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "Pixel 5a"
+        },
+        "last_changed": "2022-10-12T22:26:28.965101+00:00",
+        "last_updated": "2022-10-12T22:26:28.965101+00:00",
+        "context": {
+          "id": "01GF74WTF53G20S11WFA8FV0TB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.2354_thermostat_terminal",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "2354 Thermostat Terminal"
+        },
+        "last_changed": "2022-10-12T22:26:28.965794+00:00",
+        "last_updated": "2022-10-12T22:26:28.965794+00:00",
+        "context": {
+          "id": "01GF74WTF57F25GNMXBWKH7CDV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.leeza",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "Leeza Phone"
+        },
+        "last_changed": "2022-10-12T22:26:28.966171+00:00",
+        "last_updated": "2022-10-12T22:26:28.966171+00:00",
+        "context": {
+          "id": "01GF74WTF6CNQ6PMW7MZZQG6AJ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.2356_thermostat_terminal",
+        "state": "home",
+        "attributes": {
+          "source_type": "gps",
+          "latitude": 43.061358800412364,
+          "longitude": -87.9041891978765,
+          "gps_accuracy": 138,
+          "altitude": 0,
+          "course": 194,
+          "speed": 0,
+          "vertical_accuracy": 0,
+          "friendly_name": "2356 Thermostat Terminal"
+        },
+        "last_changed": "2022-10-12T22:26:28.966812+00:00",
+        "last_updated": "2022-10-12T22:26:28.966812+00:00",
+        "context": {
+          "id": "01GF74WTF680P10B2FN1K7E3MD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.late_night_garage_closer",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-09-20T03:12:16.170154+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1663043688965",
+          "friendly_name": "Late Night Garage Closer"
+        },
+        "last_changed": "2022-10-12T22:26:29.690977+00:00",
+        "last_updated": "2022-10-12T22:26:29.690977+00:00",
+        "context": {
+          "id": "01GF74WV5TNBBD015YBHTRY8ZA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.disable_late_night_garage",
+        "state": "off",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1663045196223",
+          "friendly_name": "Disable Late Night Garage"
+        },
+        "last_changed": "2022-10-12T22:26:29.691512+00:00",
+        "last_updated": "2022-10-12T22:26:29.691512+00:00",
+        "context": {
+          "id": "01GF74WV5VGJW7QA7Z62GMFVTC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.screen_light_dimmer",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-09-23T15:25:18.307251+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1663345317722",
+          "friendly_name": "Screen Light Dimmer"
+        },
+        "last_changed": "2022-10-12T22:26:29.691938+00:00",
+        "last_updated": "2022-10-12T22:26:29.691938+00:00",
+        "context": {
+          "id": "01GF74WV5VZY59VFNA2MN38PPB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.low_battery_level_detection_notification_for_all_battery_sensors",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-10-10T15:00:00.015846+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1663642159401",
+          "friendly_name": "Low battery level detection & notification for all battery sensors"
+        },
+        "last_changed": "2022-10-12T22:26:29.692596+00:00",
+        "last_updated": "2022-10-12T22:26:29.692596+00:00",
+        "context": {
+          "id": "01GF74WV5WRJFGRNBX0J7216V6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.set_climate_controller_hvac_mode",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-10-04T19:16:08.701121+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "set_climate_controller_hvac_mode",
+          "friendly_name": "Set climate_controller HVAC Mode"
+        },
+        "last_changed": "2022-10-12T22:26:29.693088+00:00",
+        "last_updated": "2022-10-12T22:26:29.693088+00:00",
+        "context": {
+          "id": "01GF74WV5XRQ5DVARWZ0TRBZYG",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.set_climate_entities_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-04T19:30:00.003478+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "set_climate_entities_temp",
+          "friendly_name": "Set Climate Entities Temp"
+        },
+        "last_changed": "2022-10-12T22:26:29.693751+00:00",
+        "last_updated": "2022-10-12T22:26:29.693751+00:00",
+        "context": {
+          "id": "01GF74WV5XETBNTKXKRVKQB28B",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.set_2354_climate_entities",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-10-13T22:30:00.005365+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1664911918906",
+          "friendly_name": "Set 2354 Climate Entities"
+        },
+        "last_changed": "2022-10-12T22:26:29.694237+00:00",
+        "last_updated": "2022-10-13T22:30:00.931056+00:00",
+        "context": {
+          "id": "01GF9QFZJ3R7TQJSKDXZ1R6C77",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.deactivate_all_climate_entities",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-04T19:16:19.443316+00:00",
+          "mode": "queued",
+          "current": 0,
+          "max": 10,
+          "friendly_name": "deactivate_all_climate_entities"
+        },
+        "last_changed": "2022-10-12T22:26:29.791188+00:00",
+        "last_updated": "2022-10-12T22:26:29.791188+00:00",
+        "context": {
+          "id": "01GF74WV8ZV3WNKQFNY54V7XG4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.set_heat_pump_hvac_mode",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-13T22:30:00.015361+00:00",
+          "mode": "queued",
+          "current": 0,
+          "max": 10,
+          "friendly_name": "set_heat_pump_hvac_mode"
+        },
+        "last_changed": "2022-10-13T22:30:00.020050+00:00",
+        "last_updated": "2022-10-13T22:30:00.020050+00:00",
+        "context": {
+          "id": "01GF9QFZJ3R7TQJSKDXZ1R6C77",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.calculate_2354_boiler_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-04T16:53:36.640571+00:00",
+          "mode": "queued",
+          "current": 0,
+          "max": 10,
+          "friendly_name": "Calculate 2354 Boiler Temp"
+        },
+        "last_changed": "2022-10-12T22:26:29.792128+00:00",
+        "last_updated": "2022-10-12T22:26:29.792128+00:00",
+        "context": {
+          "id": "01GF74WV90FHJK67YSF8ZNXJCN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.set_2354_boiler_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Set 2354 Boiler Temp"
+        },
+        "last_changed": "2022-10-12T22:26:29.792385+00:00",
+        "last_updated": "2022-10-12T22:26:29.792385+00:00",
+        "context": {
+          "id": "01GF74WV9027WRD5CK1773DTJV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.calculate_2354_e_hp_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-13T22:30:00.026368+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Calculate 2354 E HP Temp"
+        },
+        "last_changed": "2022-10-13T22:30:00.036152+00:00",
+        "last_updated": "2022-10-13T22:30:00.036152+00:00",
+        "context": {
+          "id": "01GF9QFZJ3R7TQJSKDXZ1R6C77",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.calculate_2354_w_hp_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-13T22:30:00.047287+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Calculate 2354 W HP Temp"
+        },
+        "last_changed": "2022-10-13T22:30:00.055899+00:00",
+        "last_updated": "2022-10-13T22:30:00.055899+00:00",
+        "context": {
+          "id": "01GF9QFZJ3R7TQJSKDXZ1R6C77",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.set_2354_e_hp_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-13T22:30:00.023298+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Set 2354 E HP Temp"
+        },
+        "last_changed": "2022-10-13T22:30:00.041216+00:00",
+        "last_updated": "2022-10-13T22:30:00.041216+00:00",
+        "context": {
+          "id": "01GF9QFZJ3R7TQJSKDXZ1R6C77",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.set_2354_w_hp_temp",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2022-10-13T22:30:00.044225+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Set 2354 W HP Temp"
+        },
+        "last_changed": "2022-10-13T22:30:00.061334+00:00",
+        "last_updated": "2022-10-13T22:30:00.061334+00:00",
+        "context": {
+          "id": "01GF9QFZJ3R7TQJSKDXZ1R6C77",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-13T22:41:33.026914+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.2356_manual_climate",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:home-thermometer",
+          "friendly_name": "2354 Manual Climate"
+        },
+        "last_changed": "2022-10-10T15:51:16.877825+00:00",
+        "last_updated": "2022-10-10T15:58:46.572466+00:00",
+        "context": {
+          "id": "01GF19XF9CY6A72NY0P5Y81PSE",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-10-10T15:58:46.601676+00:00"
+    }
+  ]
+}

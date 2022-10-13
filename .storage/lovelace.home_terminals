@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.home_terminals",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "Home",
+          "badges": [],
+          "cards": [
+            {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.forecast_booth_st_lower",
+              "name": "Forecast",
+              "secondary_info_attribute": "wind_speed"
+            },
+            {
+              "initial_view": "dayGridMonth",
+              "type": "calendar",
+              "entities": [
+                "calendar.zd_airbnb"
+              ],
+              "title": "Home Calendar"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.climate_controller",
+              "name": "Home Climate "
+            },
+            {
+              "type": "custom:config-template-card",
+              "variables": {
+                "WARMEST_SPACE": "states['sensor.warmest_space'].state"
+              },
+              "entities": [
+                "sensor.warmest_space"
+              ],
+              "card": {
+                "type": "entities",
+                "entities": [
+                  {
+                    "type": "section",
+                    "label": "Indoor"
+                  },
+                  {
+                    "entity": "sensor.2354_average_indoor_temperature",
+                    "name": "Average Temperature",
+                    "icon": "mdi:home-thermometer"
+                  },
+                  {
+                    "entity": "sensor.max_indoor_temperature",
+                    "name": "${'Max Temperature (' + WARMEST_SPACE + ')'}",
+                    "icon": "mdi:thermometer-high",
+                    "secondary_info": "none"
+                  },
+                  {
+                    "entity": "sensor.2354_average_indoor_humidity",
+                    "name": "Average Humidity",
+                    "secondary_info": "none"
+                  },
+                  {
+                    "entity": "sensor.2354_max_indoor_humidity",
+                    "name": "Max Humidity"
+                  },
+                  {
+                    "type": "section",
+                    "label": "Outdoor"
+                  },
+                  {
+                    "entity": "sensor.outside_temp",
+                    "name": "Temperature"
+                  },
+                  {
+                    "entity": "sensor.outside_humidity",
+                    "name": "Humidity"
+                  }
+                ]
+              },
+              "title": "Climate"
+            },
+            {
+              "type": "light",
+              "entity": "light.2354_e_bedroom_light",
+              "name": "Bedroom light "
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

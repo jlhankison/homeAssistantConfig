@@ -1,0 +1,95 @@
+blueprint:
+  name: Set Climate Entities
+  domain: automation
+  description: Every 15 minutes or whenever climate controller changes states -> decide
+    which hvac mode and temperature all climate entities should be set to
+  input:
+    climate_controller:
+      name: Climate Controller
+      description: This is the virtual thermostat that controls all the other climate entities
+      selector:
+        entity:
+          multiple: false
+          domain: climate
+    e_heat_pump:
+      name: East Heat Pump
+      description: This is the eastern most heat pump in the space
+      selector:
+        entity:
+          multiple: false
+          domain: climate
+    w_heat_pump:
+      name: West Heat Pump
+      description: This is the western most heat pump in the space
+      selector:
+        entity:
+          multiple: false
+          domain: climate
+    boiler_therm:
+      name: Boiler Thermostat
+      description: This is the boiler for the space
+      selector:
+        entity:
+          multiple: false
+          domain: climate
+    boiler_set_temp_script:
+      name: Boiler Set Temp Script
+      description: This is a script to set the boiler thermostat temperature
+      selector:
+        entity:
+          multiple: false
+          domain: script
+    e_hp_set_temp_script:
+      name: East Heat Pump Set Temp Script
+      description: This is a script to set the eastern heat pump temperature
+      selector:
+        entity:
+          multiple: false
+          domain: script
+    w_hp_set_temp_script:
+      name: West Heat Pump Set Temp Script
+      description: This is a script to set the western heat pump temperature
+      selector:
+        entity:
+          multiple: false
+          domain: script
+  
+variables:
+  use_hp: "{{ states('binary_sensor.use_heat_pump') }}"
+  controller: !input climate_controller
+trigger:
+  - platform: time_pattern
+    minutes: /15
+  - platform: state
+    entity_id: !input climate_controller
+    to: 
+  - platform: state
+    entity_id: !input climate_controller
+    attribute: temperature
+
+action:
+  - choose:
+    - conditions: "{{ use_hp == 'on' }}"
+      sequence:
+      - service: script.set_heat_pump_hvac_mode
+      - service: !input e_hp_set_temp_script
+      - service: !input w_hp_set_temp_script
+      - service: climate.set_temperature
+        data:
+          temperature: 65
+        target:
+          entity_id: !input boiler_therm
+    - conditions: "{{ use_hp == 'off' }}"
+      sequence:
+      - service: !input boiler_set_temp_script
+      - service: climate.turn_off
+        data:
+          entity_id:
+          - !input e_heat_pump
+          - !input w_heat_pump
+    default:
+    - service: climate.set_temperature
+      data:
+        temperature: "{{ state_attr(controller, 'temperature') }}"
+      target: 
+        entity_id: !input boiler_therm

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "zone",
+  "data": {
+    "items": [
+      {
+        "latitude": 43.05975700960929,
+        "longitude": -87.9036828945391,
+        "name": "2354 N Booth",
+        "passive": false,
+        "radius": 22.0,
+        "icon": "mdi:home",
+        "id": "2354_n_booth"
+      }
+    ]
+  }
+}

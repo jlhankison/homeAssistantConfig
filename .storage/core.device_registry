@@ -1,0 +1,737 @@
+{
+  "version": 1,
+  "minor_version": 3,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {
+        "config_entries": [
+          "711fbacb4703166be4f4ec8f7b0499e0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Core",
+        "name": "Home Assistant Core",
+        "sw_version": "2022.9.4",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "ed7b4e49e68c687cfb279d3a00c3f2dc",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "711fbacb4703166be4f4ec8f7b0499e0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "supervisor"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Supervisor",
+        "name": "Home Assistant Supervisor",
+        "sw_version": "2022.10.0",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "2f10ac026d0acd87e92c1b7fa30ccb0e",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "711fbacb4703166be4f4ec8f7b0499e0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "OS"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Operating System",
+        "name": "Home Assistant Operating System",
+        "sw_version": "9.0",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "871239354e915e2eb5ad3f6a4aa0d0ba",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "f4b6e96b00e4c4bb9fa02451f3ca562c"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "cast",
+            "d3796dbdabf36440dfc4ba486b81a5b4"
+          ]
+        ],
+        "manufacturer": "Google Inc.",
+        "model": "Chromecast",
+        "name": "Living Room TV 2",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "ae9d82a7a373d32deb154b454af2b90a",
+        "via_device_id": null,
+        "area_id": "2354_living_room",
+        "name_by_user": "2354 Living Room Chromecast",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "f4b6e96b00e4c4bb9fa02451f3ca562c"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "cast",
+            "cee84f295e4713edb585087c92b4e811"
+          ]
+        ],
+        "manufacturer": "Google Inc.",
+        "model": "Chromecast",
+        "name": "E J Bedroom TV",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "7987c1e6880932745b9620a225feba15",
+        "via_device_id": null,
+        "area_id": "2354_e_bedroom",
+        "name_by_user": "2354 E Bedroom Chromecast",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "266be10b63917bbd6d6e44459fe8cebe"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "met"
+          ]
+        ],
+        "manufacturer": "Met.no",
+        "model": "Forecast",
+        "name": "Forecast",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "1642a9f645d4d6bc10ea84eee619a810",
+        "via_device_id": null,
+        "area_id": "booth_st_house",
+        "name_by_user": "Forecast",
+        "disabled_by": null,
+        "configuration_url": "https://www.met.no/en"
+      },
+      {
+        "config_entries": [
+          "3d409d1a4f777a5c0c4a974d0ff700a1"
+        ],
+        "connections": [
+          [
+            "upnp",
+            "uuid:bdb7a4e3-0117-4d1f-b482-50d50040a291"
+          ],
+          [
+            "mac",
+            "3c:28:6d:5a:88:51"
+          ]
+        ],
+        "identifiers": [
+          [
+            "upnp_serial_number",
+            "00000000"
+          ],
+          [
+            "upnp_host",
+            "192.168.86.1"
+          ],
+          [
+            "upnp",
+            "uuid:ab9568f1-2bed-43c8-83b7-4c26a944aaf8::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
+          ]
+        ],
+        "manufacturer": "Google",
+        "model": "OnHub",
+        "name": "OnHub",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "21d124a56cb50e6efcc32a50d8d984d7",
+        "via_device_id": null,
+        "area_id": "booth_st_house",
+        "name_by_user": "Google Wifi",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "397dede2ff330d63434b03222fbb48be"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "myq",
+            "GW0B003E30A6"
+          ]
+        ],
+        "manufacturer": "The Chamberlain Group Inc.",
+        "model": "LiftMaster Wi-Fi GDO or Gate Operator AC",
+        "name": "Garage Door",
+        "sw_version": "3.12",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "10c07f2564081b2d4187bf3858494d7a",
+        "via_device_id": null,
+        "area_id": "garage",
+        "name_by_user": "Garage Door Connection",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "397dede2ff330d63434b03222fbb48be"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "myq",
+            "CG08504DEE08"
+          ]
+        ],
+        "manufacturer": "The Chamberlain Group Inc.",
+        "model": "LiftMaster Wi-Fi GDO DC w/Battery Backup",
+        "name": "Garage Door",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "1866389b89ebb7c25f7e5a3da59e7643",
+        "via_device_id": "10c07f2564081b2d4187bf3858494d7a",
+        "area_id": "garage",
+        "name_by_user": "Garage Door",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "d98c4147cd9b9748add31c360ab7200f"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya",
+            "ebb439eb3473d0a15bxef8"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Color Lights (8cr0olwf9sphi0u4)",
+        "name": "Color Lights",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "6602c1f2cc0b0574d500c3167a4d7b2a",
+        "via_device_id": null,
+        "area_id": "2354_e_bedroom",
+        "name_by_user": "2354 E Bedroom Light",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "f53f9c03cf26fe6f120887656cb5a2c3"
+        ],
+        "connections": [
+          [
+            "mac",
+            "34:d2:70:2a:38:07"
+          ]
+        ],
+        "identifiers": [
+          [
+            "fully_kiosk",
+            "eb29eeff-1d840d07"
+          ]
+        ],
+        "manufacturer": "Amazon",
+        "model": "KFGIWI",
+        "name": "Fire",
+        "sw_version": "1.48.2",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "8ffdbe9a54be7e65369c955ff0d796b9",
+        "via_device_id": null,
+        "area_id": "2354_dining_room",
+        "name_by_user": "2354 Thermostat Terminal Kiosk",
+        "disabled_by": null,
+        "configuration_url": "http://192.168.86.37:2323"
+      },
+      {
+        "config_entries": [
+          "187d4cd8fe7bb907f3b7ec5c27b07950"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "mobile_app",
+            "4b61b9903870f65f"
+          ]
+        ],
+        "manufacturer": "Google",
+        "model": "Pixel 5a",
+        "name": "Pixel 5a",
+        "sw_version": "33",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "928c527cc0bf559f074898511895bbbd",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "b2f79056f0c06c6552f0620dd9ab9fb6"
+        ],
+        "connections": [
+          [
+            "bluetooth",
+            "E4:5F:01:DF:71:AF"
+          ]
+        ],
+        "identifiers": [],
+        "manufacturer": null,
+        "model": null,
+        "name": "hci0 (E4:5F:01:DF:71:AF)",
+        "sw_version": "homeassistant",
+        "hw_version": "usb:v1D6Bp0246d053F",
+        "entry_type": null,
+        "id": "708249bbdbd6164d41909722a6372bcd",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": "config_entry",
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "711fbacb4703166be4f4ec8f7b0499e0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_vscode"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "Studio Code Server",
+        "sw_version": "5.4.0",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "3cb2dec013f7d1def1656c9512963b32",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_vscode"
+      },
+      {
+        "config_entries": [
+          "ea7a486f9f22f27d8e567aacba68d77c"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "mobile_app",
+            "bfce6dc36a0cb3a5"
+          ]
+        ],
+        "manufacturer": "Amazon",
+        "model": "KFGIWI",
+        "name": "Fire Tablet 1",
+        "sw_version": "22",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "cb4ead6476c9a9a15b8d38b9b4c1337f",
+        "via_device_id": null,
+        "area_id": "2354_dining_room",
+        "name_by_user": "2354 Thermostat Terminal",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "103ad80284af5d7c7372aa1970e34362"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "mobile_app",
+            "e1f24419222d9b32"
+          ]
+        ],
+        "manufacturer": "samsung",
+        "model": "SM-G981U1",
+        "name": "Leeza",
+        "sw_version": "31",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "9d8b59541edd05ca74562582553d4197",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": "Leeza Phone",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "fda2d33f327cbec118768c27848054e7"
+        ],
+        "connections": [
+          [
+            "mac",
+            "34:94:54:74:9d:c8"
+          ]
+        ],
+        "identifiers": [],
+        "manufacturer": "Shelly",
+        "model": "Shelly H&T",
+        "name": "shellyht-kitchen",
+        "sw_version": "",
+        "hw_version": "gen1 (SHHT-1)",
+        "entry_type": null,
+        "id": "100127f2678f5d986a13a20580cbb4a6",
+        "via_device_id": null,
+        "area_id": "2354_kitchen",
+        "name_by_user": "2354 Kitchen T/H Sensor",
+        "disabled_by": null,
+        "configuration_url": "http://192.168.86.24"
+      },
+      {
+        "config_entries": [
+          "7624e2793203f955619c92d31d44b7a8"
+        ],
+        "connections": [
+          [
+            "mac",
+            "34:94:54:74:94:b1"
+          ]
+        ],
+        "identifiers": [],
+        "manufacturer": "Shelly",
+        "model": "Shelly H&T",
+        "name": "shellyht-bedroom",
+        "sw_version": "",
+        "hw_version": "gen1 (SHHT-1)",
+        "entry_type": null,
+        "id": "bb0d88761fd69580d7e2ee3504fadcf6",
+        "via_device_id": null,
+        "area_id": "2354_e_bedroom",
+        "name_by_user": "2354 E Bedroom T/H Sensor",
+        "disabled_by": null,
+        "configuration_url": "http://192.168.86.250"
+      },
+      {
+        "config_entries": [
+          "226c49cf0ec7495e5aa5a3f06b381abd"
+        ],
+        "connections": [
+          [
+            "mac",
+            "34:94:54:74:6b:62"
+          ]
+        ],
+        "identifiers": [],
+        "manufacturer": "Shelly",
+        "model": "Shelly H&T",
+        "name": "shellyht-diningroom",
+        "sw_version": "",
+        "hw_version": "gen1 (SHHT-1)",
+        "entry_type": null,
+        "id": "b8bc8ae5ab706c1dcdacda28cbb2e9db",
+        "via_device_id": null,
+        "area_id": "2354_dining_room",
+        "name_by_user": "2354 Dining Room T/H Sensor",
+        "disabled_by": null,
+        "configuration_url": "http://192.168.86.29"
+      },
+      {
+        "config_entries": [
+          "3bd89820430fcff72e2f8a0d00aa95ab"
+        ],
+        "connections": [
+          [
+            "mac",
+            "34:94:54:74:79:32"
+          ]
+        ],
+        "identifiers": [],
+        "manufacturer": "Shelly",
+        "model": "Shelly H&T",
+        "name": "shellyht-livingroom",
+        "sw_version": "",
+        "hw_version": "gen1 (SHHT-1)",
+        "entry_type": null,
+        "id": "037dd3a07aa9c37768df15eb6e039bea",
+        "via_device_id": null,
+        "area_id": "2354_living_room",
+        "name_by_user": "2354 Living Room T/H Sensor",
+        "disabled_by": null,
+        "configuration_url": "http://192.168.86.28"
+      },
+      {
+        "config_entries": [
+          "8a9b7865f664fc5db49b32846c493820"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "mobile_app",
+            "ec7a08f59b9d136b"
+          ]
+        ],
+        "manufacturer": "Amazon",
+        "model": "KFTRWI",
+        "name": "Terminal 1",
+        "sw_version": "28",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "2bcaf1fefeb33ac19a7650aa554b1455",
+        "via_device_id": null,
+        "area_id": "2356_dining_room",
+        "name_by_user": "2356 Thermostat Terminal",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "ecobee",
+            "95JJ"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name": "2356 ecobee sensor",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "289ea192e43aae950fe75d0a2b1ba22c",
+        "via_device_id": null,
+        "area_id": "2356_dining_room",
+        "name_by_user": "2356 Ecobee H/O Sensor",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "ecobee",
+            "6D58"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name": "2354 ecobee sensor",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "03cb7287719041a2f851e045d7e48345",
+        "via_device_id": null,
+        "area_id": "2354_dining_room",
+        "name_by_user": "2354 Ecobee H/O Sensor",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "ecobee",
+            "415569625166"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee3 lite Smart Thermostat",
+        "name": "2356 ecobee",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "f9dd9319e86e50a560d671f294f60770",
+        "via_device_id": null,
+        "area_id": "2356",
+        "name_by_user": "2356 Ecobee Thermostat",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "ecobee",
+            "415571234527"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee3 lite Smart Thermostat",
+        "name": "2354 basement controller",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "98ee6be196706c18cccb9754f6c2aa5a",
+        "via_device_id": null,
+        "area_id": "2354",
+        "name_by_user": "2354 Ecobee Thermostat",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "4f09a86a9eecda164884eab9bf97ca7e"
+        ],
+        "connections": [
+          [
+            "mac",
+            "10:38:1f:19:9f:2c"
+          ]
+        ],
+        "identifiers": [
+          [
+            "gree",
+            "10381f199f2c"
+          ]
+        ],
+        "manufacturer": "Gree",
+        "model": null,
+        "name": "1f199f2c",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "ff87dfa6b725360403f1f6ce5e6d4335",
+        "via_device_id": null,
+        "area_id": "2354_kitchen",
+        "name_by_user": "2354 Kitchen Heat Pump",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "4f09a86a9eecda164884eab9bf97ca7e"
+        ],
+        "connections": [
+          [
+            "mac",
+            "10:38:1f:19:a7:ec"
+          ]
+        ],
+        "identifiers": [
+          [
+            "gree",
+            "10381f19a7ec"
+          ]
+        ],
+        "manufacturer": "Gree",
+        "model": null,
+        "name": "1f19a7ec",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "209cd8c29ba4fd71a614e1988a6f0652",
+        "via_device_id": null,
+        "area_id": "2354_dining_room",
+        "name_by_user": "2354 Dining Room Heat Pump",
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "711fbacb4703166be4f4ec8f7b0499e0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_ssh"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "SSH & Web Terminal",
+        "sw_version": "12.0.2",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "b3ff4f96064660f83de74045ea2ec4e2",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_ssh"
+      },
+      {
+        "config_entries": [
+          "1cde572d1ef74c3b448cd774cc8beada"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hacs",
+            "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+          ]
+        ],
+        "manufacturer": "hacs.xyz",
+        "model": "",
+        "name": "HACS",
+        "sw_version": "1.27.2",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "3951f075e571158429c5886ec3c18b9f",
+        "via_device_id": null,
+        "area_id": "booth_st_house",
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hacs"
+      }
+    ],
+    "deleted_devices": []
+  }
+}

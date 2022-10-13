@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "mode": "box",
+        "name": "Set Temp Modifier Heat",
+        "icon": "mdi:thermometer-plus",
+        "step": 1.0,
+        "id": "set_temp_modifier_heat"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "2354 E HP Set Temp",
+        "mode": "box",
+        "step": 1.0,
+        "id": "2354_e_hp_set_temp"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "2354 W HP Set Temp",
+        "mode": "box",
+        "step": 1.0,
+        "id": "2354_w_hp_set_temp"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "2354 Boiler Temp Helper",
+        "mode": "box",
+        "step": 1.0,
+        "id": "2354_boiler_temp_helper"
+      }
+    ]
+  }
+}

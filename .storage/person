@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "name": "Jordan Hankison",
+        "user_id": "94e5688bbe0941a6b92c3a02c5db079e",
+        "device_trackers": [
+          "device_tracker.pixel_5a",
+          "device_tracker.fire_tablet_1",
+          "device_tracker.leeza",
+          "device_tracker.terminal_1"
+        ],
+        "id": "jordan_hankison"
+      },
+      {
+        "name": "Airbnb",
+        "device_trackers": [
+          "device_tracker.2356_thermostat_terminal"
+        ],
+        "user_id": "10e3c5fcec4246db852dcfdd95692a3b",
+        "picture": null,
+        "id": "airbnb"
+      }
+    ]
+  }
+}

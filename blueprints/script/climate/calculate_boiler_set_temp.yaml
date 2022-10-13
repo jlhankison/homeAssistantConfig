@@ -1,0 +1,81 @@
+blueprint:
+  domain: script
+  name: Calculate Boiler Set Temperature
+  description: This script calculates the set temp for the boiler thermostat
+  input:
+    climate_controller:
+      name: Climate Controller
+      description: This is the virtual thermostat that controls all the other climate entities
+      selector:
+        entity:
+          multiple: false
+          domain: climate
+    boiler_therm:
+      name: Target Boiler Thermostat
+      description: This is the boiler for the space
+      selector:
+        entity:
+          multiple: false
+          domain: climate
+    temp_sensor:
+      name: Temperature Sensor
+      description: The in house sensors 
+      selector:
+        entity:
+          multiple: false
+          domain: sensor
+    current_hvac:
+      name: Current HVAC Setting
+      description: input_text representing the current hvac setting of the house (heat, cool, off)
+      selector:
+        entity:
+          multiple: false
+          domain: input_text
+    set_temp_helper:
+      name: Set Temperature Helper
+      description: this is the script output, it will save the calculated temp value to this
+      selector:
+        entity:
+          multiple: false
+          domain: input_number
+    boiler_temp_sensor:
+      name: Boiler Temperature Sensor
+      description: The built in sensor for the boiler thermostat
+      selector:
+        entity:
+          multiple: false
+          domain: sensor
+sequence:
+  - alias: setup variables
+    variables:
+      boiler_temp_sensor: !input boiler_temp_sensor
+      boiler_temp: "{{ states(boiler_temp_sensor) }}"
+      current_hvac: !input current_hvac
+      temp_sensor: !input temp_sensor
+      current_temp: "{{ states(temp_sensor) }}"
+      climate_controller: !input climate_controller
+      set_temp: "{{ state_attr(climate_controller, 'temperature') }}"
+      set_temp_heat_modifier: "{{ states('input_number.set_temp_modifier_heat') }}"
+  - if: "{{ is_state(current_hvac, 'heat') }}"
+    then:
+      if: 
+        - "{{ set_temp > current_temp }}"
+        - "{{ boiler_temp >= set_temp }}"
+      then:
+        service: input_number.set_value
+        data:
+          value: "{{ set_temp + set_temp_heat_modifier }}"
+          entity_id: !input set_temp_helper
+      else: 
+        service: input_number.set_value
+        data:
+          value: "{{ set_temp }}"
+          entity_id: !input set_temp_helper
+    else:
+      service: input_number.set_value
+      data:
+        value: 65
+        entity_id: !input set_temp_helper
+
+
+

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:bed",
+        "title": "Airbnb Dashboard",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "test-dashboard",
+        "id": "test_dashboard"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:tablet-dashboard",
+        "title": "Home Terminals",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "home-terminals",
+        "id": "home_terminals"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:cellphone",
+        "title": "Phone Dashboard",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "phone-dashboard",
+        "id": "phone_dashboard"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:air-filter",
+        "title": "Climate Testing Dashboard",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "climate-testing-dashboard",
+        "id": "climate_testing_dashboard"
+      }
+    ]
+  }
+}

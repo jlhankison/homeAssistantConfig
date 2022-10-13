@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.climate_testing_dashboard",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "cards": [
+            {
+              "type": "thermostat",
+              "entity": "climate.climate_controller"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.2354_ecobee_thermostat"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.2354_dining_room_heat_pump"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.2354_kitchen_heat_pump"
+            },
+            {
+              "type": "custom:config-template-card",
+              "variables": {
+                "WARMEST_SPACE": "states['sensor.warmest_space'].state"
+              },
+              "entities": [
+                "sensor.warmest_space"
+              ],
+              "card": {
+                "type": "entities",
+                "entities": [
+                  {
+                    "type": "section",
+                    "label": "Indoor"
+                  },
+                  {
+                    "entity": "sensor.2354_average_indoor_temperature",
+                    "name": "Average Temperature",
+                    "icon": "mdi:home-thermometer"
+                  },
+                  {
+                    "entity": "sensor.2354_w_avg_temp"
+                  },
+                  {
+                    "entity": "sensor.max_indoor_temperature",
+                    "name": "${'Max Temperature (' + WARMEST_SPACE + ')'}",
+                    "icon": "mdi:thermometer-high",
+                    "secondary_info": "none"
+                  },
+                  {
+                    "entity": "sensor.2354_average_indoor_humidity",
+                    "name": "Average Humidity",
+                    "secondary_info": "none"
+                  },
+                  {
+                    "entity": "sensor.2354_max_indoor_humidity",
+                    "name": "Max Humidity"
+                  },
+                  {
+                    "type": "section",
+                    "label": "Outdoor"
+                  },
+                  {
+                    "entity": "sensor.outside_temp",
+                    "name": "Temperature"
+                  },
+                  {
+                    "entity": "sensor.outside_humidity",
+                    "name": "Humidity"
+                  }
+                ]
+              },
+              "title": "Climate"
+            },
+            {
+              "type": "logbook",
+              "entities": [
+                "automation.set_climate_entities_temp",
+                "automation.set_climate_controller_hvac_mode",
+                "script.deactivate_all_climate_entities",
+                "input_number.2354_e_hp_set_temp",
+                "input_number.2354_w_hp_set_temp",
+                "input_number.2354_boiler_temp_helper"
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.2354_kitchen_t_h_sensor_temp"
+                },
+                {
+                  "entity": "sensor.2354_dining_room_t_h_sensor_temp"
+                },
+                {
+                  "entity": "sensor.2354_living_room_t_h_sensor_temp"
+                },
+                {
+                  "entity": "sensor.2354_e_bedroom_t_h_sensor_temp"
+                }
+              ],
+              "title": "Granular Temp Data"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.use_heat_pump"
+                },
+                {
+                  "entity": "input_text.2354_current_hvac_setting"
+                }
+              ],
+              "title": "Custom Sensor Data"
+            }
+          ]
+        }
+      ],
+      "title": "Climate Test Dashboard"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.test_dashboard",
+  "data": {
+    "config": {
+      "title": "Airbnb Thermostat",
+      "views": [
+        {
+          "path": "default_view",
+          "title": "Home",
+          "panel": true,
+          "cards": {
+            "type": "vertical-stack",
+            "cards": [
+              {
+                "type": "custom:state-switch",
+                "entity": "input_boolean.2354_manual_climate",
+                "states": {
+                  "off": {
+                    "type": "thermostat",
+                    "name": "Automated Climate",
+                    "entity": "climate.climate_controller"
+                  },
+                  "on": {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "thermostat",
+                        "name": "Kitchen Heat Pump",
+                        "entity": "climate.2354_kitchen_heat_pump"
+                      },
+                      {
+                        "type": "thermostat",
+                        "name": "Dining Heat Pump",
+                        "entity": "climate.2354_dining_room_heat_pump"
+                      },
+                      {
+                        "type": "thermostat",
+                        "name": "Boiler",
+                        "entity": "climate.2354_ecobee_thermostat"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "weather-forecast",
+                "entity": "weather.forecast_hourly"
+              }
+            ]
+          }
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Panel test dashboard",
+          "path": "panel-test-dashboard",
+          "type": "panel",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:state-switch",
+                  "entity": "input_boolean.2354_manual_climate",
+                  "states": {
+                    "off": {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "thermostat",
+                              "entity": "climate.climate_controller",
+                              "name": "Auto Themostat"
+                            },
+                            {
+                              "type": "button",
+                              "show_name": true,
+                              "show_icon": false,
+                              "tap_action": {
+                                "action": "toggle"
+                              },
+                              "entity": "input_boolean.2354_manual_climate",
+                              "icon": "mdi:toggle-switch-off",
+                              "name": "Manual Mode",
+                              "show_state": false,
+                              "hold_action": {
+                                "action": "none"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "on": {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "thermostat",
+                          "entity": "climate.2354_dining_room_heat_pump"
+                        },
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "thermostat",
+                              "entity": "climate.2354_kitchen_heat_pump"
+                            },
+                            {
+                              "show_name": true,
+                              "show_icon": false,
+                              "type": "button",
+                              "tap_action": {
+                                "action": "toggle"
+                              },
+                              "entity": "input_boolean.2354_manual_climate",
+                              "name": "auto mode"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "thermostat",
+                          "entity": "climate.2354_ecobee_thermostat"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
