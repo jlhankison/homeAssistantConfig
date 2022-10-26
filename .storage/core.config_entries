@@ -85,7 +85,7 @@
         "domain": "upnp",
         "title": "OnHub",
         "data": {
-          "udn": "uuid:ab9568f1-2bed-43c8-83b7-4c26a944aaf8",
+          "udn": "uuid:3f2efc0c-8bd7-469d-88c5-b8e07a6a2a69",
           "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:2",
           "original_udn": "uuid:bdb7a4e3-0117-4d1f-b482-50d50040a291",
           "location": "http://192.168.86.1:5000/rootDesc.xml",
@@ -96,7 +96,7 @@
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "ssdp",
-        "unique_id": "uuid:ab9568f1-2bed-43c8-83b7-4c26a944aaf8::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+        "unique_id": "uuid:3f2efc0c-8bd7-469d-88c5-b8e07a6a2a69::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
         "disabled_by": null
       },
       {
@@ -188,7 +188,7 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2022.10.0-full (2738)",
+          "app_version": "2022.10.2-full (2770)",
           "device_name": "Pixel 5a",
           "manufacturer": "Google",
           "model": "Pixel 5a",
@@ -232,12 +232,12 @@
         "data": {
           "auth_implementation": "google_408527337532_8ulbjupuni6cbbhabk8a0hghmik5s3n1_apps_googleusercontent_com",
           "token": {
-            "access_token": "ya29.a0Aa4xrXOwn5XGVFvhQVI6aWc8XgEjocDWvoaSb6l1CEV9lNjbw5PAbPyXzS533OFdiRzJLmZ5w2g6uCulMXG6j-RAK6BIGD99UnAJrnZ6ixEQpVJz7gBi5bBf-6_p9vI7oak5ag5nJPCU_ejdFEQ2UiMPlfJZRtYaCgYKATASARISFQEjDvL91yI74B7ZTiriq434GBwiOQ0166",
+            "access_token": "ya29.a0Aa4xrXP8fUgjQ3-3UXpALZJYbzVioljqfh1Ld1XRcMXqw6_RpZdXUgj33XGtmFL107p1FUMLGYCvpT9BkxUB4q1fr7ZKKZb7mf_fE1bg3PF6Ux43Qnx1yjDZsk0_9JcfD6AGKR4dY9aDj8PJH9hyTajuDKKK12saCgYKATASARISFQEjDvL906iV0axBKam8Q9gCSlVLXg0166",
             "refresh_token": "1//04p260n9Za7_8CgYIARAAGAQSNwF-L9IrXRLIwfr0PIyLhAauH_Gn0i9k1GchkoPWYyksQj6ude9ecaYA8GMsLl_eCvu5iuBpSjA",
             "scope": "https://www.googleapis.com/auth/calendar",
             "token_type": "Bearer",
             "expires_in": 3599,
-            "expires_at": 1665702690.2828531
+            "expires_at": 1666751398.2896504
           }
         },
         "options": {
@@ -288,7 +288,7 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2022.9.1-full (2700)",
+          "app_version": "2022.10.2-full (2770)",
           "device_name": "Leeza",
           "manufacturer": "samsung",
           "model": "SM-G981U1",
@@ -542,7 +542,7 @@
         "title": "1st FLOOR (Thermostat)",
         "data": {
           "AccessoryIP": "192.168.86.22",
-          "AccessoryPort": 52949
+          "AccessoryPort": 59446
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -610,13 +610,45 @@
             "sensor.2354_living_room_t_h_sensor_temp",
             "sensor.2354_e_bedroom_t_h_sensor_temp"
           ],
-          "type": "median",
+          "type": "mean",
           "round_digits": 0.0
         },
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
         "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d7cf8ce10888dc306aaf601732fe23ad",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "2354 Thermostat Tablet",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2022.10.2-full (2770)",
+          "device_name": "2354 Thermostat Tablet",
+          "manufacturer": "Amazon",
+          "model": "KFTRWI",
+          "os_name": "Android",
+          "os_version": "28",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "fepgLcRuRUu3otm8BBlWdD:APA91bFp63xwyDKBIE1J24_ofYFOAjPLx_4YHy6oBWFMAFe_YAdvdX0Ik7LrfFFULv4fnyqUBg_y5YjwbxIVY5TeeK85S17AU-YpbE9gIdz9Wu69K9NYS2k9y2Qn6CWOWvRL74Tb9Hh_"
+          },
+          "device_id": "14a48b8c6afe1145",
+          "cloudhook_url": "https://hooks.nabu.casa/gAAAAABjV06scIULIUCSg4kEcUbdXtb7oIO_IUDy1QUtDJAu7tdnt-P5931wdtCFvO9lS2oG6HnqMkuI4MolSR6e6NXYCwP9_ZecOrtsfD2na43Jh5sndnFcLCCWe15Hgxtcbe3Puy-etOCRLHzVfhxMJujFdiwrgWIKgdzVQtHsGolAkOwcmxc=",
+          "webhook_id": "3785dba9e7192f8d557a899186fbbeae405a2e211661a5537b5b877804d967fb",
+          "user_id": "94e5688bbe0941a6b92c3a02c5db079e"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-14a48b8c6afe1145",
         "disabled_by": null
       }
     ]
