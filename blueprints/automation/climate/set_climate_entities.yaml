@@ -66,7 +66,6 @@ trigger:
   - platform: state
     entity_id: !input climate_controller
     attribute: temperature
-
 action:
   - choose:
     - conditions: "{{ use_hp == 'on' }}"
@@ -81,7 +80,11 @@ action:
           entity_id: !input boiler_therm
     - conditions: "{{ use_hp == 'off' }}"
       sequence:
-      - service: !input boiler_set_temp_script
+      - service: climate.set_temperature
+        data:
+          temperature: '{{ state_attr(controller, "temperature") }}'
+        target:
+          entity_id: !input boiler_therm
       - service: climate.turn_off
         data:
           entity_id:

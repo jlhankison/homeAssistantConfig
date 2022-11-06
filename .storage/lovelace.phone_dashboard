@@ -54,6 +54,16 @@
                   "entity": "climate.2354_ecobee_thermostat"
                 }
               ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "light",
+                  "entity": "light.2354_e_bedroom_light",
+                  "name": "Bedroom Light"
+                }
+              ]
             }
           ]
         }

@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "cloud",
+  "data": {
+    "alexa_default_expose": [
+      "climate",
+      "cover",
+      "fan",
+      "humidifier",
+      "light",
+      "lock",
+      "scene",
+      "script",
+      "sensor",
+      "switch",
+      "vacuum",
+      "water_heater"
+    ],
+    "alexa_entity_configs": {},
+    "cloud_user": "2b2ac9d4850d463a87b04c905dcde6fc",
+    "cloudhooks": {
+      "2cd70cc386287ae285187b2b7060d0da9e16a7ee51eee4106703a22c8d029b42": {
+        "webhook_id": "2cd70cc386287ae285187b2b7060d0da9e16a7ee51eee4106703a22c8d029b42",
+        "cloudhook_id": "313b0164494a4aaba86d87223acbc542",
+        "cloudhook_url": "https://hooks.nabu.casa/gAAAAABjZps1NdQNDIkvv6DfaepccgtvtQRt9MGEHX4dkF-G13RjeaNC-mLRlK44siiFsQjjpNxm-MTAZEGkOsKea8Yn4twBEgsNEzCHGEVNyhZ18iFisKVZlaNqRMW7Xtv44PCaOyi9jvSEJztBbAeITRk0jcu1b5rrHLatX4sjycSqdf3DzQ8=",
+        "managed": true
+      }
+    },
+    "alexa_enabled": false,
+    "google_enabled": false,
+    "remote_enabled": true,
+    "google_default_expose": [
+      "climate",
+      "cover",
+      "fan",
+      "humidifier",
+      "light",
+      "lock",
+      "scene",
+      "script",
+      "sensor",
+      "switch",
+      "vacuum",
+      "water_heater"
+    ],
+    "google_entity_configs": {},
+    "google_local_webhook_id": "333c952059b1677aff52e2cc897aef797a91793549fc893791c3ef9e9e3befe2",
+    "google_secure_devices_pin": null,
+    "remote_domain": "080blj3hho2hksjqutx15xp1imsdjysp.ui.nabu.casa",
+    "username": "c7163c81-5804-46eb-8cf8-9c98a458cbed"
+  }
+}

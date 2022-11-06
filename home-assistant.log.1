@@ -1,11 +1,19 @@
-2022-10-12 17:23:47.178 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-10-12 17:23:47.181 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration climate_template which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-10-12 17:23:47.545 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
-2022-10-12 17:25:06.826 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
-2022-10-12 17:25:06.849 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities climate.2354_dining_room_heat_pump or it is/they are currently not available
-2022-10-12 17:25:06.994 ERROR (MainThread) [homeassistant.components.script.calculate_2354_w_hp_temp] Calculate 2354 W HP Temp: Error executing script. Error rendering template for variables at pos 1: ValueError: Template error: int got invalid input 'None' when rendering template '{{ state_attr(heat_pump, 'current_temperature') | int }}' but no default was specified
-2022-10-12 17:25:07.000 ERROR (MainThread) [homeassistant.components.script.set_2354_w_hp_temp] Set 2354 W HP Temp: Error executing script. Error rendering template for call_service at pos 2: ValueError: Template error: int got invalid input 'None' when rendering template '{{ state_attr(heat_pump, 'current_temperature') | int }}' but no default was specified
-2022-10-12 17:25:07.006 ERROR (MainThread) [homeassistant.components.automation.set_2354_climate_entities] Set 2354 Climate Entities: Choose at step 1: choice 1: Error executing script. Error rendering template for call_service at pos 3: ValueError: Template error: int got invalid input 'None' when rendering template '{{ state_attr(heat_pump, 'current_temperature') | int }}' but no default was specified
-2022-10-12 17:25:07.008 ERROR (MainThread) [homeassistant.components.automation.set_2354_climate_entities] Set 2354 Climate Entities: Error executing script. Error rendering template for choose at pos 1: ValueError: Template error: int got invalid input 'None' when rendering template '{{ state_attr(heat_pump, 'current_temperature') | int }}' but no default was specified
-2022-10-12 17:25:07.015 ERROR (MainThread) [homeassistant.components.automation.set_2354_climate_entities] Error while executing automation automation.set_2354_climate_entities: ValueError: Template error: int got invalid input 'None' when rendering template '{{ state_attr(heat_pump, 'current_temperature') | int }}' but no default was specified
-2022-10-12 17:25:53.028 ERROR (MainThread) [homeassistant.components.hassio.handler] Timeout on /homeassistant/restart request
+2022-11-06 15:18:10.827 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-11-06 15:18:10.831 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration climate_template which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-11-06 15:18:11.208 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
+2022-11-06 15:18:23.388 WARNING (MainThread) [homeassistant.config_entries] Config entry 'Fire' for fully_kiosk integration not ready yet: Cannot connect to host 192.168.86.37:2323 ssl:default [Connect call failed ('192.168.86.37', 2323)]; Retrying in background
+2022-11-06 15:18:24.206 ERROR (Thread-4) [tuya_iot] error while get mqtt config
+2022-11-06 15:18:24.219 ERROR (Thread-4) [root] Uncaught thread exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/site-packages/tuya_iot/openmq.py", line 161, in run
+    time.sleep(self.mq_config.expire_time - 60)
+AttributeError: 'NoneType' object has no attribute 'expire_time'
+2022-11-06 15:18:48.169 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
+2022-11-06 15:18:48.283 ERROR (MainThread) [homeassistant] Error doing job: Task was destroyed but it is pending!
+2022-11-06 15:18:51.248 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
+2022-11-06 15:24:38.843 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities automation.set_climate_entities_temp or it is/they are currently not available
+2022-11-06 15:24:38.864 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
+2022-11-06 15:25:19.293 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities automation.set_climate_entities_temp or it is/they are currently not available
+2022-11-06 15:29:06.640 ERROR (MainThread) [homeassistant.components.hassio.handler] Timeout on /homeassistant/restart request
