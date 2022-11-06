@@ -94,3 +94,25 @@ homeassistant.exceptions.TemplateError: ValueError: Template error: int got inva
 2022-11-06 15:40:26.305 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
 2022-11-06 15:40:31.313 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
 2022-11-06 15:58:42.534 ERROR (MainThread) [homeassistant] Error doing job: Task was destroyed but it is pending!
+2022-11-06 16:06:52.526 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /ingress/validate_session request Cannot connect to host 172.30.32.2:80 ssl:default [Connect call failed ('172.30.32.2', 80)]
+2022-11-06 16:06:52.858 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
+2022-11-06 16:06:52.902 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /ingress/session request Cannot connect to host 172.30.32.2:80 ssl:default [Connect call failed ('172.30.32.2', 80)]
+2022-11-06 16:06:52.905 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/session - 
+2022-11-06 16:06:57.681 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /ingress/validate_session request Cannot connect to host 172.30.32.2:80 ssl:default [Connect call failed ('172.30.32.2', 80)]
+2022-11-06 16:06:57.684 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
+2022-11-06 16:06:57.687 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /ingress/validate_session request Cannot connect to host 172.30.32.2:80 ssl:default [Connect call failed ('172.30.32.2', 80)]
+2022-11-06 16:06:57.689 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
+2022-11-06 16:06:57.712 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /ingress/session request Cannot connect to host 172.30.32.2:80 ssl:default [Connect call failed ('172.30.32.2', 80)]
+2022-11-06 16:06:57.715 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/session - 
+2022-11-06 16:06:57.718 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /ingress/session request Cannot connect to host 172.30.32.2:80 ssl:default [Connect call failed ('172.30.32.2', 80)]
+2022-11-06 16:06:57.720 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/session - 
+2022-11-06 16:07:01.540 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - System is not ready with state: setup
+2022-11-06 16:07:01.551 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - System is not ready with state: setup
+2022-11-06 16:07:01.600 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/session - System is not ready with state: setup
+2022-11-06 16:07:01.606 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/session - System is not ready with state: setup
+2022-11-06 16:07:52.373 ERROR (MainThread) [homeassistant.components.hassio.handler] /ingress/validate_session return code 401
+2022-11-06 16:07:52.376 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
+2022-11-06 16:07:57.688 ERROR (MainThread) [homeassistant.components.hassio.handler] /ingress/validate_session return code 401
+2022-11-06 16:07:57.690 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
+2022-11-06 16:07:57.703 ERROR (MainThread) [homeassistant.components.hassio.handler] /ingress/validate_session return code 401
+2022-11-06 16:07:57.705 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
