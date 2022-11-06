@@ -36,6 +36,14 @@
         "mode": "box",
         "step": 1.0,
         "id": "2354_boiler_temp_helper"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "Use HP Temp",
+        "step": 1.0,
+        "mode": "slider",
+        "id": "use_hp_temp"
       }
     ]
   }

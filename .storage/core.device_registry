@@ -49,7 +49,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.10.0",
+        "sw_version": "2022.10.2",
         "via_device_id": null
       },
       {
@@ -237,30 +237,6 @@
         "via_device_id": "10c07f2564081b2d4187bf3858494d7a"
       },
       {
-        "area_id": "2354_e_bedroom",
-        "config_entries": [
-          "d98c4147cd9b9748add31c360ab7200f"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "6602c1f2cc0b0574d500c3167a4d7b2a",
-        "identifiers": [
-          [
-            "tuya",
-            "ebb439eb3473d0a15bxef8"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "Color Lights (8cr0olwf9sphi0u4)",
-        "name_by_user": "2354 E Bedroom Light",
-        "name": "Color Lights",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
         "area_id": "2354_dining_room",
         "config_entries": [
           "f53f9c03cf26fe6f120887656cb5a2c3"
@@ -421,7 +397,7 @@
             "34:94:54:74:9d:c8"
           ]
         ],
-        "disabled_by": null,
+        "disabled_by": "config_entry",
         "entry_type": null,
         "hw_version": "gen1 (SHHT-1)",
         "id": "100127f2678f5d986a13a20580cbb4a6",
@@ -445,7 +421,7 @@
             "34:94:54:74:94:b1"
           ]
         ],
-        "disabled_by": null,
+        "disabled_by": "config_entry",
         "entry_type": null,
         "hw_version": "gen1 (SHHT-1)",
         "id": "bb0d88761fd69580d7e2ee3504fadcf6",
@@ -469,7 +445,7 @@
             "34:94:54:74:6b:62"
           ]
         ],
-        "disabled_by": null,
+        "disabled_by": "config_entry",
         "entry_type": null,
         "hw_version": "gen1 (SHHT-1)",
         "id": "b8bc8ae5ab706c1dcdacda28cbb2e9db",
@@ -493,7 +469,7 @@
             "34:94:54:74:79:32"
           ]
         ],
-        "disabled_by": null,
+        "disabled_by": "config_entry",
         "entry_type": null,
         "hw_version": "gen1 (SHHT-1)",
         "id": "037dd3a07aa9c37768df15eb6e039bea",
@@ -548,7 +524,7 @@
         ],
         "manufacturer": "ecobee",
         "model": "ecobee Room Sensor",
-        "name_by_user": "2356 Ecobee H/O Sensor",
+        "name_by_user": "2356 Dining H/O Sensor",
         "name": "2356 ecobee sensor",
         "sw_version": null,
         "via_device_id": null
@@ -572,7 +548,7 @@
         ],
         "manufacturer": "ecobee",
         "model": "ecobee Room Sensor",
-        "name_by_user": "2354 Ecobee H/O Sensor",
+        "name_by_user": "2354 Dining H/O Sensor",
         "name": "2354 ecobee sensor",
         "sw_version": null,
         "via_device_id": null
@@ -704,7 +680,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "SSH & Web Terminal",
-        "sw_version": "12.0.2",
+        "sw_version": "12.1.1",
         "via_device_id": null
       },
       {
@@ -734,7 +710,7 @@
       {
         "area_id": null,
         "config_entries": [
-          "d7cf8ce10888dc306aaf601732fe23ad"
+          "a50a560dd9f711e3fd8e565cdd526c61"
         ],
         "configuration_url": null,
         "connections": [],
@@ -751,11 +727,74 @@
         "manufacturer": "Amazon",
         "model": "KFTRWI",
         "name_by_user": null,
-        "name": "2354 Thermostat Tablet",
+        "name": "2354 Dining Tablet",
         "sw_version": "28",
+        "via_device_id": null
+      },
+      {
+        "area_id": "2354_kitchen",
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "fe33cfe217a04003d36f41bac5a2dc7e",
+        "identifiers": [
+          [
+            "ecobee",
+            "RPKZ"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name_by_user": "2354 Kitchen H/O Sensor",
+        "name": "2354 Kitchen Temp",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "2354_living_room",
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "c40271e8df807e2156174455f7598286",
+        "identifiers": [
+          [
+            "ecobee",
+            "F42K"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name_by_user": "2354 Living H/O Sensor",
+        "name": "2354 Living Temp",
+        "sw_version": null,
         "via_device_id": null
       }
     ],
-    "deleted_devices": []
+    "deleted_devices": [
+      {
+        "config_entries": [
+          "d98c4147cd9b9748add31c360ab7200f"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya",
+            "ebb439eb3473d0a15bxef8"
+          ]
+        ],
+        "id": "6602c1f2cc0b0574d500c3167a4d7b2a",
+        "orphaned_timestamp": null
+      }
+    ]
   }
 }

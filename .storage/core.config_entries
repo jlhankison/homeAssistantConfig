@@ -232,12 +232,12 @@
         "data": {
           "auth_implementation": "google_408527337532_8ulbjupuni6cbbhabk8a0hghmik5s3n1_apps_googleusercontent_com",
           "token": {
-            "access_token": "ya29.a0Aa4xrXP8fUgjQ3-3UXpALZJYbzVioljqfh1Ld1XRcMXqw6_RpZdXUgj33XGtmFL107p1FUMLGYCvpT9BkxUB4q1fr7ZKKZb7mf_fE1bg3PF6Ux43Qnx1yjDZsk0_9JcfD6AGKR4dY9aDj8PJH9hyTajuDKKK12saCgYKATASARISFQEjDvL906iV0axBKam8Q9gCSlVLXg0166",
+            "access_token": "ya29.a0AeTM1icG0U6v4ZV-vC3hzThfmcSjMl5eCUw58HZWRVXoWhsZBNlU8eCwr72scZNGC2WFQvjFNGS-HQ6xhLQE5b6mcVLzOWzx25N77OG1LUuLX2sAYPmWgHrwqT1I6nUNUteO6hGRX7X8drt2PQ5sJedSQG1UydwaCgYKAV8SARISFQHWtWOmE420eRTm505-aDc16Iysuw0166",
             "refresh_token": "1//04p260n9Za7_8CgYIARAAGAQSNwF-L9IrXRLIwfr0PIyLhAauH_Gn0i9k1GchkoPWYyksQj6ude9ecaYA8GMsLl_eCvu5iuBpSjA",
             "scope": "https://www.googleapis.com/auth/calendar",
             "token_type": "Bearer",
             "expires_in": 3599,
-            "expires_at": 1666751398.2896504
+            "expires_at": 1667774674.290424
           }
         },
         "options": {
@@ -327,7 +327,7 @@
         "pref_disable_polling": false,
         "source": "zeroconf",
         "unique_id": "349454749DC8",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "7624e2793203f955619c92d31d44b7a8",
@@ -345,7 +345,7 @@
         "pref_disable_polling": false,
         "source": "zeroconf",
         "unique_id": "3494547494B1",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "226c49cf0ec7495e5aa5a3f06b381abd",
@@ -363,7 +363,7 @@
         "pref_disable_polling": false,
         "source": "zeroconf",
         "unique_id": "349454746B62",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "3bd89820430fcff72e2f8a0d00aa95ab",
@@ -381,7 +381,7 @@
         "pref_disable_polling": false,
         "source": "zeroconf",
         "unique_id": "349454747932",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "8eb4f8ddd514145eabf4cb32e6dc2296",
@@ -392,10 +392,9 @@
         "options": {
           "name": "average-indoor-temperature",
           "entity_ids": [
-            "sensor.2354_dining_room_t_h_sensor_temp",
-            "sensor.2354_e_bedroom_t_h_sensor_temp",
-            "sensor.2354_kitchen_t_h_sensor_temp",
-            "sensor.2354_living_room_t_h_sensor_temp"
+            "sensor.2354_kitchen_h_o_sensor_temperature",
+            "sensor.2354_dining_h_o_sensor_temp",
+            "sensor.2354_living_h_o_sensor_temperature"
           ],
           "type": "mean",
           "round_digits": 0.0
@@ -415,56 +414,9 @@
         "options": {
           "name": "max-indoor-temperature",
           "entity_ids": [
-            "sensor.2354_dining_room_t_h_sensor_temp",
-            "sensor.2354_e_bedroom_t_h_sensor_temp",
-            "sensor.2354_kitchen_t_h_sensor_temp",
-            "sensor.2354_living_room_t_h_sensor_temp"
-          ],
-          "type": "max",
-          "round_digits": 0.0
-        },
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
-        "disabled_by": null
-      },
-      {
-        "entry_id": "203ee4f4ed3fd8c4605e0981fb4de66f",
-        "version": 1,
-        "domain": "min_max",
-        "title": "average-indoor-humidity",
-        "data": {},
-        "options": {
-          "name": "average-indoor-humidity",
-          "entity_ids": [
-            "sensor.2354_dining_room_t_h_sensor_humid",
-            "sensor.2354_e_bedroom_t_h_sensor_humidity",
-            "sensor.2354_kitchen_t_h_sensor_humid",
-            "sensor.2354_living_room_t_h_sensor_humid"
-          ],
-          "type": "mean",
-          "round_digits": 0.0
-        },
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
-        "disabled_by": null
-      },
-      {
-        "entry_id": "b2fb063a690488f71a3cb9f817ac5228",
-        "version": 1,
-        "domain": "min_max",
-        "title": "max-indoor-humidity",
-        "data": {},
-        "options": {
-          "name": "max-indoor-humidity",
-          "entity_ids": [
-            "sensor.2354_dining_room_t_h_sensor_humid",
-            "sensor.2354_e_bedroom_t_h_sensor_humidity",
-            "sensor.2354_kitchen_t_h_sensor_humid",
-            "sensor.2354_living_room_t_h_sensor_humid"
+            "sensor.2354_dining_h_o_sensor_temp",
+            "sensor.2354_kitchen_h_o_sensor_temperature",
+            "sensor.2354_living_h_o_sensor_temperature"
           ],
           "type": "max",
           "round_digits": 0.0
@@ -576,28 +528,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "3a14489d386062983aa90806cbd708d4",
-        "version": 1,
-        "domain": "min_max",
-        "title": "2354 West Average Temp Indoor",
-        "data": {},
-        "options": {
-          "name": "2354 West Average Temp Indoor",
-          "entity_ids": [
-            "sensor.2354_dining_room_t_h_sensor_temp",
-            "sensor.2354_e_bedroom_t_h_sensor_temp",
-            "sensor.2354_living_room_t_h_sensor_temp"
-          ],
-          "type": "mean",
-          "round_digits": 0.0
-        },
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
-        "disabled_by": null
-      },
-      {
         "entry_id": "ff5871e5adaeba420a2179c0edafb69d",
         "version": 1,
         "domain": "min_max",
@@ -606,9 +536,8 @@
         "options": {
           "name": "2354 E Avg Temp",
           "entity_ids": [
-            "sensor.2354_dining_room_t_h_sensor_temp",
-            "sensor.2354_living_room_t_h_sensor_temp",
-            "sensor.2354_e_bedroom_t_h_sensor_temp"
+            "sensor.2354_dining_h_o_sensor_temp",
+            "sensor.2354_living_h_o_sensor_temperature"
           ],
           "type": "mean",
           "round_digits": 0.0
@@ -620,15 +549,15 @@
         "disabled_by": null
       },
       {
-        "entry_id": "d7cf8ce10888dc306aaf601732fe23ad",
+        "entry_id": "a50a560dd9f711e3fd8e565cdd526c61",
         "version": 1,
         "domain": "mobile_app",
-        "title": "2354 Thermostat Tablet",
+        "title": "2354 Dining Tablet",
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
           "app_version": "2022.10.2-full (2770)",
-          "device_name": "2354 Thermostat Tablet",
+          "device_name": "2354 Dining Tablet",
           "manufacturer": "Amazon",
           "model": "KFTRWI",
           "os_name": "Android",
@@ -637,11 +566,11 @@
           "app_data": {
             "push_websocket_channel": true,
             "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
-            "push_token": "fepgLcRuRUu3otm8BBlWdD:APA91bFp63xwyDKBIE1J24_ofYFOAjPLx_4YHy6oBWFMAFe_YAdvdX0Ik7LrfFFULv4fnyqUBg_y5YjwbxIVY5TeeK85S17AU-YpbE9gIdz9Wu69K9NYS2k9y2Qn6CWOWvRL74Tb9Hh_"
+            "push_token": "dLxGzn98RLmNys5gVKEKR4:APA91bGpGvb7U0dopVMipMyRJN4XcYgYBvdI6KmCV2AnMZfhAVW5vrJbnqrphofHXuDcxDgLPfsCXXQGeKpIr48sgFCjYEg8e6DWB_olJkiWZXAcxaOsiSAgCAk_hg2YhJGKiEkccOFp"
           },
           "device_id": "14a48b8c6afe1145",
-          "cloudhook_url": "https://hooks.nabu.casa/gAAAAABjV06scIULIUCSg4kEcUbdXtb7oIO_IUDy1QUtDJAu7tdnt-P5931wdtCFvO9lS2oG6HnqMkuI4MolSR6e6NXYCwP9_ZecOrtsfD2na43Jh5sndnFcLCCWe15Hgxtcbe3Puy-etOCRLHzVfhxMJujFdiwrgWIKgdzVQtHsGolAkOwcmxc=",
-          "webhook_id": "3785dba9e7192f8d557a899186fbbeae405a2e211661a5537b5b877804d967fb",
+          "cloudhook_url": "https://hooks.nabu.casa/gAAAAABjZps1NdQNDIkvv6DfaepccgtvtQRt9MGEHX4dkF-G13RjeaNC-mLRlK44siiFsQjjpNxm-MTAZEGkOsKea8Yn4twBEgsNEzCHGEVNyhZ18iFisKVZlaNqRMW7Xtv44PCaOyi9jvSEJztBbAeITRk0jcu1b5rrHLatX4sjycSqdf3DzQ8=",
+          "webhook_id": "2cd70cc386287ae285187b2b7060d0da9e16a7ee51eee4106703a22c8d029b42",
           "user_id": "94e5688bbe0941a6b92c3a02c5db079e"
         },
         "options": {},

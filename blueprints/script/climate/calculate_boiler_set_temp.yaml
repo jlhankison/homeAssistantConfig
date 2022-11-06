@@ -38,40 +38,29 @@ blueprint:
         entity:
           multiple: false
           domain: input_number
-    boiler_temp_sensor:
-      name: Boiler Temperature Sensor
-      description: The built in sensor for the boiler thermostat
-      selector:
-        entity:
-          multiple: false
-          domain: sensor
 sequence:
   - alias: setup variables
     variables:
-      boiler_temp_sensor: !input boiler_temp_sensor
-      boiler_temp: "{{ states(boiler_temp_sensor) }}"
       current_hvac: !input current_hvac
       temp_sensor: !input temp_sensor
       current_temp: "{{ states(temp_sensor) }}"
       climate_controller: !input climate_controller
       set_temp: "{{ state_attr(climate_controller, 'temperature') }}"
       set_temp_heat_modifier: "{{ states('input_number.set_temp_modifier_heat') }}"
-  - if: "{{ is_state(current_hvac, 'heat') }}"
-    then:
-      if: 
-        - "{{ set_temp > current_temp }}"
-        - "{{ boiler_temp >= set_temp }}"
-      then:
+  - choose: 
+    - conditions: "{{ is_state(current_hvac, 'heat') }}"
+      sequence:
         service: input_number.set_value
         data:
-          value: "{{ set_temp + set_temp_heat_modifier }}"
-          entity_id: !input set_temp_helper
-      else: 
+          value: "{{ set_temp }}"
+          entity_id: !input set_temp_helper    
+    - conditions: "{{ is_state(current_hvac, 'off') }}"
+      sequence:
         service: input_number.set_value
         data:
           value: "{{ set_temp }}"
           entity_id: !input set_temp_helper
-    else:
+    default:
       service: input_number.set_value
       data:
         value: 65

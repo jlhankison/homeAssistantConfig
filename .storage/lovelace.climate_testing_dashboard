@@ -54,15 +54,6 @@
                     "secondary_info": "none"
                   },
                   {
-                    "entity": "sensor.2354_average_indoor_humidity",
-                    "name": "Average Humidity",
-                    "secondary_info": "none"
-                  },
-                  {
-                    "entity": "sensor.2354_max_indoor_humidity",
-                    "name": "Max Humidity"
-                  },
-                  {
                     "type": "section",
                     "label": "Outdoor"
                   },
@@ -93,16 +84,13 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "sensor.2354_kitchen_t_h_sensor_temp"
+                  "entity": "sensor.2354_kitchen_h_o_sensor_temperature"
                 },
                 {
-                  "entity": "sensor.2354_dining_room_t_h_sensor_temp"
+                  "entity": "sensor.2354_dining_h_o_sensor_temp"
                 },
                 {
-                  "entity": "sensor.2354_living_room_t_h_sensor_temp"
-                },
-                {
-                  "entity": "sensor.2354_e_bedroom_t_h_sensor_temp"
+                  "entity": "sensor.2354_living_h_o_sensor_temperature"
                 }
               ],
               "title": "Granular Temp Data"
@@ -115,6 +103,9 @@
                 },
                 {
                   "entity": "input_text.2354_current_hvac_setting"
+                },
+                {
+                  "entity": "input_number.use_hp_temp"
                 }
               ],
               "title": "Custom Sensor Data"

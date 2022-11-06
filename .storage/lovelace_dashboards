@@ -39,6 +39,15 @@
         "mode": "storage",
         "url_path": "climate-testing-dashboard",
         "id": "climate_testing_dashboard"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:test-tube",
+        "title": "Testing Dashboard",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "testing-dashboard",
+        "id": "testing_dashboard"
       }
     ]
   }

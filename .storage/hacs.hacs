@@ -7,7 +7,8 @@
       "marcomow/ble-bulb-card",
       "spycle/microbot_push",
       "DavidMStraub/homeassistant-homeconnect",
-      "Sholofly/arrisdcx960"
+      "Sholofly/arrisdcx960",
+      "lukich48/hass_mqtt_template_switch"
     ],
     "renamed_repositories": {
       "78wesley/Darkish-Theme": "78wesley/Home-Assistant-Darkish-Theme",

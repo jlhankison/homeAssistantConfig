@@ -56,8 +56,19 @@ set_heat_pump_hvac_mode:
   sequence:
     choose:
     - conditions:
+      - '{{ controller_hvac == "off"}}'
+      sequence:
+      - service: climate.set_hvac_mode
+        data:
+          hvac_mode: 'off'
+        target:
+          entity_id: '{{ heat_pumps }}'
+      - service: input_text.set_value
+        data:
+          value: 'off'
+          entity_id: '{{cur_hvac_input}}'
+    - conditions:
       - '{{ cur_hvac != "heat" }}'
-      - '{{ set_temp >= indoor_temp }}'
       - '{{ set_temp >= outside_temp }}'
       sequence:
       - service: climate.set_hvac_mode
@@ -71,7 +82,6 @@ set_heat_pump_hvac_mode:
           entity_id: '{{ cur_hvac_input }}'
     - conditions:
       - '{{ cur_hvac != "cool"}}'
-      - '{{ set_temp <= indoor_temp }}'
       - '{{ set_temp <= outside_temp }}'
       sequence:
       - service: climate.set_hvac_mode
@@ -83,20 +93,6 @@ set_heat_pump_hvac_mode:
         data:
           value: cool
           entity_id: '{{ cur_hvac_input }}'
-
-    - conditions:
-      - '{{ cur_hvac != "off" }}'
-      - '{{ controller_hvac == "off"}}'
-      sequence:
-      - service: climate.set_hvac_mode
-        data:
-          hvac_mode: 'off'
-        target:
-          entity_id: '{{ heat_pumps }}'
-      - service: input_text.set_value
-        data:
-          value: 'off'
-          entity_id: '{{cur_hvac_input}}'
 calculate_2354_boiler_temp:
   alias: Calculate 2354 Boiler Temp
   use_blueprint:
@@ -125,7 +121,7 @@ calculate_2354_e_hp_temp:
     input:
       heat_pump: climate.2354_kitchen_heat_pump
       climate_controller: climate.climate_controller
-      temp_sensor: sensor.2354_kitchen_t_h_sensor_temp
+      temp_sensor: sensor.2354_kitchen_h_o_sensor_temperature
       current_hvac: input_text.2354_current_hvac_setting
       hp_set_temp_helper: input_number.2354_e_hp_set_temp
   mode: single
