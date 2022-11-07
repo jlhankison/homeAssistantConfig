@@ -3288,7 +3288,7 @@
         "name": "Leeza Phone Battery Level",
         "options": {},
         "original_device_class": "battery",
-        "original_icon": "mdi:battery-50",
+        "original_icon": "mdi:battery-40",
         "original_name": "Leeza Battery Level",
         "platform": "mobile_app",
         "supported_features": 0,
@@ -3408,7 +3408,7 @@
         "platform": "mobile_app",
         "supported_features": 0,
         "unique_id": "1b5a627ff030edcd878abfec515cf2e48276cf777b63310a1f04288081ce0bbe_battery_temperature",
-        "unit_of_measurement": "°F"
+        "unit_of_measurement": "°C"
       },
       {
         "area_id": null,
@@ -7846,7 +7846,7 @@
         "name": "2356 Thermostat Terminal Battery Power",
         "options": {},
         "original_device_class": "power",
-        "original_icon": "mdi:battery-plus",
+        "original_icon": "mdi:battery-minus",
         "original_name": "Terminal 1 Battery Power",
         "platform": "mobile_app",
         "supported_features": 0,
@@ -11656,7 +11656,7 @@
         "name": null,
         "options": {},
         "original_device_class": null,
-        "original_icon": "mdi:cellphone",
+        "original_icon": "mdi:cellphone-off",
         "original_name": "2354 Dining Tablet Interactive",
         "platform": "mobile_app",
         "supported_features": 0,

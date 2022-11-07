@@ -22,7 +22,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -47,7 +47,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -75,7 +75,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -103,7 +103,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -131,7 +131,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -159,7 +159,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -187,7 +187,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -209,7 +209,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -229,7 +229,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -254,12 +254,12 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "input_number.2354_e_hp_set_temp",
-        "state": "69.0",
+        "state": "68.0",
         "attributes": {
           "initial": null,
           "editable": true,
@@ -269,21 +269,21 @@
           "mode": "box",
           "friendly_name": "2354 E HP Set Temp"
         },
-        "last_changed": "2022-11-06T21:40:31.343888+00:00",
-        "last_updated": "2022-11-06T21:40:31.343888+00:00",
+        "last_changed": "2022-11-06T23:25:33.170715+00:00",
+        "last_updated": "2022-11-06T23:25:33.170715+00:00",
         "context": {
-          "id": "01GH7E6ME8120R3BH13JQY8FS4",
-          "parent_id": "01GH7E6ME0ZWRJ5DCNZTCZQ8DY",
+          "id": "01GH7M6YHV3EDM55NZBAFAJ804",
+          "parent_id": "01GH7M6YHGN3MEBZ5560H7RTJ9",
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "input_number.2354_w_hp_set_temp",
-        "state": "69.0",
+        "state": "68.0",
         "attributes": {
           "initial": null,
           "editable": true,
@@ -293,16 +293,16 @@
           "mode": "box",
           "friendly_name": "2354 W HP Set Temp"
         },
-        "last_changed": "2022-11-06T21:40:31.415797+00:00",
-        "last_updated": "2022-11-06T21:40:31.415797+00:00",
+        "last_changed": "2022-11-06T23:25:33.363935+00:00",
+        "last_updated": "2022-11-06T23:25:33.363935+00:00",
         "context": {
-          "id": "01GH7E6ME8120R3BH13JQY8FS4",
-          "parent_id": "01GH7E6ME0ZWRJ5DCNZTCZQ8DY",
+          "id": "01GH7M6YHV3EDM55NZBAFAJ804",
+          "parent_id": "01GH7M6YHGN3MEBZ5560H7RTJ9",
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -326,7 +326,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -350,7 +350,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -373,7 +373,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -388,25 +388,25 @@
           "max_temp": 85,
           "target_temp_step": 1.0,
           "current_temperature": 69,
-          "temperature": 69,
+          "temperature": 68,
           "friendly_name": "climate_controller",
           "supported_features": 1
         },
         "last_changed": "2022-11-06T21:40:27.594088+00:00",
-        "last_updated": "2022-11-06T21:48:34.102119+00:00",
+        "last_updated": "2022-11-06T23:29:28.458073+00:00",
         "context": {
-          "id": "01GH7ENBXKGBD9P9VGW0WYMP0C",
+          "id": "01GH7ME4C4SYSZC2K5DSR22YHQ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.pixel_5a_battery_level",
-        "state": "35",
+        "state": "33",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "%",
@@ -414,19 +414,19 @@
           "icon": "mdi:battery-30",
           "friendly_name": "Pixel 5a Battery Level"
         },
-        "last_changed": "2022-11-06T21:34:20.280038+00:00",
-        "last_updated": "2022-11-06T21:34:20.280038+00:00",
+        "last_changed": "2022-11-06T23:41:20.223891+00:00",
+        "last_updated": "2022-11-06T23:41:20.223891+00:00",
         "context": {
-          "id": "01GH7DVA3RDVYQ8PVHE51BN1D2",
+          "id": "01GH7N3VEZH0YNT79S447Q2NYX",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 35,
+        "native_value": 33,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -448,7 +448,7 @@
         "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -470,7 +470,7 @@
         "native_value": "none",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -492,12 +492,12 @@
         "native_value": "good",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.pixel_5a_battery_temperature",
-        "state": "67.8",
+        "state": "75.9",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "°F",
@@ -505,46 +505,46 @@
           "icon": "mdi:battery",
           "friendly_name": "Pixel 5a Battery Temperature"
         },
-        "last_changed": "2022-11-06T21:34:20.503995+00:00",
-        "last_updated": "2022-11-06T21:34:20.503995+00:00",
+        "last_changed": "2022-11-06T23:46:53.366889+00:00",
+        "last_updated": "2022-11-06T23:46:53.366889+00:00",
         "context": {
-          "id": "01GH7DVAAQ7Q24NSHZPC6KHKV3",
+          "id": "01GH7NE0SP2XD99WJ7V6W1K6QW",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 19.9,
+        "native_value": 24.4,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.pixel_5a_battery_power",
-        "state": "-1.19",
+        "state": "-0.96",
         "attributes": {
           "state_class": "measurement",
-          "current": -0.317688,
-          "voltage": 3.739,
+          "current": -0.26062,
+          "voltage": 3.674,
           "unit_of_measurement": "W",
           "device_class": "power",
           "icon": "mdi:battery-minus",
           "friendly_name": "Pixel 5a Battery Power"
         },
-        "last_changed": "2022-11-06T21:49:46.207675+00:00",
-        "last_updated": "2022-11-06T21:49:46.207675+00:00",
+        "last_changed": "2022-11-06T23:46:53.368917+00:00",
+        "last_updated": "2022-11-06T23:46:53.368917+00:00",
         "context": {
-          "id": "01GH7EQJAZ5BZZMD76XTE4B8J1",
+          "id": "01GH7NE0SRPSEB778VZDY4Z50S",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": -1.19,
+        "native_value": -0.96,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -564,7 +564,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -586,7 +586,7 @@
         "native_value": "visible",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -611,7 +611,7 @@
         "native_value": 0.022,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -634,7 +634,7 @@
         "native_value": 0.3346,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -657,7 +657,7 @@
         "native_value": 0.0984,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -679,7 +679,7 @@
         "native_value": "normal",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -706,7 +706,7 @@
         "native_value": "Bluetooth is turned off",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -728,7 +728,7 @@
         "native_value": "good",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -752,7 +752,7 @@
         "native_value": 0,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -778,7 +778,7 @@
         "native_value": 0.0,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -800,7 +800,7 @@
         "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -824,7 +824,7 @@
         "native_value": 23.0,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -851,7 +851,7 @@
         "native_value": 0,
         "native_unit_of_measurement": "connection(s)"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -873,7 +873,7 @@
         "native_value": "none",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -900,7 +900,7 @@
         "native_value": "Central Daylight Time",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -922,7 +922,7 @@
         "native_value": "2022.8.0-full",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -945,7 +945,7 @@
         "native_value": "still",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -971,7 +971,7 @@
         "native_value": 89,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -993,7 +993,7 @@
         "native_value": "",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1016,7 +1016,7 @@
         "native_value": 5,
         "native_unit_of_measurement": "seconds"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1042,7 +1042,7 @@
         "native_value": 92,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1064,7 +1064,7 @@
         "native_value": "",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1092,7 +1092,7 @@
         },
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1114,7 +1114,7 @@
         "native_value": "",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1138,7 +1138,7 @@
         "native_value": "0",
         "native_unit_of_measurement": "lx"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1161,7 +1161,7 @@
         "native_value": "Unavailable",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1184,7 +1184,7 @@
         "native_value": "unavailable",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1206,7 +1206,7 @@
         "native_value": "108.215.216.20",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1228,7 +1228,7 @@
         "native_value": "normal",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1251,7 +1251,7 @@
         "native_value": 1.622,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1274,7 +1274,7 @@
         "native_value": 0.582,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1296,7 +1296,7 @@
         "native_value": 6,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1318,7 +1318,7 @@
         "native_value": 4,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1340,7 +1340,7 @@
         "native_value": 19,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1362,7 +1362,7 @@
         "native_value": 19,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1384,7 +1384,7 @@
         "native_value": 5,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1406,7 +1406,7 @@
         "native_value": 5,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1428,7 +1428,7 @@
         "native_value": 5,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1450,7 +1450,7 @@
         "native_value": "3c:28:6d:5a:88:53",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1473,7 +1473,7 @@
         "native_value": "Personal Wifi",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1496,7 +1496,7 @@
         "native_value": 5745,
         "native_unit_of_measurement": "MHz"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1518,7 +1518,7 @@
         "native_value": "192.168.86.37",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1541,7 +1541,7 @@
         "native_value": 135,
         "native_unit_of_measurement": "Mbps"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1565,7 +1565,7 @@
         "native_value": -57,
         "native_unit_of_measurement": "dBm"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1672,7 +1672,7 @@
         "native_value": 5,
         "native_unit_of_measurement": "notifications"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1691,7 +1691,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1710,7 +1710,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1729,7 +1729,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1748,7 +1748,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1767,7 +1767,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1787,7 +1787,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1806,7 +1806,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1825,7 +1825,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1844,7 +1844,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1863,7 +1863,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1882,7 +1882,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1901,7 +1901,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1920,32 +1920,32 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.leeza_battery_level",
-        "state": "57",
+        "state": "39",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "%",
           "device_class": "battery",
-          "icon": "mdi:battery-50",
+          "icon": "mdi:battery-30",
           "friendly_name": "Leeza Phone Battery Level"
         },
-        "last_changed": "2022-11-06T21:29:33.919694+00:00",
-        "last_updated": "2022-11-06T21:29:33.919694+00:00",
+        "last_changed": "2022-11-06T23:46:07.101967+00:00",
+        "last_updated": "2022-11-06T23:46:07.101967+00:00",
         "context": {
-          "id": "01GH7DJJEZ2PVPZSJ84YEMGWFD",
+          "id": "01GH7NCKKXYXPANRJGW749PA4J",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 57,
+        "native_value": 39,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1967,7 +1967,7 @@
         "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -1989,7 +1989,7 @@
         "native_value": "none",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2011,12 +2011,12 @@
         "native_value": "good",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.leeza_battery_temperature",
-        "state": "80.1",
+        "state": "74.8",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "°F",
@@ -2024,19 +2024,19 @@
           "icon": "mdi:battery",
           "friendly_name": "Leeza Phone Battery Temperature"
         },
-        "last_changed": "2022-11-06T21:29:33.920875+00:00",
-        "last_updated": "2022-11-06T21:29:33.920875+00:00",
+        "last_changed": "2022-11-06T23:46:06.963526+00:00",
+        "last_updated": "2022-11-06T23:46:06.963526+00:00",
         "context": {
-          "id": "01GH7DJJF0DPPH22MMJZWTA7TP",
+          "id": "01GH7NCKFKRJ22ET6W1ZXZFF6Q",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 26.7,
+        "native_value": 23.8,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2044,17 +2044,17 @@
         "state": "0.0",
         "attributes": {
           "state_class": "measurement",
-          "current": -0.00092,
-          "voltage": 3.872,
+          "current": -0.001068,
+          "voltage": 3.726,
           "unit_of_measurement": "W",
           "device_class": "power",
           "icon": "mdi:battery-minus",
           "friendly_name": "Leeza Phone Battery Power"
         },
-        "last_changed": "2022-11-06T21:29:33.921349+00:00",
-        "last_updated": "2022-11-06T21:29:33.921349+00:00",
+        "last_changed": "2022-11-06T23:25:45.017357+00:00",
+        "last_updated": "2022-11-06T23:46:06.992835+00:00",
         "context": {
-          "id": "01GH7DJJF15WY0NCX1JP2PS275",
+          "id": "01GH7NCKGG8VBM0T48XCRFJ1M1",
           "parent_id": null,
           "user_id": null
         }
@@ -2063,7 +2063,7 @@
         "native_value": 0.0,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2083,7 +2083,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2091,15 +2091,15 @@
         "state": "2",
         "attributes": {
           "state_class": "measurement",
-          "android.appInfo_android_0": "ApplicationInfo{c13d660 android}",
-          "android.appInfo_de.ozerov.fully_8989": "ApplicationInfo{1755a63 de.ozerov.fully}",
+          "android.appInfo_android_0": "ApplicationInfo{13ecfca android}",
+          "android.appInfo_de.ozerov.fully_8989": "ApplicationInfo{7f80f35 de.ozerov.fully}",
           "android.bigText_android_0": "If you don’t want Fully Kiosk Browser to use this feature, tap to open settings and turn it off.",
           "android.foregroundApps_android_0": [
             "de.ozerov.fully"
           ],
           "android.icon_android_0": 17301708,
           "android.icon_de.ozerov.fully_8989": 2131230855,
-          "android.largeIcon_android_0": "android.graphics.Bitmap@e03b719",
+          "android.largeIcon_android_0": "android.graphics.Bitmap@b4a353b",
           "android.reduced.images_android_0": true,
           "android.reduced.images_de.ozerov.fully_8989": true,
           "android.template_android_0": "android.app.Notification$BigTextStyle",
@@ -2123,10 +2123,10 @@
           "icon": "mdi:bell-ring",
           "friendly_name": "2356 Thermostat Terminal Active Notification Count"
         },
-        "last_changed": "2022-11-06T22:12:36.220881+00:00",
-        "last_updated": "2022-11-06T22:12:36.220881+00:00",
+        "last_changed": "2022-11-07T00:01:33.606161+00:00",
+        "last_updated": "2022-11-07T00:01:33.606161+00:00",
         "context": {
-          "id": "01GH7G1C7W6CGSQCE6417RPR1X",
+          "id": "01GH7P8WD6G1REBT9QRQ5PJ7A6",
           "parent_id": null,
           "user_id": null
         }
@@ -2135,7 +2135,7 @@
         "native_value": 2,
         "native_unit_of_measurement": "notifications"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2157,56 +2157,56 @@
         "native_value": "foreground_service",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_app_memory",
-        "state": "0.014",
+        "state": "0.013",
         "attributes": {
           "state_class": "measurement",
-          "free_memory": 0.0,
+          "free_memory": 0.001,
           "total_memory": 0.014,
           "unit_of_measurement": "GB",
           "icon": "mdi:memory",
           "friendly_name": "2356 Thermostat Terminal App Memory"
         },
-        "last_changed": "2022-11-06T22:12:36.203461+00:00",
-        "last_updated": "2022-11-06T22:12:36.203461+00:00",
+        "last_changed": "2022-11-07T00:06:53.079341+00:00",
+        "last_updated": "2022-11-07T00:06:53.079341+00:00",
         "context": {
-          "id": "01GH7G1C7BGHHN49D78JKWFB7J",
+          "id": "01GH7PJMCQ67VJ0MY0RNRA0SRH",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 0.014,
+        "native_value": 0.013,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_app_rx_gb",
-        "state": "0.7052",
+        "state": "0.7058",
         "attributes": {
           "unit_of_measurement": "GB",
           "icon": "mdi:radio-tower",
           "friendly_name": "2356 Thermostat Terminal App Rx GB"
         },
-        "last_changed": "2022-11-06T22:12:36.201183+00:00",
-        "last_updated": "2022-11-06T22:12:36.201183+00:00",
+        "last_changed": "2022-11-07T00:00:39.238130+00:00",
+        "last_updated": "2022-11-07T00:00:39.238130+00:00",
         "context": {
-          "id": "01GH7G1C791JNTSAS7TM0YW72N",
+          "id": "01GH7P77A6TMJP5GY5Y80TZVFC",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 0.7052,
+        "native_value": 0.7058,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2228,7 +2228,7 @@
         "native_value": "normal",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2255,7 +2255,7 @@
         "native_value": "Bluetooth is turned off",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2277,7 +2277,7 @@
         "native_value": "good",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2302,34 +2302,34 @@
         "native_value": 100,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_battery_power",
-        "state": "0.0",
+        "state": "-0.01",
         "attributes": {
           "state_class": "measurement",
-          "current": 0.0,
+          "current": -0.0015,
           "voltage": 4.173,
           "unit_of_measurement": "W",
           "device_class": "power",
           "icon": "mdi:battery-minus",
           "friendly_name": "2356 Thermostat Terminal Battery Power"
         },
-        "last_changed": "2022-11-06T22:12:36.205579+00:00",
-        "last_updated": "2022-11-06T22:12:36.205579+00:00",
+        "last_changed": "2022-11-07T00:06:53.081330+00:00",
+        "last_updated": "2022-11-07T00:06:53.081330+00:00",
         "context": {
-          "id": "01GH7G1C7D21H7TS1ZP10FR8XQ",
+          "id": "01GH7PJMCSCM67ZXYHECM52YAN",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 0.0,
+        "native_value": -0.01,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2351,7 +2351,7 @@
         "native_value": "full",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2375,7 +2375,7 @@
         "native_value": 23.0,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2402,7 +2402,7 @@
         "native_value": 0,
         "native_unit_of_measurement": "connection(s)"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2424,7 +2424,7 @@
         "native_value": "ac",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2451,7 +2451,7 @@
         "native_value": "Central Standard Time",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2473,7 +2473,7 @@
         "native_value": "2022.10.2-full",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2495,7 +2495,7 @@
         "native_value": "off",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2517,7 +2517,7 @@
         "native_value": "Unknown",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2542,7 +2542,7 @@
         "native_value": 87,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2564,7 +2564,7 @@
         "native_value": "",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2592,7 +2592,7 @@
         },
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2614,7 +2614,7 @@
         "native_value": "",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2624,10 +2624,10 @@
           "icon": "mdi:update",
           "friendly_name": "2356 Thermostat Terminal Last Update Trigger"
         },
-        "last_changed": "2022-11-06T21:42:43.188338+00:00",
-        "last_updated": "2022-11-06T21:42:43.188338+00:00",
+        "last_changed": "2022-11-07T00:01:33.601899+00:00",
+        "last_updated": "2022-11-07T00:01:33.601899+00:00",
         "context": {
-          "id": "01GH7EAN7MA5N1QAZBRKR4FTY1",
+          "id": "01GH7P8WD1BSCFXZHHB2M50V58",
           "parent_id": null,
           "user_id": null
         }
@@ -2636,7 +2636,7 @@
         "native_value": "android.intent.action.TIME_TICK",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2659,31 +2659,32 @@
         "native_value": "io.homeassistant.companion.android",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_light_sensor",
-        "state": "2",
+        "state": "0",
         "attributes": {
+          "state_class": "measurement",
           "unit_of_measurement": "lx",
           "device_class": "illuminance",
           "icon": "mdi:brightness-5",
           "friendly_name": "2356 Thermostat Terminal Light Sensor"
         },
-        "last_changed": "2022-11-06T22:11:35.965292+00:00",
-        "last_updated": "2022-11-06T22:11:35.965292+00:00",
+        "last_changed": "2022-11-06T22:52:01.467081+00:00",
+        "last_updated": "2022-11-06T22:52:01.493377+00:00",
         "context": {
-          "id": "01GH7FZHCXS33T4K0C2P6MGF8S",
+          "id": "01GH7J9J2N3E2AH90WCE9NPE7B",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": "2",
+        "native_value": "0",
         "native_unit_of_measurement": "lx"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2706,7 +2707,7 @@
         "native_value": "Unavailable",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2729,7 +2730,7 @@
         "native_value": "wifi",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2752,7 +2753,7 @@
         "native_value": "unavailable",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2774,7 +2775,7 @@
         "native_value": "108.215.216.20",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2796,53 +2797,54 @@
         "native_value": "normal",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_total_rx_gb",
-        "state": "6.316",
+        "state": "6.33",
         "attributes": {
           "unit_of_measurement": "GB",
           "icon": "mdi:radio-tower",
           "friendly_name": "2356 Thermostat Terminal Total Rx GB"
         },
-        "last_changed": "2022-11-06T21:42:43.200441+00:00",
-        "last_updated": "2022-11-06T21:42:43.200441+00:00",
+        "last_changed": "2022-11-06T23:17:54.412690+00:00",
+        "last_updated": "2022-11-06T23:17:54.412690+00:00",
         "context": {
-          "id": "01GH7EAN80DW51Y0Z5H0D3GG9J",
+          "id": "01GH7KRYKC95EQAS8GFR3QXWQ3",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 6.316,
+        "native_value": 6.33,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_total_tx_gb",
-        "state": "0.436",
+        "state": "0.437",
         "attributes": {
+          "state_class": "total_increasing",
           "unit_of_measurement": "GB",
           "icon": "mdi:radio-tower",
           "friendly_name": "2356 Thermostat Terminal Total Tx GB"
         },
-        "last_changed": "2022-11-06T21:29:33.931499+00:00",
-        "last_updated": "2022-11-06T21:29:33.931499+00:00",
+        "last_changed": "2022-11-06T22:52:01.555504+00:00",
+        "last_updated": "2022-11-06T22:52:01.658448+00:00",
         "context": {
-          "id": "01GH7DJJFB1JSDSXVRDA6VMBEF",
+          "id": "01GH7J9J7T550QNY9P6C5RH6R8",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 0.436,
+        "native_value": 0.437,
         "native_unit_of_measurement": "GB"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2864,7 +2866,7 @@
         "native_value": 21,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2886,7 +2888,7 @@
         "native_value": 20,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2908,7 +2910,7 @@
         "native_value": 5,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2930,7 +2932,7 @@
         "native_value": 8,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2952,7 +2954,7 @@
         "native_value": 17,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2974,7 +2976,7 @@
         "native_value": 17,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -2996,7 +2998,7 @@
         "native_value": 5,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3018,7 +3020,7 @@
         "native_value": "3c:28:6d:5a:82:ab",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3041,7 +3043,7 @@
         "native_value": "Personal Wifi",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3064,7 +3066,7 @@
         "native_value": 2412,
         "native_unit_of_measurement": "MHz"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3086,7 +3088,7 @@
         "native_value": "192.168.86.35",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3109,31 +3111,32 @@
         "native_value": 433,
         "native_unit_of_measurement": "Mbps"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2356_thermostat_terminal_wifi_signal_strength",
-        "state": "-63",
+        "state": "-66",
         "attributes": {
+          "state_class": "measurement",
           "unit_of_measurement": "dBm",
           "device_class": "signal_strength",
           "icon": "mdi:wifi-strength-2",
           "friendly_name": "2356 Thermostat Terminal WiFi Signal Strength"
         },
-        "last_changed": "2022-11-06T22:11:35.926147+00:00",
-        "last_updated": "2022-11-06T22:11:35.926147+00:00",
+        "last_changed": "2022-11-07T00:06:53.083182+00:00",
+        "last_updated": "2022-11-07T00:06:53.083182+00:00",
         "context": {
-          "id": "01GH7FZHBPPVTPZ03MND2WA9JT",
+          "id": "01GH7PJMCVQV44VF8XRYBZGERS",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": -63,
+        "native_value": -66,
         "native_unit_of_measurement": "dBm"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3152,7 +3155,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3171,7 +3174,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3190,7 +3193,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3209,7 +3212,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3229,7 +3232,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3248,7 +3251,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3267,7 +3270,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3287,7 +3290,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3306,7 +3309,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3325,7 +3328,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3344,7 +3347,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3363,7 +3366,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3382,7 +3385,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3401,7 +3404,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3420,7 +3423,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3448,7 +3451,7 @@
         "native_value": "still",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3470,7 +3473,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3492,7 +3495,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3514,7 +3517,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3536,7 +3539,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3558,7 +3561,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3580,7 +3583,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3602,7 +3605,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3626,7 +3629,7 @@
         "native_value": 100,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3648,7 +3651,7 @@
         "native_value": "full",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3670,7 +3673,7 @@
         "native_value": "ac",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3692,58 +3695,58 @@
         "native_value": "good",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2354_dining_tablet_battery_temperature",
-        "state": "75.2",
+        "state": "71.6",
         "attributes": {
           "unit_of_measurement": "°F",
           "device_class": "temperature",
           "icon": "mdi:battery",
           "friendly_name": "2354 Dining Tablet Battery Temperature"
         },
-        "last_changed": "2022-11-06T21:54:03.851373+00:00",
-        "last_updated": "2022-11-06T21:54:03.851373+00:00",
+        "last_changed": "2022-11-06T23:01:58.673536+00:00",
+        "last_updated": "2022-11-06T23:01:58.673536+00:00",
         "context": {
-          "id": "01GH7EZDYBEXNGS8FDX479QMS0",
+          "id": "01GH7JVS8HSQS3MCZ30CK9ZFNR",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 24.0,
+        "native_value": 22.0,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2354_dining_tablet_battery_power",
-        "state": "0.01",
+        "state": "0.0",
         "attributes": {
           "state_class": "measurement",
-          "current": 0.003,
+          "current": 0.0007,
           "voltage": 4.34,
           "unit_of_measurement": "W",
           "device_class": "power",
           "icon": "mdi:battery-plus",
           "friendly_name": "2354 Dining Tablet Battery Power"
         },
-        "last_changed": "2022-11-06T22:14:06.231790+00:00",
-        "last_updated": "2022-11-06T22:14:06.231790+00:00",
+        "last_changed": "2022-11-07T00:06:01.528916+00:00",
+        "last_updated": "2022-11-07T00:06:51.068839+00:00",
         "context": {
-          "id": "01GH7G444Q9JPNFE6P5VSSCWYN",
+          "id": "01GH7PJJDWC9JJY3QXE00Y595B",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 0.01,
+        "native_value": 0.0,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3765,7 +3768,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3788,22 +3791,23 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2354_dining_tablet_light_sensor",
         "state": "0",
         "attributes": {
+          "state_class": "measurement",
           "unit_of_measurement": "lx",
           "device_class": "illuminance",
           "icon": "mdi:brightness-5",
           "friendly_name": "2354 Dining Tablet Light Sensor"
         },
         "last_changed": "2022-11-06T21:53:03.385505+00:00",
-        "last_updated": "2022-11-06T21:53:03.385505+00:00",
+        "last_updated": "2022-11-06T22:52:58.326419+00:00",
         "context": {
-          "id": "01GH7EXJWSVYAS8WT2R2R6NK9E",
+          "id": "01GH7JB9JP84ASX0NZ62H1S21E",
           "parent_id": null,
           "user_id": null
         }
@@ -3812,7 +3816,7 @@
         "native_value": "0",
         "native_unit_of_measurement": "lx"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3835,7 +3839,7 @@
         "native_value": null,
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3857,16 +3861,18 @@
         "native_value": "",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.2354_dining_tablet_active_notification_count",
-        "state": "3",
+        "state": "4",
         "attributes": {
-          "android.appInfo_android_0": "ApplicationInfo{c75bc8a android}",
-          "android.appInfo_com.android.systemui_2131231471": "ApplicationInfo{4f2bc2c com.android.systemui}",
-          "android.appInfo_de.ozerov.fully_8989": "ApplicationInfo{6b7b6f5 de.ozerov.fully}",
+          "state_class": "measurement",
+          "android.appInfo_android_0": "ApplicationInfo{755ea7 android}",
+          "android.appInfo_com.android.systemui_2131231471": "ApplicationInfo{af3e0a8 com.android.systemui}",
+          "android.appInfo_de.ozerov.fully_8989": "ApplicationInfo{23a07c1 de.ozerov.fully}",
+          "android.appInfo_io.homeassistant.companion.android_42": "ApplicationInfo{1584b66 io.homeassistant.companion.android}",
           "android.bigText_android_0": "If you don’t want Fully Kiosk Browser to use this feature, tap to open settings and turn it off.",
           "android.bigText_com.android.systemui_2131231471": "Fully Kiosk Browser",
           "android.foregroundApps_android_0": [
@@ -3875,54 +3881,73 @@
           "android.icon_android_0": 17301708,
           "android.icon_com.android.systemui_2131231471": 17303902,
           "android.icon_de.ozerov.fully_8989": 2131230855,
-          "android.largeIcon_android_0": "android.graphics.Bitmap@a4f82fb",
+          "android.icon_io.homeassistant.companion.android_42": 2131230990,
+          "android.infoText_io.homeassistant.companion.android_42": "null",
+          "android.largeIcon_android_0": "android.graphics.Bitmap@fa5f54",
+          "android.largeIcon_io.homeassistant.companion.android_42": "null",
+          "android.progressIndeterminate_io.homeassistant.companion.android_42": false,
+          "android.progressMax_io.homeassistant.companion.android_42": 0,
+          "android.progress_io.homeassistant.companion.android_42": 0,
           "android.reduced.images_android_0": true,
           "android.reduced.images_com.android.systemui_2131231471": true,
           "android.reduced.images_de.ozerov.fully_8989": true,
+          "android.reduced.images_io.homeassistant.companion.android_42": true,
+          "android.remoteInputHistory_io.homeassistant.companion.android_42": "null",
+          "android.showChronometer_io.homeassistant.companion.android_42": false,
           "android.showWhen_com.android.systemui_2131231471": false,
+          "android.showWhen_io.homeassistant.companion.android_42": true,
+          "android.subText_io.homeassistant.companion.android_42": "null",
           "android.template_android_0": "android.app.Notification$BigTextStyle",
           "android.template_com.android.systemui_2131231471": "android.app.Notification$BigTextStyle",
           "android.text_android_0": "If you don’t want Fully Kiosk Browser to use this feature, tap to open settings and turn it off.",
           "android.text_com.android.systemui_2131231471": "Fully Kiosk Browser",
           "android.text_de.ozerov.fully_8989": "Running in Priority Mode",
+          "android.text_io.homeassistant.companion.android_42": "null",
           "android.title_android_0": "Fully Kiosk Browser is displaying over other apps",
           "android.title_com.android.systemui_2131231471": "Camera used by:",
           "android.title_de.ozerov.fully_8989": "Fully Kiosk Browser",
+          "android.title_io.homeassistant.companion.android_42": "Updating Sensors",
           "android_0_category": "null",
           "android_0_channel_id": "com.android.server.wm.AlertWindowNotification - de.ozerov.fully",
           "android_0_group_id": "null",
           "android_0_is_clearable": false,
           "android_0_is_ongoing": true,
-          "android_0_post_time": 1667708046623,
+          "android_0_post_time": 1667775832346,
           "com.android.systemui_2131231471_category": "null",
           "com.android.systemui_2131231471_channel_id": "APRV",
           "com.android.systemui_2131231471_group_id": "null",
           "com.android.systemui_2131231471_is_clearable": true,
           "com.android.systemui_2131231471_is_ongoing": false,
-          "com.android.systemui_2131231471_post_time": 1667708046395,
+          "com.android.systemui_2131231471_post_time": 1667775832063,
           "de.ozerov.fully_8989_category": "null",
           "de.ozerov.fully_8989_channel_id": "4565",
           "de.ozerov.fully_8989_group_id": "null",
           "de.ozerov.fully_8989_is_clearable": false,
           "de.ozerov.fully_8989_is_ongoing": true,
-          "de.ozerov.fully_8989_post_time": 1667708046279,
+          "de.ozerov.fully_8989_post_time": 1667775831896,
+          "io.homeassistant.companion.android_42_category": "null",
+          "io.homeassistant.companion.android_42_channel_id": "Sensor Worker",
+          "io.homeassistant.companion.android_42_group_id": "null",
+          "io.homeassistant.companion.android_42_is_clearable": false,
+          "io.homeassistant.companion.android_42_is_ongoing": true,
+          "io.homeassistant.companion.android_42_post_time": 1667779610761,
           "unit_of_measurement": "notifications",
           "icon": "mdi:bell-ring",
           "friendly_name": "2354 Dining Tablet Active Notification Count"
         },
-        "last_changed": "2022-11-06T22:13:04.981015+00:00",
-        "last_updated": "2022-11-06T22:13:04.981015+00:00",
+        "last_changed": "2022-11-07T00:06:51.072586+00:00",
+        "last_updated": "2022-11-07T00:06:51.072586+00:00",
         "context": {
-          "id": "01GH7G28ANWF19YS3Z3DMCVVR8",
+          "id": "01GH7PJJE0RTP922MR3HC4G2RP",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 3,
+        "native_value": 4,
         "native_unit_of_measurement": "notifications"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3947,7 +3972,7 @@
         "native_value": 88,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3966,7 +3991,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -3986,7 +4011,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4005,7 +4030,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4024,7 +4049,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4034,16 +4059,16 @@
           "icon": "mdi:cellphone-off",
           "friendly_name": "2354 Dining Tablet Interactive"
         },
-        "last_changed": "2022-11-06T21:59:17.572943+00:00",
-        "last_updated": "2022-11-06T21:59:17.572943+00:00",
+        "last_changed": "2022-11-06T23:56:21.841694+00:00",
+        "last_updated": "2022-11-06T23:56:21.841694+00:00",
         "context": {
-          "id": "01GH7F90A4YKTDHH2KE8DCDJH3",
+          "id": "01GH7NZBYHYEYAEQG0PKX71GFA",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4062,7 +4087,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4081,7 +4106,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4100,7 +4125,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4119,7 +4144,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4138,7 +4163,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4164,7 +4189,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4183,7 +4208,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4205,7 +4230,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4227,7 +4252,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4249,7 +4274,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4271,29 +4296,29 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "automation.set_2354_climate_entities",
         "state": "on",
         "attributes": {
-          "last_triggered": "2022-11-06T22:00:00.002320+00:00",
+          "last_triggered": "2022-11-07T00:00:00.003587+00:00",
           "mode": "single",
           "current": 0,
           "id": "1664911918906",
           "friendly_name": "Set 2354 Climate Entities"
         },
         "last_changed": "2022-11-06T21:40:12.716535+00:00",
-        "last_updated": "2022-11-06T22:00:01.779025+00:00",
+        "last_updated": "2022-11-07T00:00:00.897362+00:00",
         "context": {
-          "id": "01GH7FA9R1BSPHK9VN12576DP9",
+          "id": "01GH7P6101KGET57ATPW0HF4VT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4315,7 +4340,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4337,29 +4362,29 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "script.set_heat_pump_hvac_mode",
         "state": "off",
         "attributes": {
-          "last_triggered": "2022-11-06T22:00:00.011925+00:00",
+          "last_triggered": "2022-11-07T00:00:00.013516+00:00",
           "mode": "queued",
           "current": 0,
           "max": 10,
           "friendly_name": "set_heat_pump_hvac_mode"
         },
-        "last_changed": "2022-11-06T22:00:00.019264+00:00",
-        "last_updated": "2022-11-06T22:00:00.019264+00:00",
+        "last_changed": "2022-11-07T00:00:00.019722+00:00",
+        "last_updated": "2022-11-07T00:00:00.019722+00:00",
         "context": {
-          "id": "01GH7FA9R1BSPHK9VN12576DP9",
+          "id": "01GH7P6101KGET57ATPW0HF4VT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4381,7 +4406,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4402,91 +4427,91 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "script.calculate_2354_e_hp_temp",
         "state": "off",
         "attributes": {
-          "last_triggered": "2022-11-06T22:00:00.031095+00:00",
+          "last_triggered": "2022-11-07T00:00:00.026809+00:00",
           "mode": "single",
           "current": 0,
           "friendly_name": "Calculate 2354 E HP Temp"
         },
-        "last_changed": "2022-11-06T22:00:00.044893+00:00",
-        "last_updated": "2022-11-06T22:00:00.044893+00:00",
+        "last_changed": "2022-11-07T00:00:00.038628+00:00",
+        "last_updated": "2022-11-07T00:00:00.038628+00:00",
         "context": {
-          "id": "01GH7FA9R1BSPHK9VN12576DP9",
+          "id": "01GH7P6101KGET57ATPW0HF4VT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "script.calculate_2354_w_hp_temp",
         "state": "off",
         "attributes": {
-          "last_triggered": "2022-11-06T22:00:00.062696+00:00",
+          "last_triggered": "2022-11-07T00:00:00.054915+00:00",
           "mode": "single",
           "current": 0,
           "friendly_name": "Calculate 2354 W HP Temp"
         },
-        "last_changed": "2022-11-06T22:00:00.076214+00:00",
-        "last_updated": "2022-11-06T22:00:00.076214+00:00",
+        "last_changed": "2022-11-07T00:00:00.064445+00:00",
+        "last_updated": "2022-11-07T00:00:00.064445+00:00",
         "context": {
-          "id": "01GH7FA9R1BSPHK9VN12576DP9",
+          "id": "01GH7P6101KGET57ATPW0HF4VT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "script.set_2354_e_hp_temp",
         "state": "off",
         "attributes": {
-          "last_triggered": "2022-11-06T22:00:00.023874+00:00",
+          "last_triggered": "2022-11-07T00:00:00.023060+00:00",
           "mode": "single",
           "current": 0,
           "friendly_name": "Set 2354 E HP Temp"
         },
-        "last_changed": "2022-11-06T22:00:00.052808+00:00",
-        "last_updated": "2022-11-06T22:00:00.052808+00:00",
+        "last_changed": "2022-11-07T00:00:00.046126+00:00",
+        "last_updated": "2022-11-07T00:00:00.046126+00:00",
         "context": {
-          "id": "01GH7FA9R1BSPHK9VN12576DP9",
+          "id": "01GH7P6101KGET57ATPW0HF4VT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
         "entity_id": "script.set_2354_w_hp_temp",
         "state": "off",
         "attributes": {
-          "last_triggered": "2022-11-06T22:00:00.057762+00:00",
+          "last_triggered": "2022-11-07T00:00:00.051286+00:00",
           "mode": "single",
           "current": 0,
           "friendly_name": "Set 2354 W HP Temp"
         },
-        "last_changed": "2022-11-06T22:00:00.083819+00:00",
-        "last_updated": "2022-11-06T22:00:00.083819+00:00",
+        "last_changed": "2022-11-07T00:00:00.070214+00:00",
+        "last_updated": "2022-11-07T00:00:00.070214+00:00",
         "context": {
-          "id": "01GH7FA9R1BSPHK9VN12576DP9",
+          "id": "01GH7P6101KGET57ATPW0HF4VT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
@@ -4504,7 +4529,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-06T22:14:36.857000+00:00"
+      "last_seen": "2022-11-07T00:06:58.487972+00:00"
     },
     {
       "state": {
