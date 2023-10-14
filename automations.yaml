@@ -135,63 +135,63 @@
       - service: notify.mobile_app_pixel_5a
         data:
           message: '{{sensors}} is low on battery'
-- id: '1664911918906'
-  alias: Set 2354 Climate Entities
-  description: This automation will set all the thermostat entities in 2354
-  use_blueprint:
-    path: climate/set_climate_entities.yaml
-    input:
-      climate_controller: climate.climate_controller
-      e_heat_pump: climate.2354_kitchen_heat_pump
-      w_heat_pump: climate.2354_dining_room_heat_pump
-      boiler_therm: climate.2354_ecobee_thermostat
-      boiler_set_temp_script: script.set_2354_boiler_temp
-      e_hp_set_temp_script: script.set_2354_e_hp_temp
-      w_hp_set_temp_script: script.set_2354_w_hp_temp
-- id: '1667746744999'
-  alias: 2354 Climate Manual Mode
-  description: This automation enables or disables the climate automations for 2354
-    depending on the state of a "manual mode" boolean helper
-  trigger:
-  - platform: state
-    entity_id:
-    - input_boolean.2354_manual_climate
-  condition: []
-  action:
-  - if:
-    - condition: state
-      entity_id: input_boolean.2354_manual_climate
-      state: 'off'
-    then:
-    - service: automation.turn_on
-      data: {}
-      target:
-        entity_id:
-        - automation.set_2354_climate_entities
-        - automation.set_climate_entities_temp
-        - automation.set_climate_controller_hvac_mode
-    - service: climate.set_hvac_mode
-      data:
-        hvac_mode: auto
-      target:
-        entity_id: climate.climate_controller
-    else:
-    - service: automation.turn_off
-      data:
-        stop_actions: false
-      target:
-        entity_id:
-        - automation.set_2354_climate_entities
-        - automation.set_climate_controller_hvac_mode
-        - automation.set_climate_entities_temp
-    - service: climate.set_hvac_mode
-      data:
-        hvac_mode: 'off'
-      target:
-        entity_id: climate.climate_controller
-  mode: single
+# - id: '1664911918906'
+#   alias: Set 2354 Climate Entities
+#   description: This automation will set all the thermostat entities in 2354
+#   use_blueprint:
+#     path: climate/set_climate_entities.yaml
+#     input:
+#       climate_controller: climate.climate_controller
+#       e_heat_pump: climate.2354_kitchen_heat_pump
+#       w_heat_pump: climate.2354_dining_room_heat_pump
+#       boiler_therm: climate.2354_ecobee_thermostat
+#       boiler_set_temp_script: script.set_2354_boiler_temp
+#       e_hp_set_temp_script: script.set_2354_e_hp_temp
+#       w_hp_set_temp_script: script.set_2354_w_hp_temp
+# - id: '1667746744999'
+#   alias: 2354 Climate Manual Mode
+#   description: This automation enables or disables the climate automations for 2354
+#     depending on the state of a "manual mode" boolean helper
+#   trigger:
+#   - platform: state
+#     entity_id:
+#     - input_boolean.2354_manual_climate
+#   condition: []
+#   action:
+#   - if:
+#     - condition: state
+#       entity_id: input_boolean.2354_manual_climate
+#       state: 'off'
+#     then:
+#     - service: automation.turn_on
+#       data: {}
+#       target:
+#         entity_id:
+#         - automation.set_2354_climate_entities
+#         - automation.set_climate_entities_temp
+#         - automation.set_climate_controller_hvac_mode
+#     - service: climate.set_hvac_mode
+#       data:
+#         hvac_mode: auto
+#       target:
+#         entity_id: climate.climate_controller
+#     else:
+#     - service: automation.turn_off
+#       data:
+#         stop_actions: false
+#       target:
+#         entity_id:
+#         - automation.set_2354_climate_entities
+#         - automation.set_climate_controller_hvac_mode
+#         - automation.set_climate_entities_temp
+#     - service: climate.set_hvac_mode
+#       data:
+#         hvac_mode: 'off'
+#       target:
+#         entity_id: climate.climate_controller
+#   mode: single
 - id: '1667797747180'
-  alias: 'Reload Fully Browser '
+  alias: 'Reload Fully Browser'
   description: For when guests get snoopy
   trigger:
   - platform: state

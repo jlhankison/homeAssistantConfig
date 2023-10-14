@@ -1,2 +1,4 @@
-.storage/
-.cloud/
+.*
+!.gitignore
+*.log
+*.db-shm
