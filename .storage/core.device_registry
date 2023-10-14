@@ -25,7 +25,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2022.10.4",
+        "sw_version": "2023.10.1",
         "via_device_id": null
       },
       {
@@ -49,7 +49,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.10.2",
+        "sw_version": "2023.10.0",
         "via_device_id": null
       },
       {
@@ -73,7 +73,7 @@
         "model": "Home Assistant Operating System",
         "name_by_user": null,
         "name": "Home Assistant Operating System",
-        "sw_version": "9.2",
+        "sw_version": "10.5",
         "via_device_id": null
       },
       {
@@ -96,7 +96,7 @@
         "manufacturer": "Google Inc.",
         "model": "Chromecast",
         "name_by_user": "2354 Living Room Chromecast",
-        "name": "Living Room TV 2",
+        "name": "Living Room TV",
         "sw_version": null,
         "via_device_id": null
       },
@@ -120,7 +120,7 @@
         "manufacturer": "Google Inc.",
         "model": "Chromecast",
         "name_by_user": "2354 E Bedroom Chromecast",
-        "name": "E J Bedroom TV",
+        "name": "Bedroom TV",
         "sw_version": null,
         "via_device_id": null
       },
@@ -155,12 +155,12 @@
         "configuration_url": null,
         "connections": [
           [
-            "mac",
-            "3c:28:6d:5a:88:51"
-          ],
-          [
             "upnp",
             "uuid:bdb7a4e3-0117-4d1f-b482-50d50040a291"
+          ],
+          [
+            "mac",
+            "3c:28:6d:5a:88:51"
           ]
         ],
         "disabled_by": null,
@@ -173,12 +173,12 @@
             "00000000"
           ],
           [
-            "upnp_host",
-            "192.168.86.1"
+            "upnp",
+            "uuid:dfdc0d8f-90e7-454e-aed5-43d9c83afd4f::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
           ],
           [
-            "upnp",
-            "uuid:3f2efc0c-8bd7-469d-88c5-b8e07a6a2a69::urn:schemas-upnp-org:device:InternetGatewayDevice:2"
+            "upnp_host",
+            "192.168.86.1"
           ]
         ],
         "manufacturer": "Google",
@@ -209,7 +209,7 @@
         "model": "LiftMaster Wi-Fi GDO or Gate Operator AC",
         "name_by_user": "Garage Door Connection",
         "name": "Garage Door",
-        "sw_version": "3.12",
+        "sw_version": "3.13",
         "via_device_id": null
       },
       {
@@ -334,7 +334,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "Studio Code Server",
-        "sw_version": "5.4.0",
+        "sw_version": "5.11.0",
         "via_device_id": null
       },
       {
@@ -501,7 +501,7 @@
         "manufacturer": "Amazon",
         "model": "KFTRWI",
         "name_by_user": "2356 Thermostat Terminal",
-        "name": "Terminal 1",
+        "name": "2356 thermostat terminal ",
         "sw_version": "28",
         "via_device_id": null
       },
@@ -679,8 +679,8 @@
         "manufacturer": "Home Assistant Community Add-ons",
         "model": "Home Assistant Add-on",
         "name_by_user": null,
-        "name": "SSH & Web Terminal",
-        "sw_version": "12.1.1",
+        "name": "Advanced SSH & Web Terminal",
+        "sw_version": "15.0.8",
         "via_device_id": null
       },
       {
@@ -704,7 +704,7 @@
         "model": "",
         "name_by_user": null,
         "name": "HACS",
-        "sw_version": "1.27.2",
+        "sw_version": "1.33.0",
         "via_device_id": null
       },
       {
@@ -778,23 +778,253 @@
         "name": "2354 Living Temp",
         "sw_version": null,
         "via_device_id": null
-      }
-    ],
-    "deleted_devices": [
+      },
       {
+        "area_id": "2356_living_room",
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "1027530ac945c1af02cc3238162dc716",
+        "identifiers": [
+          [
+            "ecobee",
+            "RKP4"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name_by_user": "2356 Living H/O Sensor",
+        "name": "2356 Living H O Sensor",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "2356_kitchen",
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "e1c17bac5bd8f57eb4cce8d641e5619f",
+        "identifiers": [
+          [
+            "ecobee",
+            "FZTG"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name_by_user": "2356 Kitchen H/O Sensor",
+        "name": "2356 Kitchen H O Sensor",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "2356_dining_room",
+        "config_entries": [
+          "df7ce42bf331987985caaf577e4178f3"
+        ],
+        "configuration_url": "http://192.168.86.35:2323",
+        "connections": [
+          [
+            "mac",
+            "b4:e4:54:ce:f9:f4"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "b5585704ac638873901e82c878b701e8",
+        "identifiers": [
+          [
+            "fully_kiosk",
+            "ed76a815-6770a67d"
+          ]
+        ],
+        "manufacturer": "Amazon",
+        "model": "KFTRWI",
+        "name_by_user": "2356 Dining Fully Browser",
+        "name": "Fire Tablet",
+        "sw_version": "1.48.2",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "4fa9f46b78eff67bb1c8f7a1dcbb30cd",
+        "identifiers": [
+          [
+            "ecobee",
+            "FWYV"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name_by_user": null,
+        "name": "2356 E Bedroom H O Sensor",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "ede658875101e12aadd17bf9c3484fe4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "ec43a410ff34c31e5b04a61e5e57c288",
+        "identifiers": [
+          [
+            "ecobee",
+            "RGXR"
+          ]
+        ],
+        "manufacturer": "ecobee",
+        "model": "ecobee Room Sensor",
+        "name_by_user": null,
+        "name": "2356 W Bedroom H O Sensor",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
         "config_entries": [
           "d98c4147cd9b9748add31c360ab7200f"
         ],
+        "configuration_url": null,
         "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "6602c1f2cc0b0574d500c3167a4d7b2a",
         "identifiers": [
           [
             "tuya",
             "ebb439eb3473d0a15bxef8"
           ]
         ],
-        "id": "6602c1f2cc0b0574d500c3167a4d7b2a",
-        "orphaned_timestamp": null
+        "manufacturer": "Tuya",
+        "model": "Color Lights (8cr0olwf9sphi0u4)",
+        "name_by_user": null,
+        "name": "Color Lights",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "d98c4147cd9b9748add31c360ab7200f"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "f33930d73d864b52c71912d72b4a12c4",
+        "identifiers": [
+          [
+            "tuya",
+            "eb3a57e0d70b03cd93rpjn"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Color Light (xhebnprpwivypgtt)",
+        "name_by_user": null,
+        "name": "Color Light 2",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "d98c4147cd9b9748add31c360ab7200f"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "80ddbeac20078b974855947a42606c67",
+        "identifiers": [
+          [
+            "tuya",
+            "ebb139a68045d5f324otqx"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Color Light (xhebnprpwivypgtt)",
+        "name_by_user": null,
+        "name": "Color Light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "711fbacb4703166be4f4ec8f7b0499e0"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "896f48a57cb5400c62b782152d8a3fe1",
+        "identifiers": [
+          [
+            "hassio",
+            "host"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Host",
+        "name_by_user": null,
+        "name": "Home Assistant Host",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "34fb38568edb48db43782d2b32bcf84a"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "7f5dbf184c0583580a1ab03db1c78691",
+        "identifiers": [
+          [
+            "sun",
+            "34fb38568edb48db43782d2b32bcf84a"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Sun",
+        "sw_version": null,
+        "via_device_id": null
       }
-    ]
+    ],
+    "deleted_devices": []
   }
 }

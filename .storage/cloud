@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "minor_version": 1,
+  "minor_version": 2,
   "key": "cloud",
   "data": {
     "alexa_default_expose": [
@@ -48,6 +48,8 @@
     "google_local_webhook_id": "333c952059b1677aff52e2cc897aef797a91793549fc893791c3ef9e9e3befe2",
     "google_secure_devices_pin": null,
     "remote_domain": "080blj3hho2hksjqutx15xp1imsdjysp.ui.nabu.casa",
-    "username": "c7163c81-5804-46eb-8cf8-9c98a458cbed"
+    "username": "c7163c81-5804-46eb-8cf8-9c98a458cbed",
+    "alexa_settings_version": 3,
+    "google_settings_version": 3
   }
 }

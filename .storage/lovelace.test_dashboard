@@ -118,14 +118,6 @@
               "name": "Outside Temperature"
             }
           ]
-        },
-        {
-          "theme": "Backend-selected",
-          "title": "test",
-          "path": "forecast",
-          "type": "sidebar",
-          "badges": [],
-          "cards": []
         }
       ]
     }

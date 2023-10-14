@@ -7,7 +7,7 @@
       {
         "show_in_sidebar": true,
         "icon": "mdi:bed",
-        "title": "Airbnb Dashboard",
+        "title": "Home Thermostat",
         "require_admin": false,
         "mode": "storage",
         "url_path": "test-dashboard",
@@ -48,6 +48,14 @@
         "mode": "storage",
         "url_path": "testing-dashboard",
         "id": "testing_dashboard"
+      },
+      {
+        "show_in_sidebar": true,
+        "title": "Airbnb Thermostat",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "airbnb-thermostat",
+        "id": "airbnb_thermostat"
       }
     ]
   }

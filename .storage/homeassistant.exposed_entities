@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "homeassistant.exposed_entities",
+  "data": {
+    "assistants": {},
+    "exposed_entities": {
+      "group.heatpumps": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "sun.sun": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "zone.home": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "sensor.outside_temp": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "sensor.outside_humidity": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "sensor.warmest_space": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "binary_sensor.use_heat_pump": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          },
+          "cloud.alexa": {
+            "should_expose": false
+          },
+          "cloud.google_assistant": {
+            "should_expose": false
+          }
+        }
+      },
+      "climate.climate_controller": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          },
+          "cloud.alexa": {
+            "should_expose": true
+          },
+          "cloud.google_assistant": {
+            "should_expose": true
+          }
+        }
+      }
+    }
+  }
+}
