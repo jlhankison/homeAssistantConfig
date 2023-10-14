@@ -85,7 +85,7 @@
         "domain": "upnp",
         "title": "OnHub",
         "data": {
-          "udn": "uuid:3f2efc0c-8bd7-469d-88c5-b8e07a6a2a69",
+          "udn": "uuid:dfdc0d8f-90e7-454e-aed5-43d9c83afd4f",
           "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:2",
           "original_udn": "uuid:bdb7a4e3-0117-4d1f-b482-50d50040a291",
           "location": "http://192.168.86.1:5000/rootDesc.xml",
@@ -96,7 +96,7 @@
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "ssdp",
-        "unique_id": "uuid:3f2efc0c-8bd7-469d-88c5-b8e07a6a2a69::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+        "unique_id": "uuid:dfdc0d8f-90e7-454e-aed5-43d9c83afd4f::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
         "disabled_by": null
       },
       {
@@ -232,12 +232,12 @@
         "data": {
           "auth_implementation": "google_408527337532_8ulbjupuni6cbbhabk8a0hghmik5s3n1_apps_googleusercontent_com",
           "token": {
-            "access_token": "ya29.a0AeTM1icgVEMSKqYtfsMJsf_xLTB8gZliad8dtTGk0ZapHh2lN5tL0CIyv1Ftx9_5fPrOZClqV0-GWC6waEr7gvHW6WJyiY0zWzcN39zI7zRvcDLRzOv5B5eb2Yl5VhxjXxtjr002eSR7qYD8F3EqJqTy1SUtoVkaCgYKAfYSARISFQHWtWOmgCri7JiJBR26canrOmQmHw0166",
+            "access_token": "ya29.a0AVvZVspOM-n8TqDN4W0HHAqmSQwAdNZRU1zCATwSQ7uebKRo_OlidFdC1hg15S9P4bSe6mVkQJaSlSoRf3MTWkl2jabquwwbH6TOk8juh0XXJfN0IoXeVAnHc5jvt9GAYcnlEV_pGDfbqp9V5tBjr2yWA0xzFm78AAaCgYKAWoSARISFQGbdwaIa2zqPecGLWvpAPsCfPXu2A0169",
             "refresh_token": "1//04p260n9Za7_8CgYIARAAGAQSNwF-L9IrXRLIwfr0PIyLhAauH_Gn0i9k1GchkoPWYyksQj6ude9ecaYA8GMsLl_eCvu5iuBpSjA",
             "scope": "https://www.googleapis.com/auth/calendar",
             "token_type": "Bearer",
             "expires_in": 3599,
-            "expires_at": 1667782321.2568955
+            "expires_at": 1678146100.2590618
           }
         },
         "options": {
@@ -435,8 +435,8 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2022.8.0-full (2624)",
-          "device_name": "Terminal 1",
+          "app_version": "2022.10.2-full (2770)",
+          "device_name": "2356 thermostat terminal ",
           "manufacturer": "Amazon",
           "model": "KFTRWI",
           "os_name": "Android",
@@ -494,7 +494,7 @@
         "title": "1st FLOOR (Thermostat)",
         "data": {
           "AccessoryIP": "192.168.86.22",
-          "AccessoryPort": 59446
+          "AccessoryPort": 44462
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -578,6 +578,45 @@
         "pref_disable_polling": false,
         "source": "registration",
         "unique_id": "io.homeassistant.companion.android-14a48b8c6afe1145",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "390f9f9fc1633c8ef0ca72824e4e86d0",
+        "version": 1,
+        "domain": "min_max",
+        "title": "2356 Average Indoor Temperature",
+        "data": {},
+        "options": {
+          "name": "2356 Average Indoor Temperature",
+          "entity_ids": [
+            "sensor.2356_kitchen_h_o_sensor_temperature",
+            "sensor.2356_dining_h_o_sensor_temp",
+            "sensor.2356_living_h_o_sensor_temperature"
+          ],
+          "type": "mean",
+          "round_digits": 0.0
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "df7ce42bf331987985caaf577e4178f3",
+        "version": 1,
+        "domain": "fully_kiosk",
+        "title": "2356 Dining Fully Browser",
+        "data": {
+          "host": "192.168.86.35",
+          "password": "104013",
+          "mac": "b4:e4:54:ce:f9:f4"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "ed76a815-6770a67d",
         "disabled_by": null
       }
     ]

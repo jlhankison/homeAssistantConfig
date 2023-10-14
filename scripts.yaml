@@ -39,60 +39,53 @@ deactivate_all_climate_entities:
     target:
       entity_id: '{{ boiler_thermostat }}'
 set_heat_pump_hvac_mode:
-  description: Use this script to determine when heat pumps should switch to heating
-    and cooling modes
+  description: Use this script to determine when heat pumps should switch to heating and cooling modes
   variables:
-    heat_pumps:
-    - climate.2354_dining_room_heat_pump
-    - climate.2354_kitchen_heat_pump
-    indoor_temp: '{{ states(''sensor.2354_average_indoor_temperature'') | int }}'
-    outside_temp: '{{ states(''sensor.outside_temp'') | int }}'
-    cur_hvac_input: input_text.2354_current_hvac_setting
-    cur_hvac: '{{ states(''input_text.2354_current_hvac_setting'') }}'
-    set_temp: '{{ state_attr(''climate.climate_controller'', ''temperature'') | int
-      }}'
-    controller_hvac: '{{ states("climate.climate_controller") }}'
+    heat_pumps: ['climate.2354_dining_room_heat_pump', 'climate.2354_kitchen_heat_pump']
+    indoor_temp: "{{ state('sensor.2354_average_indoor_temperature') | int }}"
+    outside_temp: "{{ state('sensor.outside_temp') | int }}"
+    cur_hvac_input: "input_text.2354_current_hvac_setting"
+    cur_hvac: "{{ states('input_text.2354_current_hvac_setting') }}"
+    set_temp: "{{ state_attr('climate.climate_controller', 'temperature') | int }}"
   mode: queued
   sequence:
-    choose:
-    - conditions:
-      - '{{ controller_hvac == "off"}}'
-      sequence:
-      - service: climate.set_hvac_mode
-        data:
-          hvac_mode: 'off'
-        target:
-          entity_id: '{{ heat_pumps }}'
-      - service: input_text.set_value
-        data:
-          value: 'off'
-          entity_id: '{{cur_hvac_input}}'
-    - conditions:
-      - '{{ cur_hvac != "heat" }}'
-      - '{{ set_temp >= outside_temp }}'
-      sequence:
-      - service: climate.set_hvac_mode
-        data:
-          hvac_mode: heat
-        target:
-          entity_id: '{{ heat_pumps}}'
-      - service: input_text.set_value
-        data:
-          value: heat
-          entity_id: '{{ cur_hvac_input }}'
-    - conditions:
-      - '{{ cur_hvac != "cool"}}'
-      - '{{ set_temp <= outside_temp }}'
-      sequence:
-      - service: climate.set_hvac_mode
-        data:
-          hvac_mode: cool
-        target:
-          entity_id: '{{ heat_pumps}}'
-      - service: input_text.set_value
-        data:
-          value: cool
-          entity_id: '{{ cur_hvac_input }}'
+    - choose:
+        - conditions: >
+            {{ controller_hvac == "off" }}
+          sequence:
+            - service: climate.set_hvac_mode
+              data:
+                hvac_mode: 'off'
+              target:
+                entity_id: "{{ heat_pumps }}"
+            - service: input_text.set_value
+              data:
+                value: 'off'
+                entity_id: "{{ cur_hvac_input }}"
+        - conditions: >
+            {{ cur_hvac != "heat" and set_temp >= outside_temp }}
+          sequence:
+            - service: climate.set_hvac_mode
+              data:
+                hvac_mode: heat
+              target:
+                entity_id: "{{ heat_pumps }}"
+            - service: input_text.set_value
+              data:
+                value: heat
+                entity_id: "{{ cur_hvac_input }}"
+        - conditions: >
+            {{ cur_hvac != "cool" and set_temp <= outside_temp }}
+          sequence:
+            - service: climate.set_hvac_mode
+              data:
+                hvac_mode: cool
+              target:
+                entity_id: "{{ heat_pumps }}"
+            - service: input_text.set_value
+              data:
+                value: cool
+                entity_id: "{{ cur_hvac_input }}"
 calculate_2354_boiler_temp:
   alias: Calculate 2354 Boiler Temp
   use_blueprint:

@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.airbnb_thermostat",
+  "data": {
+    "config": {
+      "title": "Airbnb Thermostat",
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "Home",
+          "path": "home",
+          "subview": true,
+          "type": "sidebar",
+          "badges": [],
+          "cards": [
+            {
+              "type": "thermostat",
+              "entity": "climate.2356_ecobee_thermostat",
+              "name": "Thermostat",
+              "view_layout": {
+                "position": "sidebar"
+              }
+            },
+            {
+              "hours_to_show": 48,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.2356_average_indoor_temperature",
+              "detail": 1,
+              "name": "Indoor Temperature",
+              "icon": "mdi:home-thermometer",
+              "view_layout": {
+                "position": "main"
+              }
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "show_current": true,
+                  "show_forecast": true,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_hourly",
+                  "name": "Booth St. Forecast"
+                },
+                {
+                  "show_current": false,
+                  "show_forecast": true,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_booth_st_lower",
+                  "name": "Booth St Forecast"
+                }
+              ],
+              "view_layout": {
+                "position": "sidebar"
+              }
+            },
+            {
+              "hours_to_show": 48,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.outside_temp",
+              "detail": 2,
+              "name": "Outside Temperature"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,70 +1,65 @@
 blueprint:
   domain: script
   name: Calculate Boiler Set Temperature
-  description: This script calculates the set temp for the boiler thermostat
+  description: Calculates the set temp for the boiler thermostat
   input:
     climate_controller:
       name: Climate Controller
-      description: This is the virtual thermostat that controls all the other climate entities
+      description: The virtual thermostat that controls all other climate entities
       selector:
-        entity:
-          multiple: false
-          domain: climate
+        target:
+          entity:
+            domain: climate
     boiler_therm:
       name: Target Boiler Thermostat
-      description: This is the boiler for the space
+      description: The boiler for the space
       selector:
-        entity:
-          multiple: false
-          domain: climate
+        target:
+          entity:
+            domain: climate
     temp_sensor:
       name: Temperature Sensor
-      description: The in house sensors 
+      description: The in-house sensors
       selector:
-        entity:
-          multiple: false
-          domain: sensor
+        target:
+          entity:
+            domain: sensor
     current_hvac:
       name: Current HVAC Setting
-      description: input_text representing the current hvac setting of the house (heat, cool, off)
+      description: Represents the current HVAC setting of the house (heat, cool, off)
       selector:
-        entity:
-          multiple: false
-          domain: input_text
+        target:
+          entity:
+            domain: input_text
     set_temp_helper:
       name: Set Temperature Helper
-      description: this is the script output, it will save the calculated temp value to this
+      description: Stores the calculated set temperature value
       selector:
-        entity:
-          multiple: false
-          domain: input_number
+        target:
+          entity:
+            domain: input_number
 sequence:
-  - alias: setup variables
-    variables:
-      current_hvac: !input current_hvac
-      temp_sensor: !input temp_sensor
-      current_temp: "{{ states(temp_sensor) }}"
-      climate_controller: !input climate_controller
+  - variables:
+      current_hvac: "{{ state_attr(!input.current_hvac, 'value') }}"
+      current_temp: "{{ state_attr(!input.temp_sensor, 'state') }}"
+      climate_controller: "{{ states(!input.climate_controller) }}"
       set_temp: "{{ state_attr(climate_controller, 'temperature') }}"
-      set_temp_heat_modifier: "{{ states('input_number.set_temp_modifier_heat') }}"
-  - choose: 
-    - conditions: "{{ is_state(current_hvac, 'heat') }}"
-      sequence:
-        service: input_number.set_value
-        data:
-          value: "{{ set_temp }}"
-          entity_id: !input set_temp_helper    
-    - conditions: "{{ is_state(current_hvac, 'off') }}"
-      sequence:
-        service: input_number.set_value
-        data:
-          value: "{{ set_temp }}"
-          entity_id: !input set_temp_helper
+      set_temp_heat_modifier: "{{ state_attr('input_number.set_temp_modifier_heat', 'value') }}"
+  - choose:
+      - conditions: "{{ current_hvac == 'heat' }}"
+        sequence:
+          - service: input_number.set_value
+            data:
+              entity_id: !input set_temp_helper
+              value: "{{ set_temp }}"
+      - conditions: "{{ current_hvac == 'off' }}"
+        sequence:
+          - service: input_number.set_value
+            data:
+              entity_id: !input set_temp_helper
+              value: "{{ set_temp }}"
     default:
-      service: input_number.set_value
-      data:
-        value: 65
-        entity_id: !input set_temp_helper
-
-
-
+      - service: input_number.set_value
+        data:
+          entity_id: !input set_temp_helper
+          value: 65

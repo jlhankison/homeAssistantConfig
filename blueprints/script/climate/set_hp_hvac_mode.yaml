@@ -1,110 +1,107 @@
 blueprint:
-  name: Set Heat Pump Hvac Mode
+  name: Set Heat Pump HVAC Mode
   domain: script
-  description: >
-    This script should calculate if the heat pumps should be synced in heat or cooling mode
+  description: |
+    This script calculates if the heat pumps should be synced in heat or cooling mode.
+  
   input:
     heat_pumps:
       name: Heat Pumps
       description: The heat pumps in the house
       selector:
         entity:
-          multiple: true
           domain: climate
+          multiple: true
     climate_controller:
       name: Climate Controller
-      description: the thermostat controlling the climate of the house
+      description: The thermostat controlling the climate of the house
       selector:
         entity:
-          multiple: false
           domain: climate
+          multiple: false
     average_temp:
       name: Temperature Sensor
-      description: This is the average temperature of the house
+      description: The average temperature of the house
       selector:
         entity:
-          multiple: false
           domain: sensor
+          multiple: false
     cur_hvac_setting:
-      name: Current HVAC Setting 
-      description: This is the hvac setting variable to sync all the heatpumps together
+      name: Current HVAC Setting
+      description: The HVAC setting variable to sync all the heat pumps together
       selector:
         entity:
-          multiple: false
           domain: input_text
+          multiple: false
+
 sequence:
   - alias: Setup Variables
     variables:
-      use_hp: '{{ states("binary_sensor.use_heat_pump") }}'
-      outdoor_temp: '{{ states("sensor.outside_temp") | int }}'
+      use_hp: "{{ state('binary_sensor.use_heat_pump') }}"
+      outdoor_temp: "{{ state('sensor.outside_temp') | int }}"
       controller: !input climate_controller
-      set_temp: '{{ state_attr(controller, "temperature") | int}}'
+      set_temp: "{{ state_attr(controller, 'temperature') | int }}"
       cur_hvac_setting: !input cur_hvac_setting
-      cur_hvac: '{{ states(cur_hvac_setting) }}'
-  - alias: Begin Script
+      cur_hvac: "{{ state(cur_hvac_setting) }}"
+
+  - alias: Determine HVAC Mode
     choose:
-      - alias: If -> use_heat_pump == true
-        conditions: '{{ use_hp == true }}'
-        sequence: 
-          choose:
-            - alias: If -> climate controller == off
-              conditions: 
-                - '{{ states(controller) == "off" }}'
-              sequence:
-                - service: input_text.set_value
-                  data: 
-                    value: "off"
-                    target: !input cur_hvac_setting
-                - service: climate.turn_off
-                  target:
-                    entity_id: !input heat_pumps
-            - alias: If -> current hvac setting != heat && set temp >= outside temp
-              conditions:
-                - '{{ cur_hvac != "heat" }}'
-                - '{{ set_temp >= outdoor_temp }}'
-              sequence:
-                - service: input_text.set_value
-                  data:
-                    value: heat
-                    target: !input cur_hvac_setting
-                - service: climate.set_hvac_mode
-                  data:
-                    hvac_mode: heat
-                  target:
-                    entity_id: !input heat_pumps
-            - alias: If -> current hvac setting != cool
-              conditions: 
-                - '{{ cur_hvac != "cool" }}'
-                - '{{ set_temp < outdoor_temp }}'
-              sequence:
-                - service: input_text.set_value
-                  data: 
-                    value: cool
-                    target: !input cur_hvac_setting
-                - service: climate.set_hvac_mode
-                  data:
-                    hvac_mode: cool
-                  target:
-                    entity_id: !input heat_pumps
-      - alias: If -> use_heat_pump == false
-        conditions: '{{ use_hp == false }}'
+      - conditions: "{{ use_hp == 'true' }}"
+        sequence:
+          - choose:
+              - conditions: "{{ state(controller) == 'off' }}"
+                sequence:
+                  - service: input_text.set_value
+                    data:
+                      value: "off"
+                      target: !input cur_hvac_setting
+                  - service: climate.turn_off
+                    target:
+                      entity_id: !input heat_pumps
+
+              - conditions: "{{ cur_hvac != 'heat' and set_temp >= outdoor_temp }}"
+                sequence:
+                  - service: input_text.set_value
+                    data:
+                      value: "heat"
+                      target: !input cur_hvac_setting
+                  - service: climate.set_hvac_mode
+                    data:
+                      hvac_mode: "heat"
+                    target:
+                      entity_id: !input heat_pumps
+
+              - conditions: "{{ cur_hvac != 'cool' and set_temp < outdoor_temp }}"
+                sequence:
+                  - service: input_text.set_value
+                    data:
+                      value: "cool"
+                      target: !input cur_hvac_setting
+                  - service: climate.set_hvac_mode
+                    data:
+                      hvac_mode: "cool"
+                    target:
+                      entity_id: !input heat_pumps
+      
+      - conditions: "{{ use_hp == 'false' }}"
         sequence:
           - service: climate.set_hvac_mode
             data:
-              hvac_mode: 'off'
+              hvac_mode: "off"
             target:
-              entity_id: heat_pumps
+              entity_id: !input heat_pumps
           - service: input_text.set_value
-            data: 
+            data:
               value: "off"
               target: !input cur_hvac_setting
+      
     default:
       - service: climate.set_hvac_mode
         data:
-          hvac_mode: 'off'
+          hvac_mode: "off"
         target:
-            entity_id: !input heat_pumps
+          entity_id: !input heat_pumps
       - service: input_text.set_value
-        data: 
+        data:
           value: "off"
           target: !input cur_hvac_setting

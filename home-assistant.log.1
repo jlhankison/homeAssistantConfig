@@ -1,19 +1,98 @@
-2022-11-06 15:18:10.827 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-11-06 15:18:10.831 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration climate_template which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-11-06 15:18:11.208 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
-2022-11-06 15:18:23.388 WARNING (MainThread) [homeassistant.config_entries] Config entry 'Fire' for fully_kiosk integration not ready yet: Cannot connect to host 192.168.86.37:2323 ssl:default [Connect call failed ('192.168.86.37', 2323)]; Retrying in background
-2022-11-06 15:18:24.206 ERROR (Thread-4) [tuya_iot] error while get mqtt config
-2022-11-06 15:18:24.219 ERROR (Thread-4) [root] Uncaught thread exception
+2023-10-13 17:16:06.927 WARNING (SyncWorker_4) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2023-10-13 17:16:06.929 WARNING (SyncWorker_4) [homeassistant.loader] We found a custom integration climate_template which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2023-10-13 17:16:07.400 WARNING (MainThread) [homeassistant.components.lovelace] Lovelace is running in storage mode. Define resources via user interface
+2023-10-13 17:16:23.771 ERROR (MainThread) [homeassistant.components.script] Blueprint 'Calculate Boiler Set Temperature' generated invalid script with inputs {'climate_controller': 'climate.climate_controller', 'boiler_therm': 'climate.2354_ecobee_thermostat', 'temp_sensor': 'sensor.2354_average_indoor_temperature', 'current_hvac': 'input_text.2354_current_hvac_setting', 'set_temp_helper': 'input_number.2354_boiler_temp_helper', 'boiler_temp_sensor': 'sensor.2354_ecobee_h_o_sensor_temp'}: invalid template (TemplateSyntaxError: unexpected char '!' at 10) for dictionary value @ data['sequence'][0]['variables']['climate_controller']. Got '{{ states(!input.climate_controller) }}'
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['current_hvac']. Got "{{ state_attr(!input.current_hvac, 'value') }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['current_temp']. Got "{{ state_attr(!input.temp_sensor, 'state') }}"
+2023-10-13 17:16:24.034 ERROR (MainThread) [homeassistant.components.script] Blueprint 'Calculate Heat Pump Set Temperature' generated invalid script with inputs {'heat_pump': 'climate.2354_kitchen_heat_pump', 'climate_controller': 'climate.climate_controller', 'temp_sensor': 'sensor.2354_kitchen_h_o_sensor_temperature', 'current_hvac': 'input_text.2354_current_hvac_setting', 'hp_set_temp_helper': 'input_number.2354_e_hp_set_temp'}: invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['climate_controller']. Got "{{ state_attr(!input.climate_controller, 'temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['heat_pump']. Got "{{ state_attr(!input.heat_pump, 'current_temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['current_hvac']. Got '{{ state(!input.current_hvac) }}'
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['sensor_temp']. Got '{{ state(!input.temp_sensor) | int }}'
+2023-10-13 17:16:24.041 ERROR (MainThread) [homeassistant.components.script] Blueprint 'Calculate Heat Pump Set Temperature' generated invalid script with inputs {'heat_pump': 'climate.2354_dining_room_heat_pump', 'climate_controller': 'climate.climate_controller', 'temp_sensor': 'sensor.2354_w_avg_temp', 'current_hvac': 'input_text.2354_current_hvac_setting', 'hp_set_temp_helper': 'input_number.2354_w_hp_set_temp'}: invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['climate_controller']. Got "{{ state_attr(!input.climate_controller, 'temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['heat_pump']. Got "{{ state_attr(!input.heat_pump, 'current_temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['current_hvac']. Got '{{ state(!input.current_hvac) }}'
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['sensor_temp']. Got '{{ state(!input.temp_sensor) | int }}'
+2023-10-13 17:16:25.893 WARNING (MainThread) [homeassistant.config_entries] Config entry '2356 Dining Fully Browser' for fully_kiosk integration not ready yet: Cannot connect to host 192.168.86.35:2323 ssl:False [Connect call failed ('192.168.86.35', 2323)]; Retrying in background
+2023-10-13 17:16:27.074 WARNING (MainThread) [homeassistant.config_entries] Config entry 'jlhankison@gmail.com' for myq integration not ready yet: Got 429 error - stopping request  until 2023-10-13 23:16:26.846862. there were 1 request; Retrying in background
+2023-10-13 17:16:28.422 WARNING (MainThread) [homeassistant.config_entries] Config entry 'Fire' for fully_kiosk integration not ready yet: Cannot connect to host 192.168.86.37:2323 ssl:False [Connect call failed ('192.168.86.37', 2323)]; Retrying in background
+2023-10-13 17:16:29.447 WARNING (MainThread) [homeassistant.config_entries] Config entry 'jlhankison@gmail.com' for google integration could not authenticate: 400, message='Bad Request', url=URL('https://oauth2.googleapis.com/token')
+2023-10-13 17:16:31.274 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({% set max = states('sensor.max_indoor_temperature') | int %} {% set kitchen = states('sensor.2354_kitchen_h_o_sensor_temperature') | int %} {% set dining = states('sensor.2354_dining_h_o_sensor_temp') | int %} {% set living = states('sensor.2354_living_h_o_sensor_temperature') | int %} {% if (kitchen == max) %}
+  Kitchen
+{% elif (dining == max) %}
+  Dining Room
+{% elif (living == max) %}
+  Living Room
+{% else %}
+  Error, no sensor matches max temp
+{% endif %}) renders=2>
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/local/lib/python3.10/site-packages/tuya_iot/openmq.py", line 161, in run
-    time.sleep(self.mq_config.expire_time - 60)
-AttributeError: 'NoneType' object has no attribute 'expire_time'
-2022-11-06 15:18:48.169 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
-2022-11-06 15:18:48.283 ERROR (MainThread) [homeassistant] Error doing job: Task was destroyed but it is pending!
-2022-11-06 15:18:51.248 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
-2022-11-06 15:24:38.843 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities automation.set_climate_entities_temp or it is/they are currently not available
-2022-11-06 15:24:38.864 WARNING (MainThread) [homeassistant.helpers.script.climate_controller] climate_controller: Already running
-2022-11-06 15:25:19.293 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities automation.set_climate_entities_temp or it is/they are currently not available
-2022-11-06 15:29:06.640 ERROR (MainThread) [homeassistant.components.hassio.handler] Timeout on /homeassistant/restart request
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 568, in async_render
+    render_result = _render_with_context(self.template, compiled, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 2196, in _render_with_context
+    return template.render(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 1944, in forgiving_int_filter
+    raise_no_default("int", value)
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 1626, in raise_no_default
+    raise ValueError(
+ValueError: Template error: int got invalid input 'unknown' when rendering template '{% set max = states('sensor.max_indoor_temperature') | int %} {% set kitchen = states('sensor.2354_kitchen_h_o_sensor_temperature') | int %} {% set dining = states('sensor.2354_dining_h_o_sensor_temp') | int %} {% set living = states('sensor.2354_living_h_o_sensor_temperature') | int %} {% if (kitchen == max) %}
+  Kitchen
+{% elif (dining == max) %}
+  Dining Room
+{% elif (living == max) %}
+  Living Room
+{% else %}
+  Error, no sensor matches max temp
+{% endif %}' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 694, in async_render_to_info
+    render_info._result = self.async_render(
+                          ^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/template.py", line 570, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: int got invalid input 'unknown' when rendering template '{% set max = states('sensor.max_indoor_temperature') | int %} {% set kitchen = states('sensor.2354_kitchen_h_o_sensor_temperature') | int %} {% set dining = states('sensor.2354_dining_h_o_sensor_temp') | int %} {% set living = states('sensor.2354_living_h_o_sensor_temperature') | int %} {% if (kitchen == max) %}
+  Kitchen
+{% elif (dining == max) %}
+  Dining Room
+{% elif (living == max) %}
+  Living Room
+{% else %}
+  Error, no sensor matches max temp
+{% endif %}' but no default was specified
+2023-10-13 17:16:31.285 ERROR (MainThread) [homeassistant.components.template.template_entity] TemplateError('ValueError: Template error: int got invalid input 'unknown' when rendering template '{% set max = states('sensor.max_indoor_temperature') | int %} {% set kitchen = states('sensor.2354_kitchen_h_o_sensor_temperature') | int %} {% set dining = states('sensor.2354_dining_h_o_sensor_temp') | int %} {% set living = states('sensor.2354_living_h_o_sensor_temperature') | int %} {% if (kitchen == max) %}
+  Kitchen
+{% elif (dining == max) %}
+  Dining Room
+{% elif (living == max) %}
+  Living Room
+{% else %}
+  Error, no sensor matches max temp
+{% endif %}' but no default was specified') while processing template 'Template<template=({% set max = states('sensor.max_indoor_temperature') | int %} {% set kitchen = states('sensor.2354_kitchen_h_o_sensor_temperature') | int %} {% set dining = states('sensor.2354_dining_h_o_sensor_temp') | int %} {% set living = states('sensor.2354_living_h_o_sensor_temperature') | int %} {% if (kitchen == max) %}
+  Kitchen
+{% elif (dining == max) %}
+  Dining Room
+{% elif (living == max) %}
+  Living Room
+{% else %}
+  Error, no sensor matches max temp
+{% endif %}) renders=4>' for attribute '_attr_native_value' in entity 'sensor.warmest_space'
+2023-10-13 17:21:29.801 ERROR (MainThread) [homeassistant.components.script] Blueprint 'Calculate Boiler Set Temperature' generated invalid script with inputs {'climate_controller': 'climate.climate_controller', 'boiler_therm': 'climate.2354_ecobee_thermostat', 'temp_sensor': 'sensor.2354_average_indoor_temperature', 'current_hvac': 'input_text.2354_current_hvac_setting', 'set_temp_helper': 'input_number.2354_boiler_temp_helper', 'boiler_temp_sensor': 'sensor.2354_ecobee_h_o_sensor_temp'}: invalid template (TemplateSyntaxError: unexpected char '!' at 10) for dictionary value @ data['sequence'][0]['variables']['climate_controller']. Got '{{ states(!input.climate_controller) }}'
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['current_hvac']. Got "{{ state_attr(!input.current_hvac, 'value') }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['current_temp']. Got "{{ state_attr(!input.temp_sensor, 'state') }}"
+2023-10-13 17:21:29.811 ERROR (MainThread) [homeassistant.components.script] Blueprint 'Calculate Heat Pump Set Temperature' generated invalid script with inputs {'heat_pump': 'climate.2354_kitchen_heat_pump', 'climate_controller': 'climate.climate_controller', 'temp_sensor': 'sensor.2354_kitchen_h_o_sensor_temperature', 'current_hvac': 'input_text.2354_current_hvac_setting', 'hp_set_temp_helper': 'input_number.2354_e_hp_set_temp'}: invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['climate_controller']. Got "{{ state_attr(!input.climate_controller, 'temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['heat_pump']. Got "{{ state_attr(!input.heat_pump, 'current_temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['current_hvac']. Got '{{ state(!input.current_hvac) }}'
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['sensor_temp']. Got '{{ state(!input.temp_sensor) | int }}'
+2023-10-13 17:21:29.818 ERROR (MainThread) [homeassistant.components.script] Blueprint 'Calculate Heat Pump Set Temperature' generated invalid script with inputs {'heat_pump': 'climate.2354_dining_room_heat_pump', 'climate_controller': 'climate.climate_controller', 'temp_sensor': 'sensor.2354_w_avg_temp', 'current_hvac': 'input_text.2354_current_hvac_setting', 'hp_set_temp_helper': 'input_number.2354_w_hp_set_temp'}: invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['climate_controller']. Got "{{ state_attr(!input.climate_controller, 'temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 14) for dictionary value @ data['sequence'][0]['variables']['heat_pump']. Got "{{ state_attr(!input.heat_pump, 'current_temperature') | int }}"
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['current_hvac']. Got '{{ state(!input.current_hvac) }}'
+invalid template (TemplateSyntaxError: unexpected char '!' at 9) for dictionary value @ data['sequence'][0]['variables']['sensor_temp']. Got '{{ state(!input.temp_sensor) | int }}'
