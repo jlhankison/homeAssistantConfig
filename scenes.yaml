@@ -1,0 +1,9 @@
+- id: '1663044584846'
+  name: Garage
+  entities:
+    cover.garage_door:
+      device_class: garage
+      friendly_name: Garage Door
+      supported_features: 3
+      state: closed
+  metadata: {}

@@ -1,0 +1,26 @@
+# Gets outside temp from forcast entity
+- name: outside_temp
+  unit_of_measurement: "°F"
+  state: >
+    {{ state_attr('weather.forecast_booth_st_lower', 'temperature') | float}}
+# Gets outside humidity from forcast entity
+- name: outside_humidity
+  unit_of_measurement: "%"
+  state: >
+    {{ state_attr('weather.forecast_booth_st_lower', 'humidity') | float}}
+
+- name: warmest_space
+  state: >
+    {% set max = states('sensor.max_indoor_temperature') | int %}
+    {% set kitchen = states('sensor.2354_kitchen_h_o_sensor_temperature') | int %}
+    {% set dining = states('sensor.2354_dining_h_o_sensor_temp') | int %}
+    {% set living = states('sensor.2354_living_h_o_sensor_temperature') | int %}
+    {% if (kitchen == max) %}
+      Kitchen
+    {% elif (dining == max) %}
+      Dining Room
+    {% elif (living == max) %}
+      Living Room
+    {% else %}
+      Error, no sensor matches max temp
+    {% endif %}
