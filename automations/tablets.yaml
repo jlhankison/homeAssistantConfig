@@ -1,0 +1,87 @@
+- id: '1667797747180'
+  alias: 'Reload Fully Browser'
+  description: For when guests get snoopy
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.2356_dining_fully_browser_current_page
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - service: button.press
+    data: {}
+    target:
+      entity_id: button.2356_dining_fully_browser_load_start_url
+  mode: single
+# 
+- id: '1663345317722'
+  alias: Screen Light Dimmer
+  description: Dims the screen of a terminal based on the Lumins input
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 8ffdbe9a54be7e65369c955ff0d796b9
+    entity_id: switch.fire_screen
+    domain: switch
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.fire_tablet_1_light_sensor
+        above: 15
+        below: 25
+      sequence:
+      - device_id: 8ffdbe9a54be7e65369c955ff0d796b9
+        domain: number
+        entity_id: number.fire_screen_brightness
+        type: set_value
+        value: 255
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.fire_tablet_1_light_sensor
+        above: 10
+        below: 15
+      sequence:
+      - device_id: 8ffdbe9a54be7e65369c955ff0d796b9
+        domain: number
+        entity_id: number.fire_screen_brightness
+        type: set_value
+        value: 191
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.fire_tablet_1_light_sensor
+        above: 7
+        below: 10
+      sequence:
+      - device_id: 8ffdbe9a54be7e65369c955ff0d796b9
+        domain: number
+        entity_id: number.fire_screen_brightness
+        type: set_value
+        value: 127
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.fire_tablet_1_light_sensor
+        above: 4
+        below: 7
+      sequence:
+      - device_id: 8ffdbe9a54be7e65369c955ff0d796b9
+        domain: number
+        entity_id: number.fire_screen_brightness
+        type: set_value
+        value: 63
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.fire_tablet_1_light_sensor
+        above: 0
+        below: 4
+      sequence:
+      - device_id: 8ffdbe9a54be7e65369c955ff0d796b9
+        domain: number
+        entity_id: number.fire_screen_brightness
+        type: set_value
+        value: 0
+  mode: single

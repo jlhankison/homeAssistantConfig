@@ -1,0 +1,65 @@
+blueprint:
+  domain: script
+  name: Calculate Boiler Set Temperature
+  description: Calculates the set temp for the boiler thermostat
+  input:
+    climate_controller:
+      name: Climate Controller
+      description: The virtual thermostat that controls all other climate entities
+      selector:
+        target:
+          entity:
+            domain: climate
+    boiler_therm:
+      name: Target Boiler Thermostat
+      description: The boiler for the space
+      selector:
+        target:
+          entity:
+            domain: climate
+    temp_sensor:
+      name: Temperature Sensor
+      description: The in-house sensors
+      selector:
+        target:
+          entity:
+            domain: sensor
+    current_hvac:
+      name: Current HVAC Setting
+      description: Represents the current HVAC setting of the house (heat, cool, off)
+      selector:
+        target:
+          entity:
+            domain: input_text
+    set_temp_helper:
+      name: Set Temperature Helper
+      description: Stores the calculated set temperature value
+      selector:
+        target:
+          entity:
+            domain: input_number
+sequence:
+  - variables:
+      current_hvac: "{{ state_attr(!input.current_hvac, 'value') }}"
+      current_temp: "{{ state_attr(!input.temp_sensor, 'state') }}"
+      climate_controller: "{{ states(!input.climate_controller) }}"
+      set_temp: "{{ state_attr(climate_controller, 'temperature') }}"
+      set_temp_heat_modifier: "{{ state_attr('input_number.set_temp_modifier_heat', 'value') }}"
+  - choose:
+      - conditions: "{{ current_hvac == 'heat' }}"
+        sequence:
+          - service: input_number.set_value
+            data:
+              entity_id: !input set_temp_helper
+              value: "{{ set_temp }}"
+      - conditions: "{{ current_hvac == 'off' }}"
+        sequence:
+          - service: input_number.set_value
+            data:
+              entity_id: !input set_temp_helper
+              value: "{{ set_temp }}"
+    default:
+      - service: input_number.set_value
+        data:
+          entity_id: !input set_temp_helper
+          value: 65

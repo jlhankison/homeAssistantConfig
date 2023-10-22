@@ -1,0 +1,15 @@
+- id: '1663642159401'
+  alias: Low battery level detection & notification for all battery sensors
+  description: ''
+  use_blueprint:
+    path: sbyx/low-battery-level-detection-notification-for-all-battery-sensors.yaml
+    input:
+      exclude:
+        entity_id:
+        - sensor.pixel_5a_battery_level
+        - sensor.leeza_battery_level
+      threshold: 15
+      actions:
+      - service: notify.mobile_app_pixel_5a
+        data:
+          message: '{{sensors}} is low on battery'

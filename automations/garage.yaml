@@ -1,0 +1,54 @@
+- id: '1663043688965'
+  alias: Late Night Garage Closer
+  description: Tries to close the garage door every 15 minutes from 10 pm to 5 am
+  trigger:
+  - platform: device
+    device_id: 1866389b89ebb7c25f7e5a3da59e7643
+    domain: cover
+    entity_id: cover.garage_door
+    type: opened
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition:
+  - condition: time
+    before: 07:00:00
+    after: '22:00:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  action:
+  - service: cover.close_cover
+    data: {}
+    target:
+      entity_id: cover.garage_door
+  mode: single
+- id: '1663045196223'
+  alias: Disable Late Night Garage
+  description: Disables the Late Night Garage Door Automation temporarily
+  trigger:
+  - platform: event
+    event_type: ''
+  condition: []
+  action:
+  - service: automation.turn_off
+    data:
+      stop_actions: false
+    target:
+      entity_id: automation.late_night_garage_closer
+  - delay:
+      hours: 2
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.late_night_garage_closer
+  mode: single
