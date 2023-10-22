@@ -60,22 +60,22 @@ climate:
       - "off"
     min_temp: 65
     max_temp: 85
-    current_temperature_template: "{{ states('sensor.2354_average_indoor_temperature') | int}}"
+    current_temperature_template: "{{ states('sensor.2354_average_indoor_temperature') | int }}"
     set_temperature:
       - service: climate.set_temperature
         data:
-          entity_id: climate.climate_controller
-          temperature: "{{ state_attr('climate.climate_controller', 'temperature')}}"
+          entity_id: climate.2354_climate_controller
+          temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') | int }}"
     set_hvac_mode:
       - condition: state
         entity_id:
-          - climate.climate_controller
+          - climate.2354_climate_controller
         state: "off"
       - service: climate.set_hvac_mode
         data:
-          entity_id: climate.climate_controller
-          hvac_mode: "{{ states('climate.climate_controller')}}"
+          entity_id: climate.2354_climate_controller
+          hvac_mode: "{{ states('climate.2354_climate_controller') }}"
 
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml

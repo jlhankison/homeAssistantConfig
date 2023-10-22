@@ -4,7 +4,16 @@
 !*.yaml
 !.gitignore
 !*.md
+# Blueprints
 !blueprints/
+!automation/
+!depricated_climate/
+!homeassistant/
+!script/
+# Automations
+!automations/
+!climate/
+
 
 # Ignore folders.
 .storage/

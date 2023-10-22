@@ -1,0 +1,67 @@
+- alias: "Sync Climate and Ecobee Controllers (Heat)"
+  trigger:
+    platform: state
+    entity_id: climate.2354_climate_controller
+  condition:
+    - condition: state
+      entity_id: climate.2354_climate_controller
+      attribute: hvac_mode
+      state: "heat"
+    - condition: template
+      value_template: "{{ state_attr('climate.2354_ecobee_thermostat', 'hvac_mode') != 'heat' }}"
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.2354_ecobee_thermostat
+      data:
+        hvac_mode: "heat"
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.2354_ecobee_thermostat
+      data:
+        temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') }}"
+  mode: parallel
+
+- alias: "Sync Climate and Ecobee Controllers (Temp)"
+  trigger:
+    platform: state
+    entity_id: climate.2354_climate_controller
+  condition:
+    - condition: state
+      entity_id: climate.2354_climate_controller
+      attribute: hvac_mode
+      state: "heat"
+    - condition: template
+      value_template: "{{ state_attr('climate.2354_climate_controller', 'temperature') != state_attr('climate.2354_ecobee_thermostat', 'temperature') }}"
+  action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.2354_ecobee_thermostat
+      data:
+        temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') }}"
+  mode: parallel
+
+- alias: "Set Ecobee Controller (Heat)"
+  trigger:
+    platform: state
+    entity_id: climate.2354_climate_controller
+  condition:
+    - condition: template
+      value_template: "{{ state_attr('climate.2354_climate_controller', 'hvac_mode') != 'heat' and state_attr('climate.2354_ecobee_thermostat', 'temperature') != 65 }}"
+  action:
+    - choose:
+        - conditions:
+          - condition: template
+            value_template: "{{ state_attr('climate.2354_ecobee_thermostat', 'hvac_mode') != 'heat' }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              target:
+                entity_id: climate.2354_ecobee_thermostat
+              data:
+                hvac_mode: "heat"
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.2354_ecobee_thermostat
+      data:
+        temperature: 65
+  mode: parallel
