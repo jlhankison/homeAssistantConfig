@@ -54,27 +54,83 @@ climate:
   - platform: climate_template
     name: 2354_climate_controller
     modes:
-      - auto
       - heat
       - cool
       - "off"
     min_temp: 65
     max_temp: 85
     current_temperature_template: "{{ states('sensor.2354_average_indoor_temperature') | int }}"
+    target_temperature_template: "{{ state_attr('climate.2354_climate_controller', 'temperature') | int }}"
     set_temperature:
-      - service: climate.set_temperature
-        data:
-          entity_id: climate.2354_climate_controller
-          temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') | int }}"
+      - choose:
+        - conditions: >
+            "{{  states('climate.2354_climate_controller') == 'heat' }}"
+          sequence:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.2354_ecobee_thermostat
+                temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') | int }}"
+        - conditions: >
+            "{{  states('climate.2354_climate_controller') == 'cool' }}"
+          sequence:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.2354_dining_room_heat_pump
+                temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') | int }}"
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.2354_kitchen_heat_pump
+                temperature: "{{ state_attr('climate.2354_climate_controller', 'temperature') | int }}"
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.2354_ecobee_thermostat
+                temperature: 65
+        - conditions: >
+            "{{  states('climate.2354_climate_controller') == 'off' }}"
+          sequence:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.2354_ecobee_thermostat
+                temperature: 65
     set_hvac_mode:
-      - condition: state
-        entity_id:
-          - climate.2354_climate_controller
-        state: "off"
-      - service: climate.set_hvac_mode
-        data:
-          entity_id: climate.2354_climate_controller
-          hvac_mode: "{{ states('climate.2354_climate_controller') }}"
+      - choose:
+        - conditions: >
+            "{{  states('climate.2354_climate_controller') == 'heat' }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_ecobee_thermostat
+                hvac_mode: "{{ states('climate.2354_climate_controller') }}"
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_dining_room_heat_pump
+                hvac_mode: "off"
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_kitchen_heat_pump
+                hvac_mode: "off"
+        - conditions: >
+            "{{  states('climate.2354_climate_controller') == 'cool' }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_dining_room_heat_pump
+                hvac_mode: "{{ states('climate.2354_climate_controller') }}"
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_kitchen_heat_pump
+                hvac_mode: "{{ states('climate.2354_climate_controller') }}"
+        - conditions: >
+            "{{  states('climate.2354_climate_controller') == 'off' }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_dining_room_heat_pump
+                hvac_mode: "off"
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.2354_kitchen_heat_pump
+                hvac_mode: "off"
 
 automation: !include_dir_merge_list automations/
 script: !include scripts.yaml
