@@ -1,0 +1,194 @@
+# ================================================================================================
+# CLIMATE CONTROLLERS CONFIGURATION
+# ================================================================================================
+# Intelligent climate template that coordinates heat pumps and boiler based on efficiency
+# ================================================================================================
+
+- platform: climate_template
+  name: "Master Climate Controller"
+  unique_id: master_climate_controller_2354
+  
+  # ============================================================================================
+  # BASIC CONFIGURATION
+  # ============================================================================================
+  
+  modes:
+    - "heat"
+    - "cool" 
+    - "off"
+  
+  min_temp: 65
+  max_temp: 85
+  temp_step: 1
+  
+  # ============================================================================================
+  # TEMPERATURE SOURCES
+  # ============================================================================================
+  
+  # Current temperature from averaged indoor sensors
+  current_temperature_template: >
+    {% set sensors = [
+      states('sensor.kitchen_temperature') | float(0),
+      states('sensor.dining_room_temperature') | float(0),
+      states('sensor.living_room_temperature') | float(0)
+    ] %}
+    {% set valid_sensors = sensors | select('>', 0) | list %}
+    {% if valid_sensors | length > 0 %}
+      {{ (valid_sensors | sum / valid_sensors | length) | round(1) }}
+    {% else %}
+      {{ states('sensor.average_indoor_temperature') | float(70) }}
+    {% endif %}
+  
+  # Target temperature (self-referential for persistence)
+  target_temperature_template: >
+    {{ state_attr('climate.master_climate_controller', 'temperature') | float(72) }}
+  
+  # ============================================================================================
+  # HVAC MODE LOGIC
+  # ============================================================================================
+  
+  set_hvac_mode:
+    - choose:
+        # ================================================================================
+        # HEAT MODE: Use most efficient heat source based on outside temperature
+        # ================================================================================
+        - conditions: "{{ hvac_mode == 'heat' }}"
+          sequence:
+            - choose:
+                # Use boiler when outside temp too cold for heat pumps
+                - conditions: "{{ states('binary_sensor.heat_pump_recommended') == 'off' }}"
+                  sequence:
+                    - service: climate.set_hvac_mode
+                      target:
+                        entity_id: climate.ecobee_thermostat
+                      data:
+                        hvac_mode: "heat"
+                    - service: climate.set_hvac_mode
+                      target:
+                        entity_id:
+                          - climate.dining_room_heat_pump
+                          - climate.kitchen_heat_pump
+                      data:
+                        hvac_mode: "off"
+                
+                # Use heat pumps when outside temp favorable
+                - conditions: "{{ states('binary_sensor.heat_pump_recommended') == 'on' }}"
+                  sequence:
+                    - service: climate.set_hvac_mode
+                      target:
+                        entity_id:
+                          - climate.dining_room_heat_pump
+                          - climate.kitchen_heat_pump
+                      data:
+                        hvac_mode: "heat"
+                    - service: climate.set_hvac_mode
+                      target:
+                        entity_id: climate.ecobee_thermostat
+                      data:
+                        hvac_mode: "heat"
+        
+        # ================================================================================
+        # COOL MODE: Always use heat pumps for cooling
+        # ================================================================================
+        - conditions: "{{ hvac_mode == 'cool' }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              target:
+                entity_id:
+                  - climate.dining_room_heat_pump
+                  - climate.kitchen_heat_pump
+              data:
+                hvac_mode: "cool"
+            - service: climate.set_hvac_mode
+              target:
+                entity_id: climate.ecobee_thermostat
+              data:
+                hvac_mode: "heat"  # Keep boiler available for safety
+        
+        # ================================================================================
+        # OFF MODE: Turn off all active heating/cooling
+        # ================================================================================
+        - conditions: "{{ hvac_mode == 'off' }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              target:
+                entity_id:
+                  - climate.dining_room_heat_pump
+                  - climate.kitchen_heat_pump
+              data:
+                hvac_mode: "off"
+            - service: climate.set_hvac_mode
+              target:
+                entity_id: climate.ecobee_thermostat
+              data:
+                hvac_mode: "heat"  # Keep boiler available for safety
+  
+  # ============================================================================================
+  # TEMPERATURE SETTING LOGIC
+  # ============================================================================================
+  
+  set_temperature:
+    - choose:
+        # ================================================================================
+        # HEAT MODE TEMPERATURE SETTING
+        # ================================================================================
+        - conditions: "{{ states('climate.master_climate_controller') == 'heat' }}"
+          sequence:
+            - choose:
+                # Boiler heating: Set ecobee to target temperature
+                - conditions: "{{ states('binary_sensor.heat_pump_recommended') == 'off' }}"
+                  sequence:
+                    - service: climate.set_temperature
+                      target:
+                        entity_id: climate.ecobee_thermostat
+                      data:
+                        temperature: "{{ temperature }}"
+                
+                # Heat pump heating: Set heat pumps to target, ecobee to safety minimum
+                - conditions: "{{ states('binary_sensor.heat_pump_recommended') == 'on' }}"
+                  sequence:
+                    - service: climate.set_temperature
+                      target:
+                        entity_id:
+                          - climate.dining_room_heat_pump
+                          - climate.kitchen_heat_pump
+                      data:
+                        temperature: "{{ temperature }}"
+                    - service: climate.set_temperature
+                      target:
+                        entity_id: climate.ecobee_thermostat
+                      data:
+                        temperature: 65  # Safety minimum
+        
+        # ================================================================================
+        # COOL MODE TEMPERATURE SETTING
+        # ================================================================================
+        - conditions: "{{ states('climate.master_climate_controller') == 'cool' }}"
+          sequence:
+            - service: climate.set_temperature
+              target:
+                entity_id:
+                  - climate.dining_room_heat_pump
+                  - climate.kitchen_heat_pump
+              data:
+                temperature: "{{ temperature }}"
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.ecobee_thermostat
+              data:
+                temperature: 65  # Safety minimum
+        
+        # ================================================================================
+        # OFF MODE TEMPERATURE SETTING
+        # ================================================================================
+        - conditions: "{{ states('climate.master_climate_controller') == 'off' }}"
+          sequence:
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.ecobee_thermostat
+              data:
+                temperature: 65  # Safety minimum
+
+# ================================================================================================
+# END CLIMATE CONTROLLERS
+# ================================================================================================

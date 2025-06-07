@@ -13,6 +13,12 @@
 # Automations
 !automations/
 !climate/
+# Development files
+!package.json
+!package-lock.json
+!.env.example
+!tests/
+!*.js
 
 
 # Ignore folders.
@@ -24,3 +30,12 @@
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.production
+
+# Node modules and development artifacts
+node_modules/
+coverage/

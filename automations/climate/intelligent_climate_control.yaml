@@ -1,0 +1,329 @@
+# ================================================================================================
+# INTELLIGENT CLIMATE CONTROL AUTOMATIONS  
+# ================================================================================================
+# Automated climate management with efficient heat source selection
+# ================================================================================================
+
+# ============================================================================================
+# HEAT SOURCE OPTIMIZATION
+# ============================================================================================
+
+- id: heat_source_optimization_boiler
+  alias: "Climate: Use Boiler for Heating"
+  description: "Use boiler when outside temperature makes heat pumps inefficient"
+  
+  trigger:
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      to: "heat"
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: temperature
+    - platform: state
+      entity_id: binary_sensor.heat_pump_recommended
+      to: "off"
+  
+  condition:
+    - condition: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      state: "heat"
+    - condition: state
+      entity_id: binary_sensor.heat_pump_recommended
+      state: "off"
+  
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.ecobee_thermostat
+      data:
+        hvac_mode: "heat"
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.ecobee_thermostat
+      data:
+        temperature: "{{ state_attr('climate.master_climate_controller', 'temperature') }}"
+    - service: climate.set_hvac_mode
+      target:
+        entity_id:
+          - climate.dining_room_heat_pump
+          - climate.kitchen_heat_pump
+      data:
+        hvac_mode: "off"
+    - service: logbook.log
+      data:
+        name: "Climate System"
+        message: >
+          Switched to boiler heating at {{ state_attr('climate.master_climate_controller', 'temperature') }}°F 
+          (outside: {{ states('sensor.outside_temperature') }}°F)
+  
+  mode: single
+  max_exceeded: silent
+
+- id: heat_source_optimization_heat_pumps
+  alias: "Climate: Use Heat Pumps for Heating"
+  description: "Use heat pumps when outside temperature allows for efficient operation"
+  
+  trigger:
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      to: "heat"
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: temperature
+    - platform: state
+      entity_id: binary_sensor.heat_pump_recommended
+      to: "on"
+  
+  condition:
+    - condition: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      state: "heat"
+    - condition: state
+      entity_id: binary_sensor.heat_pump_recommended
+      state: "on"
+  
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id:
+          - climate.dining_room_heat_pump
+          - climate.kitchen_heat_pump
+      data:
+        hvac_mode: "heat"
+    - service: climate.set_temperature
+      target:
+        entity_id:
+          - climate.dining_room_heat_pump
+          - climate.kitchen_heat_pump
+      data:
+        temperature: "{{ state_attr('climate.master_climate_controller', 'temperature') }}"
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.ecobee_thermostat
+      data:
+        temperature: 65  # Safety minimum
+    - service: logbook.log
+      data:
+        name: "Climate System"
+        message: >
+          Switched to heat pump heating at {{ state_attr('climate.master_climate_controller', 'temperature') }}°F 
+          (outside: {{ states('sensor.outside_temperature') }}°F)
+  
+  mode: single
+  max_exceeded: silent
+
+# ============================================================================================
+# COOLING OPERATIONS
+# ============================================================================================
+
+- id: cooling_operations_heat_pumps
+  alias: "Climate: Use Heat Pumps for Cooling"
+  description: "Activate heat pump cooling when system is in cool mode"
+  
+  trigger:
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      to: "cool"
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: temperature
+  
+  condition:
+    - condition: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      state: "cool"
+  
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id:
+          - climate.dining_room_heat_pump
+          - climate.kitchen_heat_pump
+      data:
+        hvac_mode: "cool"
+    - service: climate.set_temperature
+      target:
+        entity_id:
+          - climate.dining_room_heat_pump
+          - climate.kitchen_heat_pump
+      data:
+        temperature: "{{ state_attr('climate.master_climate_controller', 'temperature') }}"
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.ecobee_thermostat
+      data:
+        temperature: 65  # Safety minimum
+    - service: logbook.log
+      data:
+        name: "Climate System"
+        message: >
+          Activated cooling at {{ state_attr('climate.master_climate_controller', 'temperature') }}°F
+  
+  mode: single
+  max_exceeded: silent
+
+# ============================================================================================
+# SYSTEM SHUTDOWN & SAFETY
+# ============================================================================================
+
+- id: climate_system_shutdown
+  alias: "Climate: System Shutdown Safety"
+  description: "Ensure safe shutdown when climate system is turned off"
+  
+  trigger:
+    - platform: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      to: "off"
+  
+  condition:
+    - condition: state
+      entity_id: climate.master_climate_controller
+      attribute: hvac_mode
+      state: "off"
+  
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id:
+          - climate.dining_room_heat_pump
+          - climate.kitchen_heat_pump
+      data:
+        hvac_mode: "off"
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.ecobee_thermostat
+      data:
+        temperature: 65  # Safety minimum
+    - service: logbook.log
+      data:
+        name: "Climate System"
+        message: "Climate system shutdown - all units set to safe state"
+  
+  mode: single
+  max_exceeded: silent
+
+# ============================================================================================
+# AUTOMATIC MODE SWITCHING
+# ============================================================================================
+
+- id: automatic_heating_activation
+  alias: "Climate: Auto Switch to Heating"
+  description: "Automatically switch to heating when indoor temperature drops below target"
+  
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.heating_required
+      to: "on"
+      for: "00:05:00"  # 5 minute delay to prevent rapid switching
+  
+  condition:
+    - condition: not
+      conditions:
+        - condition: state
+          entity_id: climate.master_climate_controller
+          attribute: hvac_mode
+          state: "off"
+    - condition: state
+      entity_id: binary_sensor.heating_required
+      state: "on"
+    - condition: template
+      value_template: >
+        {{ state_attr('climate.master_climate_controller', 'hvac_mode') != 'heat' }}
+  
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.master_climate_controller
+      data:
+        hvac_mode: "heat"
+    - service: logbook.log
+      data:
+        name: "Climate System"
+        message: >
+          Auto-switched to heating: indoor {{ states('sensor.average_indoor_temperature') }}°F 
+          < target {{ state_attr('climate.master_climate_controller', 'temperature') }}°F
+  
+  mode: single
+  max_exceeded: silent
+
+- id: automatic_cooling_activation
+  alias: "Climate: Auto Switch to Cooling"
+  description: "Automatically switch to cooling when indoor temperature rises above target"
+  
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.cooling_required
+      to: "on"
+      for: "00:05:00"  # 5 minute delay to prevent rapid switching
+  
+  condition:
+    - condition: not
+      conditions:
+        - condition: state
+          entity_id: climate.master_climate_controller
+          attribute: hvac_mode
+          state: "off"
+    - condition: state
+      entity_id: binary_sensor.cooling_required
+      state: "on"
+    - condition: template
+      value_template: >
+        {{ state_attr('climate.master_climate_controller', 'hvac_mode') != 'cool' }}
+  
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.master_climate_controller
+      data:
+        hvac_mode: "cool"
+    - service: logbook.log
+      data:
+        name: "Climate System"
+        message: >
+          Auto-switched to cooling: indoor {{ states('sensor.average_indoor_temperature') }}°F 
+          > target {{ state_attr('climate.master_climate_controller', 'temperature') }}°F
+  
+  mode: single
+  max_exceeded: silent
+
+# ============================================================================================
+# SYSTEM MONITORING & ALERTS
+# ============================================================================================
+
+- id: climate_efficiency_notification
+  alias: "Climate: Efficiency Change Notification"
+  description: "Notify when heat source efficiency recommendation changes"
+  
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.heat_pump_recommended
+  
+  condition:
+    - condition: template
+      value_template: >
+        {{ trigger.from_state.state != trigger.to_state.state }}
+  
+  action:
+    - service: logbook.log
+      data:
+        name: "Climate Efficiency"
+        message: >
+          {% if states('binary_sensor.heat_pump_recommended') == 'on' %}
+            Heat pumps now recommended (outside: {{ states('sensor.outside_temperature') }}°F)
+          {% else %}
+            Boiler now recommended (outside: {{ states('sensor.outside_temperature') }}°F)
+          {% endif %}
+  
+  mode: single
+  max_exceeded: silent
+
+# ================================================================================================
+# END INTELLIGENT CLIMATE CONTROL
+# ================================================================================================
