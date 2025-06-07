@@ -1,0 +1,191 @@
+# ================================================================================================
+# CLIMATE SENSORS TEMPLATE CONFIGURATION
+# ================================================================================================
+# Weather-based sensors and climate decision logic
+# ================================================================================================
+
+sensor:
+  # ============================================================================================
+  # WEATHER SENSORS
+  # ============================================================================================
+  
+  - name: "Outside Temperature"
+    unique_id: outside_temperature_sensor
+    unit_of_measurement: "°F"
+    device_class: temperature
+    state_class: measurement
+    icon: mdi:thermometer
+    state: >
+      {% set temp = state_attr('weather.forecast_booth_st_lower', 'temperature') %}
+      {% if temp is not none %}
+        {{ temp | float | round(1) }}
+      {% else %}
+        {{ states('sensor.outside_temperature') | float(32) }}
+      {% endif %}
+    availability: >
+      {{ state_attr('weather.forecast_booth_st_lower', 'temperature') is not none }}
+
+  - name: "Outside Humidity"
+    unique_id: outside_humidity_sensor
+    unit_of_measurement: "%"
+    device_class: humidity
+    state_class: measurement
+    icon: mdi:water-percent
+    state: >
+      {% set humidity = state_attr('weather.forecast_booth_st_lower', 'humidity') %}
+      {% if humidity is not none %}
+        {{ humidity | float | round(0) }}
+      {% else %}
+        {{ states('sensor.outside_humidity') | float(50) }}
+      {% endif %}
+    availability: >
+      {{ state_attr('weather.forecast_booth_st_lower', 'humidity') is not none }}
+
+  # ============================================================================================
+  # INDOOR TEMPERATURE ANALYSIS
+  # ============================================================================================
+  
+  - name: "Average Indoor Temperature"
+    unique_id: average_indoor_temperature
+    unit_of_measurement: "°F"
+    device_class: temperature
+    state_class: measurement
+    icon: mdi:home-thermometer
+    state: >
+      {% set sensors = [
+        states('sensor.kitchen_temperature') | float(0),
+        states('sensor.dining_room_temperature') | float(0),
+        states('sensor.living_room_temperature') | float(0)
+      ] %}
+      {% set valid_sensors = sensors | select('>', 0) | list %}
+      {% if valid_sensors | length > 0 %}
+        {{ (valid_sensors | sum / valid_sensors | length) | round(1) }}
+      {% else %}
+        70
+      {% endif %}
+    availability: >
+      {{ states('sensor.kitchen_temperature') | float > 0 or
+         states('sensor.dining_room_temperature') | float > 0 or
+         states('sensor.living_room_temperature') | float > 0 }}
+
+  - name: "Maximum Indoor Temperature"
+    unique_id: maximum_indoor_temperature
+    unit_of_measurement: "°F"
+    device_class: temperature
+    state_class: measurement
+    icon: mdi:thermometer-high
+    state: >
+      {% set sensors = [
+        states('sensor.kitchen_temperature') | float(0),
+        states('sensor.dining_room_temperature') | float(0),
+        states('sensor.living_room_temperature') | float(0)
+      ] %}
+      {% set valid_sensors = sensors | select('>', 0) | list %}
+      {% if valid_sensors | length > 0 %}
+        {{ valid_sensors | max | round(1) }}
+      {% else %}
+        70
+      {% endif %}
+
+  - name: "Warmest Room"
+    unique_id: warmest_room_sensor
+    icon: mdi:home-thermometer-outline
+    state: >
+      {% set kitchen_temp = states('sensor.kitchen_temperature') | float(0) %}
+      {% set dining_temp = states('sensor.dining_room_temperature') | float(0) %}
+      {% set living_temp = states('sensor.living_room_temperature') | float(0) %}
+      {% set max_temp = [kitchen_temp, dining_temp, living_temp] | max %}
+      
+      {% if max_temp == 0 %}
+        Unknown
+      {% elif kitchen_temp == max_temp %}
+        Kitchen
+      {% elif dining_temp == max_temp %}
+        Dining Room
+      {% elif living_temp == max_temp %}
+        Living Room
+      {% else %}
+        Error
+      {% endif %}
+    availability: >
+      {{ states('sensor.kitchen_temperature') | float > 0 or
+         states('sensor.dining_room_temperature') | float > 0 or
+         states('sensor.living_room_temperature') | float > 0 }}
+
+# ================================================================================================
+# BINARY SENSORS - DECISION LOGIC
+# ================================================================================================
+
+binary_sensor:
+  # ============================================================================================
+  # HEAT PUMP EFFICIENCY RECOMMENDATION
+  # ============================================================================================
+  
+  - name: "Heat Pump Recommended"
+    unique_id: heat_pump_efficiency_recommendation
+    device_class: heat
+    icon: mdi:heat-pump
+    state: >
+      {% set outdoor_temp = states('sensor.outside_temperature') | float(32) %}
+      {% set threshold_temp = states('input_number.heat_pump_threshold_temp') | float(35) %}
+      {{ outdoor_temp >= threshold_temp }}
+    attributes:
+      outdoor_temperature: >
+        {{ states('sensor.outside_temperature') | float(32) }}
+      threshold_temperature: >
+        {{ states('input_number.heat_pump_threshold_temp') | float(35) }}
+      efficiency_reason: >
+        {% set outdoor_temp = states('sensor.outside_temperature') | float(32) %}
+        {% set threshold_temp = states('input_number.heat_pump_threshold_temp') | float(35) %}
+        {% if outdoor_temp >= threshold_temp %}
+          Heat pumps efficient at {{ outdoor_temp }}°F (above {{ threshold_temp }}°F threshold)
+        {% else %}
+          Boiler more efficient at {{ outdoor_temp }}°F (below {{ threshold_temp }}°F threshold)
+        {% endif %}
+    availability: >
+      {{ states('sensor.outside_temperature') not in ['unknown', 'unavailable'] and
+         states('input_number.heat_pump_threshold_temp') not in ['unknown', 'unavailable'] }}
+
+  # ============================================================================================
+  # AUTOMATIC MODE SWITCHING LOGIC
+  # ============================================================================================
+  
+  - name: "Heating Required"
+    unique_id: heating_required_sensor
+    device_class: heat
+    icon: mdi:fire
+    state: >
+      {% set indoor_temp = states('sensor.average_indoor_temperature') | float(70) %}
+      {% set target_temp = state_attr('climate.master_climate_controller', 'temperature') | float(72) %}
+      {{ indoor_temp < (target_temp - 0.5) }}
+    attributes:
+      indoor_temperature: >
+        {{ states('sensor.average_indoor_temperature') | float(70) }}
+      target_temperature: >
+        {{ state_attr('climate.master_climate_controller', 'temperature') | float(72) }}
+      temperature_difference: >
+        {% set indoor = states('sensor.average_indoor_temperature') | float(70) %}
+        {% set target = state_attr('climate.master_climate_controller', 'temperature') | float(72) %}
+        {{ (target - indoor) | round(1) }}
+
+  - name: "Cooling Required"
+    unique_id: cooling_required_sensor
+    device_class: cold
+    icon: mdi:snowflake
+    state: >
+      {% set indoor_temp = states('sensor.average_indoor_temperature') | float(70) %}
+      {% set target_temp = state_attr('climate.master_climate_controller', 'temperature') | float(72) %}
+      {{ indoor_temp > (target_temp + 0.5) }}
+    attributes:
+      indoor_temperature: >
+        {{ states('sensor.average_indoor_temperature') | float(70) }}
+      target_temperature: >
+        {{ state_attr('climate.master_climate_controller', 'temperature') | float(72) }}
+      temperature_difference: >
+        {% set indoor = states('sensor.average_indoor_temperature') | float(70) %}
+        {% set target = state_attr('climate.master_climate_controller', 'temperature') | float(72) %}
+        {{ (indoor - target) | round(1) }}
+
+# ================================================================================================
+# END CLIMATE SENSORS
+# ================================================================================================

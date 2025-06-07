@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Automation Tester - Corrected Logic</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1em;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            min-height: 70vh;
+        }
+        
+        .panel {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .panel h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .control-group {
+            margin-bottom: 25px;
+        }
+        
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #34495e;
+            font-size: 1.1em;
+        }
+        
+        .slider-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+            transition: background 0.3s;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #3498db;
+        }
+        
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 80px;
+            height: 40px;
+            background: #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .toggle-switch.on {
+            background: #3498db;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .toggle-switch.on .toggle-slider {
+            transform: translateX(40px);
+        }
+        
+        .toggle-label {
+            margin-left: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .entity-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .entity-card.heat {
+            border-left-color: #e74c3c;
+        }
+        
+        .entity-card.cool {
+            border-left-color: #3498db;
+        }
+        
+        .entity-card.off {
+            border-left-color: #95a5a6;
+        }
+        
+        .entity-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .entity-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .entity-temp {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .entity-mode {
+            background: #ecf0f1;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .automation-log {
+            background: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            padding: 15px;
+            height: 320px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        
+        .log-entry.trigger {
+            background: rgba(52, 152, 219, 0.2);
+        }
+        
+        .log-entry.action {
+            background: rgba(46, 204, 113, 0.2);
+        }
+        
+        .log-entry.important {
+            background: rgba(241, 196, 15, 0.2);
+        }
+        
+        .automation-status {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #95a5a6;
+            font-size: 0.9em;
+        }
+        
+        .automation-status.triggered {
+            border-left-color: #f39c12;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #95a5a6;
+            margin-right: 10px;
+        }
+        
+        .status-indicator.triggered {
+            background: #f39c12;
+        }
+        
+        .efficiency-indicator {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .efficiency-indicator h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .efficiency-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .efficiency-badge.heat-pump {
+            background: #3498db;
+            color: white;
+        }
+        
+        .efficiency-badge.boiler {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .button {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 5px;
+            width: 100%;
+        }
+        
+        .button:hover {
+            background: #7f8c8d;
+        }
+        
+        .current-conditions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .current-conditions h4 {
+            color: #856404;
+            margin-bottom: 8px;
+        }
+        
+        .current-conditions div {
+            font-size: 0.9em;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌡️ Climate Automation Tester</h1>
+            <p>Corrected logic with proper heat source switching and mode automation</p>
+        </div>
+        
+        <div class="dashboard">
+            <!-- Control Panel -->
+            <div class="panel">
+                <h2>🎛️ Test Controls</h2>
+                
+                <div class="control-group">
+                    <label for="outside-temp-slider">Outside Temperature</label>
+                    <div class="slider-container">
+                        <input type="range" id="outside-temp-slider" class="slider" min="-20" max="100" value="50">
+                        <div class="slider-value" id="outside-temp-value">50°F</div>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="indoor-temp-slider">Current Indoor Temperature</label>
+                    <div class="slider-container">
+                        <input type="range" id="indoor-temp-slider" class="slider" min="60" max="85" value="70">
+                        <div class="slider-value" id="indoor-temp-value">70°F</div>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="controller-temp-slider">Climate Controller Set Temperature</label>
+                    <div class="slider-container">
+                        <input type="range" id="controller-temp-slider" class="slider" min="60" max="85" value="72">
+                        <div class="slider-value" id="controller-temp-value">72°F</div>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>Climate Controller Power</label>
+                    <div class="toggle-container">
+                        <div class="toggle-switch on" id="controller-power-toggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        <div class="toggle-label" id="controller-power-label">ON</div>
+                    </div>
+                </div>
+                
+                <div class="current-conditions">
+                    <h4>📊 Current Conditions</h4>
+                    <div id="heat-pump-recommendation">Heat pumps recommended</div>
+                    <div id="mode-recommendation">Should be heating</div>
+                </div>
+                
+                <div class="efficiency-indicator">
+                    <h3>🎯 System Recommendation</h3>
+                    <div class="efficiency-badge heat-pump" id="efficiency-indicator">Heat Pumps</div>
+                    <div style="margin-top: 8px; font-size: 0.9em; color: #7f8c8d;">
+                        Threshold: 35°F
+                    </div>
+                </div>
+                
+                <button class="button" onclick="clearLog()">🧹 Clear Log</button>
+            </div>
+            
+            <!-- System Status Panel -->
+            <div class="panel">
+                <h2>🏠 System Status</h2>
+                
+                <div class="entity-card heat" id="controller-card">
+                    <div class="entity-name">Climate Controller</div>
+                    <div class="entity-status">
+                        <span class="entity-temp">72°F</span>
+                        <span class="entity-mode">HEAT</span>
+                    </div>
+                </div>
+                
+                <div class="entity-card" id="ecobee-card">
+                    <div class="entity-name">Ecobee Thermostat</div>
+                    <div class="entity-status">
+                        <span class="entity-temp">70°F</span>
+                        <span class="entity-mode">HEAT</span>
+                    </div>
+                </div>
+                
+                <div class="entity-card off" id="dining-hp-card">
+                    <div class="entity-name">Dining Room Heat Pump</div>
+                    <div class="entity-status">
+                        <span class="entity-temp">--°F</span>
+                        <span class="entity-mode">OFF</span>
+                    </div>
+                </div>
+                
+                <div class="entity-card off" id="kitchen-hp-card">
+                    <div class="entity-name">Kitchen Heat Pump</div>
+                    <div class="entity-status">
+                        <span class="entity-temp">--°F</span>
+                        <span class="entity-mode">OFF</span>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 20px; color: #2c3e50; margin-bottom: 15px;">🤖 Automation Status</h3>
+                
+                <div class="automation-status" id="auto1-status">
+                    <div class="status-indicator"></div>
+                    <span>Boiler Heat Mode</span>
+                </div>
+                
+                <div class="automation-status" id="auto2-status">
+                    <div class="status-indicator"></div>
+                    <span>Heat Pump Heating</span>
+                </div>
+                
+                <div class="automation-status" id="auto3-status">
+                    <div class="status-indicator"></div>
+                    <span>Heat Pump Cooling</span>
+                </div>
+                
+                <div class="automation-status" id="auto4-status">
+                    <div class="status-indicator"></div>
+                    <span>System Off</span>
+                </div>
+                
+                <div class="automation-status" id="auto5-status">
+                    <div class="status-indicator"></div>
+                    <span>Heat Source Switch</span>
+                </div>
+                
+                <div class="automation-status" id="auto6-status">
+                    <div class="status-indicator"></div>
+                    <span>Auto Mode Switch</span>
+                </div>
+            </div>
+            
+            <!-- Automation Log Panel -->
+            <div class="panel">
+                <h2>📋 Automation Log</h2>
+                <div class="automation-log" id="automation-log">
+                    <div class="log-entry">🚀 Dashboard initialized with corrected logic</div>
+                    <div class="log-entry">📊 Ready for testing...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        class CorrectedClimateAutomationTester {
+            constructor() {
+                this.state = {
+                    outsideTemp: 50,
+                    indoorTemp: 70,
+                    heatPumpThreshold: 35,
+                    controller: { 
+                        isOn: true, 
+                        temperature: 72,
+                        mode: 'heat' // Will be auto-determined
+                    },
+                    ecobee: { mode: 'heat', temperature: 70 },
+                    heatPumps: {
+                        dining: { mode: 'off', temperature: null },
+                        kitchen: { mode: 'off', temperature: null }
+                    }
+                };
+                
+                this.eventLog = [];
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.updateUI();
+                this.log('🚀 Dashboard initialized with corrected logic');
+                this.log('📊 Ready for testing...');
+                this.triggerAutomations('initial_setup');
+            }
+            
+            setupEventListeners() {
+                // Outside temperature slider
+                document.getElementById('outside-temp-slider').addEventListener('input', (e) => {
+                    this.state.outsideTemp = parseInt(e.target.value);
+                    this.log(`🌤️ Outside temperature: ${this.state.outsideTemp}°F`);
+                    this.triggerAutomations('outside_temp_change');
+                    this.updateUI();
+                });
+                
+                // Indoor temperature slider
+                document.getElementById('indoor-temp-slider').addEventListener('input', (e) => {
+                    this.state.indoorTemp = parseInt(e.target.value);
+                    this.log(`🏠 Indoor temperature: ${this.state.indoorTemp}°F`);
+                    this.triggerAutomations('indoor_temp_change');
+                    this.updateUI();
+                });
+                
+                // Controller temperature slider
+                document.getElementById('controller-temp-slider').addEventListener('input', (e) => {
+                    const oldTemp = this.state.controller.temperature;
+                    this.state.controller.temperature = parseInt(e.target.value);
+                    this.log(`🌡️ Controller temperature: ${oldTemp}°F → ${this.state.controller.temperature}°F`);
+                    this.triggerAutomations('controller_temp_change');
+                    this.updateUI();
+                });
+                
+                // Controller power toggle
+                document.getElementById('controller-power-toggle').addEventListener('click', () => {
+                    this.state.controller.isOn = !this.state.controller.isOn;
+                    this.log(`🔌 Controller: ${this.state.controller.isOn ? 'ON' : 'OFF'}`);
+                    this.triggerAutomations('controller_power_change');
+                    this.updateUI();
+                });
+            }
+            
+            triggerAutomations(trigger) {
+                this.log(`🤖 Evaluating automations for: ${trigger}`);
+                
+                let triggeredCount = 0;
+                
+                // First, determine the correct mode based on indoor vs target temperature
+                if (this.state.controller.isOn) {
+                    if (this.state.indoorTemp < this.state.controller.temperature) {
+                        this.state.controller.mode = 'heat';
+                    } else if (this.state.indoorTemp > this.state.controller.temperature) {
+                        this.state.controller.mode = 'cool';
+                    }
+                    // If temperatures are equal, keep current mode
+                } else {
+                    this.state.controller.mode = 'off';
+                }
+                
+                const shouldUseHeatPump = this.state.outsideTemp >= this.state.heatPumpThreshold;
+                
+                // Reset all automation statuses
+                ['auto1-status', 'auto2-status', 'auto3-status', 'auto4-status', 'auto5-status', 'auto6-status'].forEach(id => {
+                    const elem = document.getElementById(id);
+                    elem.classList.remove('triggered');
+                    elem.querySelector('.status-indicator').classList.remove('triggered');
+                });
+                
+                // AUTOMATION 1: Boiler Heat Mode (heat mode + boiler recommended)
+                if (this.state.controller.mode === 'heat' && !shouldUseHeatPump) {
+                    triggeredCount++;
+                    this.log(`✅ Automation 1: Sync Ecobee for Heat Mode`, 'trigger');
+                    this.animateAutomation('auto1-status');
+                    this.log(`🔧 Setting ecobee to heat at ${this.state.controller.temperature}°F`, 'action');
+                    this.log(`🔧 Turning off heat pumps`, 'action');
+                    this.state.ecobee.mode = 'heat';
+                    this.state.ecobee.temperature = this.state.controller.temperature;
+                    this.state.heatPumps.dining.mode = 'off';
+                    this.state.heatPumps.kitchen.mode = 'off';
+                    this.state.heatPumps.dining.temperature = null;
+                    this.state.heatPumps.kitchen.temperature = null;
+                }
+                
+                // AUTOMATION 2: Heat Pump Heating (heat mode + heat pumps recommended)
+                else if (this.state.controller.mode === 'heat' && shouldUseHeatPump) {
+                    triggeredCount++;
+                    this.log(`✅ Automation 2: Use Heat Pumps for Heating`, 'trigger');
+                    this.animateAutomation('auto2-status');
+                    this.log(`🔧 Setting heat pumps to heat at ${this.state.controller.temperature}°F`, 'action');
+                    this.log(`🔧 Setting ecobee to safety minimum (65°F)`, 'action');
+                    this.state.heatPumps.dining.mode = 'heat';
+                    this.state.heatPumps.kitchen.mode = 'heat';
+                    this.state.heatPumps.dining.temperature = this.state.controller.temperature;
+                    this.state.heatPumps.kitchen.temperature = this.state.controller.temperature;
+                    this.state.ecobee.mode = 'heat';
+                    this.state.ecobee.temperature = 65;
+                }
+                
+                // AUTOMATION 3: Heat Pump Cooling (cool mode)
+                else if (this.state.controller.mode === 'cool') {
+                    triggeredCount++;
+                    this.log(`✅ Automation 3: Use Heat Pumps for Cooling`, 'trigger');
+                    this.animateAutomation('auto3-status');
+                    this.log(`🔧 Setting heat pumps to cool at ${this.state.controller.temperature}°F`, 'action');
+                    this.log(`🔧 Setting ecobee to safety minimum (65°F)`, 'action');
+                    this.state.heatPumps.dining.mode = 'cool';
+                    this.state.heatPumps.kitchen.mode = 'cool';
+                    this.state.heatPumps.dining.temperature = this.state.controller.temperature;
+                    this.state.heatPumps.kitchen.temperature = this.state.controller.temperature;
+                    this.state.ecobee.mode = 'heat';
+                    this.state.ecobee.temperature = 65;
+                }
+                
+                // AUTOMATION 4: System Off
+                else if (this.state.controller.mode === 'off') {
+                    triggeredCount++;
+                    this.log(`✅ Automation 4: Set Minimum Temperature When System Off`, 'trigger');
+                    this.animateAutomation('auto4-status');
+                    this.log(`🔧 Turning off heat pumps`, 'action');
+                    this.log(`🔧 Setting ecobee to safety minimum (65°F)`, 'action');
+                    this.state.heatPumps.dining.mode = 'off';
+                    this.state.heatPumps.kitchen.mode = 'off';
+                    this.state.heatPumps.dining.temperature = null;
+                    this.state.heatPumps.kitchen.temperature = null;
+                    this.state.ecobee.mode = 'heat';
+                    this.state.ecobee.temperature = 65;
+                }
+                
+                // AUTOMATION 5: Heat Source Switching (when outside temp changes)
+                if (trigger === 'outside_temp_change' && this.state.controller.mode === 'heat') {
+                    triggeredCount++;
+                    this.log(`✅ Automation 5: Switch Heat Source Based on Outside Temperature`, 'trigger');
+                    this.animateAutomation('auto5-status');
+                    if (shouldUseHeatPump) {
+                        this.log(`🔧 Switching to heat pump heating (outside temp favorable)`, 'important');
+                    } else {
+                        this.log(`🔧 Switching to boiler heating (outside temp too cold)`, 'important');
+                    }
+                }
+                
+                // AUTOMATION 6: Auto Mode Switching (when indoor temp vs target changes)
+                if (trigger === 'indoor_temp_change' || trigger === 'controller_temp_change') {
+                    triggeredCount++;
+                    this.log(`✅ Automation 6: Auto Switch Heat/Cool Mode`, 'trigger');
+                    this.animateAutomation('auto6-status');
+                    if (this.state.controller.mode === 'heat') {
+                        this.log(`🔧 Switching to heat mode (indoor < target)`, 'important');
+                    } else if (this.state.controller.mode === 'cool') {
+                        this.log(`🔧 Switching to cool mode (indoor > target)`, 'important');
+                    }
+                }
+                
+                if (triggeredCount === 0) {
+                    this.log('⚠️ No automations triggered');
+                } else {
+                    this.log(`🎯 ${triggeredCount} automation(s) executed`);
+                }
+            }
+            
+            animateAutomation(statusId) {
+                const statusElement = document.getElementById(statusId);
+                statusElement.classList.add('triggered');
+                statusElement.querySelector('.status-indicator').classList.add('triggered');
+                
+                setTimeout(() => {
+                    statusElement.classList.remove('triggered');
+                    statusElement.querySelector('.status-indicator').classList.remove('triggered');
+                }, 2500);
+            }
+            
+            updateUI() {
+                // Update slider values
+                document.getElementById('outside-temp-value').textContent = `${this.state.outsideTemp}°F`;
+                document.getElementById('indoor-temp-value').textContent = `${this.state.indoorTemp}°F`;
+                document.getElementById('controller-temp-value').textContent = `${this.state.controller.temperature}°F`;
+                
+                // Update current conditions
+                const shouldUseHeatPump = this.state.outsideTemp >= this.state.heatPumpThreshold;
+                document.getElementById('heat-pump-recommendation').textContent = 
+                    shouldUseHeatPump ? 'Heat pumps recommended' : 'Boiler recommended';
+                
+                const modeRecommendation = this.state.indoorTemp < this.state.controller.temperature ? 'Should be heating' :
+                                         this.state.indoorTemp > this.state.controller.temperature ? 'Should be cooling' :
+                                         'Temperature at target';
+                document.getElementById('mode-recommendation').textContent = modeRecommendation;
+                
+                // Update power toggle
+                const powerToggle = document.getElementById('controller-power-toggle');
+                const powerLabel = document.getElementById('controller-power-label');
+                if (this.state.controller.isOn) {
+                    powerToggle.classList.add('on');
+                    powerLabel.textContent = 'ON';
+                } else {
+                    powerToggle.classList.remove('on');
+                    powerLabel.textContent = 'OFF';
+                }
+                
+                // Update efficiency indicator
+                const efficiencyIndicator = document.getElementById('efficiency-indicator');
+                if (shouldUseHeatPump) {
+                    efficiencyIndicator.textContent = 'Heat Pumps';
+                    efficiencyIndicator.className = 'efficiency-badge heat-pump';
+                } else {
+                    efficiencyIndicator.textContent = 'Boiler';
+                    efficiencyIndicator.className = 'efficiency-badge boiler';
+                }
+                
+                // Update entity cards
+                this.updateEntityCard('controller-card', 
+                    this.state.controller.isOn ? this.state.controller.mode : 'off', 
+                    this.state.controller.temperature,
+                    this.state.controller.isOn ? this.state.controller.mode.toUpperCase() : 'OFF');
+                    
+                this.updateEntityCard('ecobee-card', 
+                    this.state.ecobee.mode, 
+                    this.state.ecobee.temperature);
+                    
+                this.updateEntityCard('dining-hp-card', 
+                    this.state.heatPumps.dining.mode, 
+                    this.state.heatPumps.dining.temperature);
+                    
+                this.updateEntityCard('kitchen-hp-card', 
+                    this.state.heatPumps.kitchen.mode, 
+                    this.state.heatPumps.kitchen.temperature);
+            }
+            
+            updateEntityCard(cardId, mode, temperature, displayMode = null) {
+                const card = document.getElementById(cardId);
+                const tempSpan = card.querySelector('.entity-temp');
+                const modeSpan = card.querySelector('.entity-mode');
+                
+                card.className = `entity-card ${mode}`;
+                
+                if (temperature !== null && temperature !== undefined) {
+                    tempSpan.textContent = `${temperature}°F`;
+                } else {
+                    tempSpan.textContent = '--°F';
+                }
+                
+                modeSpan.textContent = displayMode || mode.toUpperCase();
+            }
+            
+            log(message, type = 'info') {
+                const timestamp = new Date().toLocaleTimeString();
+                this.eventLog.push({ timestamp, message, type });
+                
+                const logContainer = document.getElementById('automation-log');
+                const logElement = document.createElement('div');
+                logElement.className = `log-entry ${type}`;
+                logElement.textContent = `[${timestamp}] ${message}`;
+                
+                logContainer.appendChild(logElement);
+                logContainer.scrollTop = logContainer.scrollHeight;
+                
+                if (this.eventLog.length > 100) {
+                    this.eventLog.shift();
+                    logContainer.removeChild(logContainer.firstChild);
+                }
+            }
+        }
+        
+        function clearLog() {
+            dashboard.eventLog = [];
+            document.getElementById('automation-log').innerHTML = '';
+            dashboard.log('🧹 Log cleared');
+        }
+        
+        // Initialize dashboard
+        let dashboard;
+        document.addEventListener('DOMContentLoaded', () => {
+            dashboard = new CorrectedClimateAutomationTester();
+        });
+    </script>
+</body>
+</html>
