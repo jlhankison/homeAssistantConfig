@@ -38,6 +38,10 @@
 !tests/
 !tests/**
 
+# Lovelace dashboards
+!dashboards/
+!dashboards/**
+
 # Dashboard and documentation
 !*.html
 !*.js

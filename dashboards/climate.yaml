@@ -1,0 +1,175 @@
+# Climate monitoring dashboard for both units.
+# Loaded via lovelace.dashboards.climate-yaml in configuration.v2.yaml.
+# Uses core cards only — no HACS dependencies.
+
+title: Climate
+views:
+  - title: Overview
+    path: overview
+    icon: mdi:home-thermometer
+    cards:
+      # Top strip: outside conditions + economic decision summary
+      - type: glance
+        title: Outside & Economics
+        columns: 5
+        entities:
+          - entity: sensor.outside_temperature
+            name: Outside
+          - entity: sensor.outside_humidity
+            name: Humidity
+          - entity: sensor.heat_pump_cop
+            name: HP COP
+          - entity: sensor.preferred_heat_source
+            name: Preferred
+          - entity: binary_sensor.heat_pump_economical
+            name: HP Wins?
+
+      - type: markdown
+        content: >
+          **Economic decision** —
+          {{ state_attr('sensor.preferred_heat_source', 'reason') }}
+
+
+          Heat pump: **${{ states('sensor.heat_pump_usd_per_btu') }}/BTU**
+          · Boiler: **${{ states('sensor.boiler_usd_per_btu') }}/BTU**
+
+      # Main + Rental side by side
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: thermostat
+                entity: climate.main_controller
+                name: Main (2354)
+
+              - type: entities
+                title: Main — controls
+                entities:
+                  - entity: input_boolean.main_auto_mode_enabled
+                    name: Auto heat/cool switching
+                  - entity: input_number.main_setpoint_home
+                  - entity: input_number.main_setpoint_away
+                  - type: divider
+                  - entity: sensor.main_average_indoor_temperature
+                  - entity: sensor.main_warmest_room
+                  - entity: binary_sensor.main_heating_required
+                  - entity: binary_sensor.main_cooling_required
+
+              - type: glance
+                title: Main — per-room
+                columns: 3
+                entities:
+                  - entity: sensor.2354_kitchen_h_o_sensor_temperature
+                    name: Kitchen
+                  - entity: sensor.2354_dining_h_o_sensor_temp
+                    name: Dining
+                  - entity: sensor.2354_living_h_o_sensor_temperature
+                    name: Living
+
+              - type: entities
+                title: Main — physical devices
+                entities:
+                  - entity: climate.2354_ecobee_thermostat
+                    name: Boiler (Ecobee)
+                  - entity: climate.2354_kitchen_heat_pump
+                    name: Kitchen heat pump
+                  - entity: climate.2354_dining_room_heat_pump
+                    name: Dining heat pump
+
+              - type: history-graph
+                title: Main — last 24h
+                hours_to_show: 24
+                entities:
+                  - entity: sensor.main_average_indoor_temperature
+                  - entity: climate.main_controller
+
+          - type: vertical-stack
+            cards:
+              - type: thermostat
+                entity: climate.rental_controller
+                name: Rental (2356)
+
+              - type: entities
+                title: Rental — controls
+                entities:
+                  - entity: input_number.rental_setpoint_home
+                  - entity: input_number.rental_setpoint_away
+                  - type: divider
+                  - entity: sensor.rental_average_indoor_temperature
+                  - entity: sensor.rental_warmest_room
+                  - entity: binary_sensor.rental_heating_required
+                  - entity: binary_sensor.rental_cooling_required
+
+              - type: glance
+                title: Rental — per-room
+                columns: 3
+                entities:
+                  - entity: sensor.2356_kitchen_h_o_sensor_temperature
+                    name: Kitchen
+                  - entity: sensor.2356_dining_h_o_sensor_temp
+                    name: Dining
+                  - entity: sensor.2356_living_h_o_sensor_temperature
+                    name: Living
+                  - entity: sensor.2356_e_bedroom_h_o_sensor_temperature
+                    name: E. Bedroom
+                  - entity: sensor.2356_w_bedroom_h_o_sensor_temperature
+                    name: W. Bedroom
+
+              - type: entities
+                title: Rental — physical devices
+                entities:
+                  - entity: climate.2356_ecobee_thermostat
+                    name: Boiler (Ecobee)
+
+              - type: history-graph
+                title: Rental — last 24h
+                hours_to_show: 24
+                entities:
+                  - entity: sensor.rental_average_indoor_temperature
+                  - entity: climate.rental_controller
+
+  - title: Tuning
+    path: tuning
+    icon: mdi:tune
+    cards:
+      - type: entities
+        title: Utility rates & economics
+        entities:
+          - entity: input_number.electricity_rate_usd_per_kwh
+          - entity: input_number.gas_rate_usd_per_therm
+          - entity: input_number.boiler_afue_percent
+          - entity: input_number.heat_pump_safety_floor_f
+          - type: divider
+          - entity: sensor.heat_pump_cop
+          - entity: sensor.heat_pump_usd_per_btu
+          - entity: sensor.boiler_usd_per_btu
+          - entity: sensor.preferred_heat_source
+          - entity: binary_sensor.heat_pump_economical
+
+      - type: gauge
+        entity: sensor.heat_pump_cop
+        name: Heat Pump COP
+        min: 1
+        max: 5
+        severity:
+          green: 3
+          yellow: 2
+          red: 1
+
+      - type: markdown
+        content: >
+          **How it works**
+
+
+          For every BTU of heat delivered:
+
+
+          `heat_pump_$/BTU = electricity_rate / (3412 × COP)`
+
+
+          `boiler_$/BTU    = gas_rate / (100000 × AFUE)`
+
+
+          The heat pump wins when it's cheaper AND the outdoor temperature
+          is above the safety floor (below which the Gree units cannot
+          reliably deliver).

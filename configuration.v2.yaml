@@ -16,6 +16,19 @@ homeassistant:
 
 default_config:
 
+# Lovelace dashboards
+# The default dashboard stays UI-editable (storage mode). A secondary
+# YAML dashboard named "Climate" is loaded from dashboards/climate.yaml.
+lovelace:
+  mode: storage
+  dashboards:
+    climate-yaml:
+      mode: yaml
+      title: Climate
+      icon: mdi:home-thermometer
+      show_in_sidebar: true
+      filename: dashboards/climate.yaml
+
 tts:
   - platform: google_translate
     cache: true
