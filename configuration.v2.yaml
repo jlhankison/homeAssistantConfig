@@ -1,0 +1,39 @@
+# Home Assistant — Booth St. House duplex
+# v2 configuration. Climate logic and all domain-specific config lives in packages/.
+# Switched in by renaming this file to configuration.yaml at phase 7.
+
+homeassistant:
+  name: Booth St. House
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 692
+  unit_system: imperial
+  time_zone: America/Chicago
+  country: US
+  currency: USD
+  internal_url: http://homeassistant.local:8123
+  packages: !include_dir_named packages/
+
+default_config:
+
+tts:
+  - platform: google_translate
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+
+logger:
+  default: warning
+  logs:
+    homeassistant.components.climate: info
+    homeassistant.components.automation: info
+
+recorder:
+  exclude:
+    domains:
+      - weblink
+      - updater
+    entities:
+      - sun.sun
+      - sensor.date
+      - sensor.time
