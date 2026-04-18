@@ -1,0 +1,29 @@
+# Shared weather sensors derived from weather.forecast_booth_st_lower (met.no).
+# Provides stable outdoor temp/humidity entities with availability guards and
+# fallback defaults so downstream templates never see 'unknown'/'unavailable'.
+
+template:
+  - sensor:
+      - name: Outside Temperature
+        unique_id: outside_temperature
+        unit_of_measurement: "°F"
+        device_class: temperature
+        state_class: measurement
+        icon: mdi:thermometer
+        state: >
+          {% set t = state_attr('weather.forecast_booth_st_lower', 'temperature') %}
+          {{ (t | float) | round(1) if t is not none else 32 }}
+        availability: >
+          {{ state_attr('weather.forecast_booth_st_lower', 'temperature') is not none }}
+
+      - name: Outside Humidity
+        unique_id: outside_humidity
+        unit_of_measurement: "%"
+        device_class: humidity
+        state_class: measurement
+        icon: mdi:water-percent
+        state: >
+          {% set h = state_attr('weather.forecast_booth_st_lower', 'humidity') %}
+          {{ (h | float) | round(0) if h is not none else 50 }}
+        availability: >
+          {{ state_attr('weather.forecast_booth_st_lower', 'humidity') is not none }}

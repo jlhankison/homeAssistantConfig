@@ -1,0 +1,132 @@
+# Utility rates, heat-pump COP curve, and cost-per-BTU decision logic.
+# All tunable values are input_number helpers so the user can adjust via UI.
+#
+# The economic decision: for each BTU of heat delivered,
+#   heat_pump_$/BTU = electricity_rate / (3412 BTU/kWh × COP(outdoor_temp))
+#   boiler_$/BTU    = gas_rate / (100000 BTU/therm × (AFUE/100))
+# Heat pump wins when its $/BTU is lower AND outdoor temp is above the safety
+# floor (below which the Gree units can't deliver reliably regardless of cost).
+
+input_number:
+  electricity_rate_usd_per_kwh:
+    name: Electricity rate ($/kWh)
+    min: 0.05
+    max: 0.50
+    step: 0.001
+    unit_of_measurement: "$/kWh"
+    icon: mdi:lightning-bolt
+    initial: 0.18
+
+  gas_rate_usd_per_therm:
+    name: Natural gas rate ($/therm)
+    min: 0.30
+    max: 3.00
+    step: 0.01
+    unit_of_measurement: "$/therm"
+    icon: mdi:fire
+    initial: 0.95
+
+  boiler_afue_percent:
+    name: Boiler AFUE (%)
+    min: 70
+    max: 99
+    step: 1
+    unit_of_measurement: "%"
+    icon: mdi:water-boiler
+    initial: 90
+
+  heat_pump_safety_floor_f:
+    name: Heat pump safety floor (°F)
+    min: -10
+    max: 40
+    step: 1
+    unit_of_measurement: "°F"
+    icon: mdi:snowflake-thermometer
+    initial: 15
+
+template:
+  - sensor:
+      # Generic cold-climate mini-split COP curve. Piecewise linear between
+      # (T=47°F, COP=3.8) and (T=-5°F, COP=1.0). Clamped outside the range.
+      # Refine with actual Gree model datasheet when available.
+      - name: Heat Pump COP
+        unique_id: heat_pump_cop
+        state_class: measurement
+        icon: mdi:gauge
+        state: >
+          {% set T = states('sensor.outside_temperature') | float(32) %}
+          {% if T >= 47 %}
+            3.80
+          {% elif T <= -5 %}
+            1.00
+          {% else %}
+            {{ (1.0 + (T + 5) * 0.0538) | round(2) }}
+          {% endif %}
+        availability: >
+          {{ states('sensor.outside_temperature') not in ['unknown', 'unavailable', 'none'] }}
+
+      - name: Heat Pump Cost per BTU
+        unique_id: heat_pump_usd_per_btu
+        unit_of_measurement: "$/BTU"
+        state_class: measurement
+        icon: mdi:currency-usd
+        state: >
+          {% set rate = states('input_number.electricity_rate_usd_per_kwh') | float(0.18) %}
+          {% set cop = states('sensor.heat_pump_cop') | float(1.0) %}
+          {{ (rate / (3412 * cop)) | round(8) }}
+        availability: >
+          {{ states('sensor.heat_pump_cop') not in ['unknown', 'unavailable', 'none'] }}
+
+      - name: Boiler Cost per BTU
+        unique_id: boiler_usd_per_btu
+        unit_of_measurement: "$/BTU"
+        state_class: measurement
+        icon: mdi:currency-usd
+        state: >
+          {% set rate = states('input_number.gas_rate_usd_per_therm') | float(0.95) %}
+          {% set afue = states('input_number.boiler_afue_percent') | float(90) %}
+          {{ (rate / (100000 * (afue / 100))) | round(8) }}
+
+      - name: Preferred Heat Source
+        unique_id: preferred_heat_source
+        icon: mdi:thermostat
+        state: >
+          {% set hp_cost = states('sensor.heat_pump_usd_per_btu') | float(999) %}
+          {% set boiler_cost = states('sensor.boiler_usd_per_btu') | float(999) %}
+          {% set outside = states('sensor.outside_temperature') | float(0) %}
+          {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
+          {% if outside < floor %}
+            boiler
+          {% elif hp_cost < boiler_cost %}
+            heat_pump
+          {% else %}
+            boiler
+          {% endif %}
+        attributes:
+          reason: >
+            {% set hp_cost = states('sensor.heat_pump_usd_per_btu') | float(999) %}
+            {% set boiler_cost = states('sensor.boiler_usd_per_btu') | float(999) %}
+            {% set outside = states('sensor.outside_temperature') | float(0) %}
+            {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
+            {% set cop = states('sensor.heat_pump_cop') | float(1.0) %}
+            {% if outside < floor %}
+              Outside {{ outside }}°F below {{ floor }}°F safety floor — boiler only.
+            {% elif hp_cost < boiler_cost %}
+              Heat pump at COP {{ cop }} costs ${{ hp_cost }}/BTU vs boiler ${{ boiler_cost }}/BTU.
+            {% else %}
+              Boiler at ${{ boiler_cost }}/BTU beats heat pump at ${{ hp_cost }}/BTU (COP {{ cop }}).
+            {% endif %}
+          heat_pump_usd_per_btu: "{{ states('sensor.heat_pump_usd_per_btu') }}"
+          boiler_usd_per_btu: "{{ states('sensor.boiler_usd_per_btu') }}"
+          heat_pump_cop: "{{ states('sensor.heat_pump_cop') }}"
+          outside_temperature: "{{ states('sensor.outside_temperature') }}"
+
+  - binary_sensor:
+      - name: Heat Pump Economical
+        unique_id: heat_pump_economical
+        device_class: heat
+        icon: mdi:heat-pump
+        state: >
+          {{ states('sensor.preferred_heat_source') == 'heat_pump' }}
+        attributes:
+          reason: "{{ state_attr('sensor.preferred_heat_source', 'reason') }}"
