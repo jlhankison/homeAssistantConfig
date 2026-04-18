@@ -1,0 +1,347 @@
+# Main unit (2354 Booth St / residence) climate controller.
+#
+# Physical devices driven:
+#   - climate.2354_ecobee_thermostat     (boiler via Ecobee)
+#   - climate.2354_kitchen_heat_pump     (Gree)
+#   - climate.2354_dining_room_heat_pump (Gree)
+#
+# Indoor temperature from three Ecobee room sensors (kitchen, dining, living).
+#
+# Master controller (climate.main_controller) is the SINGLE authority that
+# touches physical devices. Automations in this file only mutate the master
+# entity — they never bypass it.
+
+input_number:
+  main_setpoint_home:
+    name: Main — occupied setpoint
+    min: 60
+    max: 80
+    step: 1
+    unit_of_measurement: "°F"
+    icon: mdi:home-thermometer
+    initial: 72
+
+  main_setpoint_away:
+    name: Main — away setpoint
+    min: 55
+    max: 75
+    step: 1
+    unit_of_measurement: "°F"
+    icon: mdi:home-thermometer-outline
+    initial: 66
+
+input_boolean:
+  main_auto_mode_enabled:
+    name: Main — auto heat/cool switching
+    icon: mdi:thermostat-auto
+
+template:
+  - sensor:
+      - name: Main Average Indoor Temperature
+        unique_id: main_average_indoor_temperature
+        unit_of_measurement: "°F"
+        device_class: temperature
+        state_class: measurement
+        icon: mdi:home-thermometer
+        state: >
+          {% set sensors = [
+            states('sensor.2354_kitchen_h_o_sensor_temperature') | float(0),
+            states('sensor.2354_dining_h_o_sensor_temp') | float(0),
+            states('sensor.2354_living_h_o_sensor_temperature') | float(0)
+          ] %}
+          {% set valid = sensors | select('>', 0) | list %}
+          {% if valid | length > 0 %}
+            {{ (valid | sum / valid | length) | round(1) }}
+          {% else %}
+            70
+          {% endif %}
+        availability: >
+          {{ states('sensor.2354_kitchen_h_o_sensor_temperature') | float(0) > 0
+             or states('sensor.2354_dining_h_o_sensor_temp') | float(0) > 0
+             or states('sensor.2354_living_h_o_sensor_temperature') | float(0) > 0 }}
+
+      - name: Main Warmest Room
+        unique_id: main_warmest_room
+        icon: mdi:thermometer-high
+        state: >
+          {% set rooms = {
+            'Kitchen': states('sensor.2354_kitchen_h_o_sensor_temperature') | float(0),
+            'Dining Room': states('sensor.2354_dining_h_o_sensor_temp') | float(0),
+            'Living Room': states('sensor.2354_living_h_o_sensor_temperature') | float(0)
+          } %}
+          {% set valid = rooms.items() | selectattr('1', '>', 0) | list %}
+          {% if valid | length > 0 %}
+            {{ (valid | sort(attribute='1', reverse=true) | first)[0] }}
+          {% else %}
+            Unknown
+          {% endif %}
+
+  - binary_sensor:
+      - name: Main Heating Required
+        unique_id: main_heating_required
+        device_class: heat
+        icon: mdi:fire
+        state: >
+          {% set indoor = states('sensor.main_average_indoor_temperature') | float(70) %}
+          {% set target = state_attr('climate.main_controller', 'temperature') | float(72) %}
+          {{ indoor < (target - 0.5) }}
+
+      - name: Main Cooling Required
+        unique_id: main_cooling_required
+        device_class: cold
+        icon: mdi:snowflake
+        state: >
+          {% set indoor = states('sensor.main_average_indoor_temperature') | float(70) %}
+          {% set target = state_attr('climate.main_controller', 'temperature') | float(72) %}
+          {{ indoor > (target + 0.5) }}
+
+climate:
+  - platform: climate_template
+    name: Main Controller
+    unique_id: main_controller
+    modes:
+      - "heat"
+      - "cool"
+      - "off"
+    min_temp: 60
+    max_temp: 85
+    temp_step: 1
+
+    current_temperature_template: >
+      {{ states('sensor.main_average_indoor_temperature') | float(70) }}
+
+    target_temperature_template: >
+      {{ state_attr('climate.main_controller', 'temperature') | float(72) }}
+
+    set_hvac_mode:
+      - choose:
+          # HEAT: route to cheapest source per binary_sensor.heat_pump_economical
+          - conditions: "{{ hvac_mode == 'heat' }}"
+            sequence:
+              - choose:
+                  - conditions: "{{ states('binary_sensor.heat_pump_economical') == 'on' }}"
+                    sequence:
+                      - service: climate.set_hvac_mode
+                        target:
+                          entity_id:
+                            - climate.2354_kitchen_heat_pump
+                            - climate.2354_dining_room_heat_pump
+                        data:
+                          hvac_mode: heat
+                      - service: climate.set_temperature
+                        target:
+                          entity_id:
+                            - climate.2354_kitchen_heat_pump
+                            - climate.2354_dining_room_heat_pump
+                        data:
+                          temperature: "{{ state_attr('climate.main_controller', 'temperature') | float(72) }}"
+                      - service: climate.set_hvac_mode
+                        target:
+                          entity_id: climate.2354_ecobee_thermostat
+                        data:
+                          hvac_mode: heat
+                      - service: climate.set_temperature
+                        target:
+                          entity_id: climate.2354_ecobee_thermostat
+                        data:
+                          temperature: 65
+                default:
+                  - service: climate.set_hvac_mode
+                    target:
+                      entity_id:
+                        - climate.2354_kitchen_heat_pump
+                        - climate.2354_dining_room_heat_pump
+                    data:
+                      hvac_mode: "off"
+                  - service: climate.set_hvac_mode
+                    target:
+                      entity_id: climate.2354_ecobee_thermostat
+                    data:
+                      hvac_mode: heat
+                  - service: climate.set_temperature
+                    target:
+                      entity_id: climate.2354_ecobee_thermostat
+                    data:
+                      temperature: "{{ state_attr('climate.main_controller', 'temperature') | float(72) }}"
+
+          # COOL: heat pumps only; boiler held at safety floor
+          - conditions: "{{ hvac_mode == 'cool' }}"
+            sequence:
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id:
+                    - climate.2354_kitchen_heat_pump
+                    - climate.2354_dining_room_heat_pump
+                data:
+                  hvac_mode: cool
+              - service: climate.set_temperature
+                target:
+                  entity_id:
+                    - climate.2354_kitchen_heat_pump
+                    - climate.2354_dining_room_heat_pump
+                data:
+                  temperature: "{{ state_attr('climate.main_controller', 'temperature') | float(72) }}"
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id: climate.2354_ecobee_thermostat
+                data:
+                  hvac_mode: heat
+              - service: climate.set_temperature
+                target:
+                  entity_id: climate.2354_ecobee_thermostat
+                data:
+                  temperature: 65
+
+          # OFF: heat pumps off; boiler held at 65°F so pipes don't freeze
+          - conditions: "{{ hvac_mode == 'off' }}"
+            sequence:
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id:
+                    - climate.2354_kitchen_heat_pump
+                    - climate.2354_dining_room_heat_pump
+                data:
+                  hvac_mode: "off"
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id: climate.2354_ecobee_thermostat
+                data:
+                  hvac_mode: heat
+              - service: climate.set_temperature
+                target:
+                  entity_id: climate.2354_ecobee_thermostat
+                data:
+                  temperature: 65
+
+    set_temperature:
+      - choose:
+          - conditions: "{{ states('climate.main_controller') == 'heat' }}"
+            sequence:
+              - choose:
+                  - conditions: "{{ states('binary_sensor.heat_pump_economical') == 'on' }}"
+                    sequence:
+                      - service: climate.set_temperature
+                        target:
+                          entity_id:
+                            - climate.2354_kitchen_heat_pump
+                            - climate.2354_dining_room_heat_pump
+                        data:
+                          temperature: "{{ temperature }}"
+                default:
+                  - service: climate.set_temperature
+                    target:
+                      entity_id: climate.2354_ecobee_thermostat
+                    data:
+                      temperature: "{{ temperature }}"
+          - conditions: "{{ states('climate.main_controller') == 'cool' }}"
+            sequence:
+              - service: climate.set_temperature
+                target:
+                  entity_id:
+                    - climate.2354_kitchen_heat_pump
+                    - climate.2354_dining_room_heat_pump
+                data:
+                  temperature: "{{ temperature }}"
+
+automation:
+  # Auto-switch to HEAT when indoor drops below target for 5min (main unit only).
+  - id: main_auto_switch_to_heat
+    alias: "Main: auto-switch to heat"
+    description: Switches master controller to heat when indoor drifts below target.
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.main_heating_required
+        to: "on"
+        for: "00:05:00"
+    condition:
+      - condition: state
+        entity_id: input_boolean.main_auto_mode_enabled
+        state: "on"
+      - condition: template
+        value_template: "{{ state_attr('climate.main_controller', 'hvac_mode') not in ['heat', 'off'] }}"
+    action:
+      - service: climate.set_hvac_mode
+        target:
+          entity_id: climate.main_controller
+        data:
+          hvac_mode: heat
+    mode: single
+    max_exceeded: silent
+
+  # Auto-switch to COOL when indoor rises above target for 5min.
+  - id: main_auto_switch_to_cool
+    alias: "Main: auto-switch to cool"
+    description: Switches master controller to cool when indoor drifts above target.
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.main_cooling_required
+        to: "on"
+        for: "00:05:00"
+    condition:
+      - condition: state
+        entity_id: input_boolean.main_auto_mode_enabled
+        state: "on"
+      - condition: template
+        value_template: "{{ state_attr('climate.main_controller', 'hvac_mode') not in ['cool', 'off'] }}"
+    action:
+      - service: climate.set_hvac_mode
+        target:
+          entity_id: climate.main_controller
+        data:
+          hvac_mode: cool
+    mode: single
+    max_exceeded: silent
+
+  # When the economic decision flips and controller is in heat mode, re-invoke
+  # set_hvac_mode on the master to re-route to the now-cheaper source.
+  # This calls the master entity only — the template's internal handler does
+  # the physical device routing.
+  - id: main_reroute_on_economic_flip
+    alias: "Main: re-route on economic flip"
+    description: Re-applies heat routing when preferred source changes.
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.heat_pump_economical
+    condition:
+      - condition: state
+        entity_id: climate.main_controller
+        state: heat
+    action:
+      - service: climate.set_hvac_mode
+        target:
+          entity_id: climate.main_controller
+        data:
+          hvac_mode: heat
+      - service: logbook.log
+        data:
+          name: Main Climate
+          message: >
+            Economic flip — now preferring {{ states('sensor.preferred_heat_source') }}.
+            {{ state_attr('sensor.preferred_heat_source', 'reason') }}
+    mode: single
+    max_exceeded: silent
+
+  # Alert when indoor drifts >3°F from target for >30min (hardware struggling).
+  - id: main_climate_struggle_alert
+    alias: "Main: climate struggle alert"
+    description: Logs when indoor temp fails to track target.
+    trigger:
+      - platform: template
+        value_template: >
+          {% set indoor = states('sensor.main_average_indoor_temperature') | float(70) %}
+          {% set target = state_attr('climate.main_controller', 'temperature') | float(72) %}
+          {{ (indoor - target) | abs > 3 }}
+        for: "00:30:00"
+    condition:
+      - condition: template
+        value_template: "{{ state_attr('climate.main_controller', 'hvac_mode') != 'off' }}"
+    action:
+      - service: logbook.log
+        data:
+          name: Main Climate
+          message: >
+            Indoor {{ states('sensor.main_average_indoor_temperature') }}°F vs target
+            {{ state_attr('climate.main_controller', 'temperature') }}°F — >3°F drift for 30min.
+            Source: {{ states('sensor.preferred_heat_source') }}.
+    mode: single
+    max_exceeded: silent
