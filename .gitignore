@@ -1,0 +1,103 @@
+# ================================================================================================
+# HOME ASSISTANT .GITIGNORE
+# ================================================================================================
+# Ignore everything by default, then whitelist specific files and directories
+# ================================================================================================
+
+# Ignore everything
+*
+
+# ================================================================================================
+# WHITELIST: Core Configuration Files
+# ================================================================================================
+
+# YAML configuration files
+!*.yaml
+!.gitignore
+!*.md
+
+# ================================================================================================
+# WHITELIST: Directory Structure
+# ================================================================================================
+
+# Core directories
+!automations/
+!automations/**
+!climate/
+!climate/**
+!templates/
+!templates/**
+!packages/
+!packages/**
+!blueprints/
+!blueprints/**
+
+# Development and testing
+!dev/
+!dev/**
+!tests/
+!tests/**
+
+# Dashboard and documentation
+!*.html
+!*.js
+!*.json
+
+# ================================================================================================
+# EXPLICIT IGNORES: Security and System Files
+# ================================================================================================
+
+# Home Assistant system folders
+.storage/
+.cloud/
+.google.token/
+.uuid
+home-assistant.log*
+deps/
+tts/
+
+# Secret and sensitive files (NEVER commit these!)
+secrets.yaml
+ip_bans.yaml
+known_devices.yaml
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ================================================================================================
+# EXPLICIT IGNORES: Development Artifacts
+# ================================================================================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing and coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ================================================================================================
+# END GITIGNORE
+# ================================================================================================
