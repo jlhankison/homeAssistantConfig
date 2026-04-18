@@ -1,0 +1,205 @@
+# Rental unit (2356 Booth St / Airbnb) climate controller.
+#
+# Physical devices driven:
+#   - climate.2356_ecobee_thermostat (boiler via Ecobee)
+#
+# The rental does NOT currently have Gree heat pumps paired with HA.
+# If/when they are added, extend this file with heat-pump routing matching
+# the pattern in climate_main.yaml and consume binary_sensor.heat_pump_economical.
+#
+# Design choices specific to the rental:
+#   - NO auto heat/cool switching (guests pick mode manually — avoids
+#     confusing them with automatic temperature swings).
+#   - OFF mode holds the boiler at 65°F safety floor to prevent frozen pipes
+#     between bookings.
+#   - Indoor sensor set is larger (5 rooms) — averaged.
+
+input_number:
+  rental_setpoint_home:
+    name: Rental — occupied setpoint
+    min: 60
+    max: 80
+    step: 1
+    unit_of_measurement: "°F"
+    icon: mdi:home-thermometer
+    initial: 70
+
+  rental_setpoint_away:
+    name: Rental — vacant setpoint
+    min: 55
+    max: 75
+    step: 1
+    unit_of_measurement: "°F"
+    icon: mdi:home-thermometer-outline
+    initial: 62
+
+template:
+  - sensor:
+      - name: Rental Average Indoor Temperature
+        unique_id: rental_average_indoor_temperature
+        unit_of_measurement: "°F"
+        device_class: temperature
+        state_class: measurement
+        icon: mdi:home-thermometer
+        state: >
+          {% set sensors = [
+            states('sensor.2356_kitchen_h_o_sensor_temperature') | float(0),
+            states('sensor.2356_dining_h_o_sensor_temp') | float(0),
+            states('sensor.2356_living_h_o_sensor_temperature') | float(0),
+            states('sensor.2356_e_bedroom_h_o_sensor_temperature') | float(0),
+            states('sensor.2356_w_bedroom_h_o_sensor_temperature') | float(0)
+          ] %}
+          {% set valid = sensors | select('>', 0) | list %}
+          {% if valid | length > 0 %}
+            {{ (valid | sum / valid | length) | round(1) }}
+          {% else %}
+            70
+          {% endif %}
+        availability: >
+          {{ states('sensor.2356_kitchen_h_o_sensor_temperature') | float(0) > 0
+             or states('sensor.2356_dining_h_o_sensor_temp') | float(0) > 0
+             or states('sensor.2356_living_h_o_sensor_temperature') | float(0) > 0
+             or states('sensor.2356_e_bedroom_h_o_sensor_temperature') | float(0) > 0
+             or states('sensor.2356_w_bedroom_h_o_sensor_temperature') | float(0) > 0 }}
+
+      - name: Rental Warmest Room
+        unique_id: rental_warmest_room
+        icon: mdi:thermometer-high
+        state: >
+          {% set rooms = {
+            'Kitchen': states('sensor.2356_kitchen_h_o_sensor_temperature') | float(0),
+            'Dining Room': states('sensor.2356_dining_h_o_sensor_temp') | float(0),
+            'Living Room': states('sensor.2356_living_h_o_sensor_temperature') | float(0),
+            'East Bedroom': states('sensor.2356_e_bedroom_h_o_sensor_temperature') | float(0),
+            'West Bedroom': states('sensor.2356_w_bedroom_h_o_sensor_temperature') | float(0)
+          } %}
+          {% set valid = rooms.items() | selectattr('1', '>', 0) | list %}
+          {% if valid | length > 0 %}
+            {{ (valid | sort(attribute='1', reverse=true) | first)[0] }}
+          {% else %}
+            Unknown
+          {% endif %}
+
+  - binary_sensor:
+      - name: Rental Heating Required
+        unique_id: rental_heating_required
+        device_class: heat
+        icon: mdi:fire
+        state: >
+          {% set indoor = states('sensor.rental_average_indoor_temperature') | float(70) %}
+          {% set target = state_attr('climate.rental_controller', 'temperature') | float(70) %}
+          {{ indoor < (target - 0.5) }}
+
+      - name: Rental Cooling Required
+        unique_id: rental_cooling_required
+        device_class: cold
+        icon: mdi:snowflake
+        state: >
+          {% set indoor = states('sensor.rental_average_indoor_temperature') | float(70) %}
+          {% set target = state_attr('climate.rental_controller', 'temperature') | float(70) %}
+          {{ indoor > (target + 0.5) }}
+
+climate:
+  - platform: climate_template
+    name: Rental Controller
+    unique_id: rental_controller
+    modes:
+      - "heat"
+      - "cool"
+      - "off"
+    min_temp: 60
+    max_temp: 85
+    temp_step: 1
+
+    current_temperature_template: >
+      {{ states('sensor.rental_average_indoor_temperature') | float(70) }}
+
+    target_temperature_template: >
+      {{ state_attr('climate.rental_controller', 'temperature') | float(70) }}
+
+    set_hvac_mode:
+      - choose:
+          # HEAT: boiler direct (no heat pumps paired for 2356 yet).
+          - conditions: "{{ hvac_mode == 'heat' }}"
+            sequence:
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  hvac_mode: heat
+              - service: climate.set_temperature
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  temperature: "{{ state_attr('climate.rental_controller', 'temperature') | float(70) }}"
+
+          # COOL: the rental has no cooling source yet. Held at safety floor.
+          # When Gree heat pumps are added for 2356, extend this branch.
+          - conditions: "{{ hvac_mode == 'cool' }}"
+            sequence:
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  hvac_mode: heat
+              - service: climate.set_temperature
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  temperature: 65
+              - service: persistent_notification.create
+                data:
+                  title: Rental cooling unavailable
+                  message: >
+                    Rental was set to cool but has no cooling hardware paired.
+                    Boiler held at 65°F safety floor.
+                  notification_id: rental_cooling_unavailable
+
+          # OFF: boiler held at 65°F to prevent frozen pipes between bookings.
+          - conditions: "{{ hvac_mode == 'off' }}"
+            sequence:
+              - service: climate.set_hvac_mode
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  hvac_mode: heat
+              - service: climate.set_temperature
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  temperature: 65
+
+    set_temperature:
+      - choose:
+          - conditions: "{{ states('climate.rental_controller') == 'heat' }}"
+            sequence:
+              - service: climate.set_temperature
+                target:
+                  entity_id: climate.2356_ecobee_thermostat
+                data:
+                  temperature: "{{ temperature }}"
+
+automation:
+  # Alert when indoor drifts >3°F from target for >30min.
+  - id: rental_climate_struggle_alert
+    alias: "Rental: climate struggle alert"
+    description: Logs when indoor temp fails to track target.
+    trigger:
+      - platform: template
+        value_template: >
+          {% set indoor = states('sensor.rental_average_indoor_temperature') | float(70) %}
+          {% set target = state_attr('climate.rental_controller', 'temperature') | float(70) %}
+          {{ (indoor - target) | abs > 3 }}
+        for: "00:30:00"
+    condition:
+      - condition: template
+        value_template: "{{ state_attr('climate.rental_controller', 'hvac_mode') != 'off' }}"
+    action:
+      - service: logbook.log
+        data:
+          name: Rental Climate
+          message: >
+            Indoor {{ states('sensor.rental_average_indoor_temperature') }}°F vs target
+            {{ state_attr('climate.rental_controller', 'temperature') }}°F — >3°F drift for 30min.
+    mode: single
+    max_exceeded: silent
