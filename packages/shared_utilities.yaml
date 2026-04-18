@@ -91,8 +91,8 @@ template:
         unique_id: preferred_heat_source
         icon: mdi:thermostat
         state: >
-          {% set hp_cost = states('sensor.heat_pump_usd_per_btu') | float(999) %}
-          {% set boiler_cost = states('sensor.boiler_usd_per_btu') | float(999) %}
+          {% set hp_cost = states('sensor.heat_pump_cost_per_btu') | float(999) %}
+          {% set boiler_cost = states('sensor.boiler_cost_per_btu') | float(999) %}
           {% set outside = states('sensor.outside_temperature') | float(0) %}
           {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
           {% if outside < floor %}
@@ -104,8 +104,8 @@ template:
           {% endif %}
         attributes:
           reason: >
-            {% set hp_cost = states('sensor.heat_pump_usd_per_btu') | float(999) %}
-            {% set boiler_cost = states('sensor.boiler_usd_per_btu') | float(999) %}
+            {% set hp_cost = states('sensor.heat_pump_cost_per_btu') | float(999) %}
+            {% set boiler_cost = states('sensor.boiler_cost_per_btu') | float(999) %}
             {% set outside = states('sensor.outside_temperature') | float(0) %}
             {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
             {% set cop = states('sensor.heat_pump_cop') | float(1.0) %}
@@ -116,8 +116,8 @@ template:
             {% else %}
               Boiler at ${{ boiler_cost }}/BTU beats heat pump at ${{ hp_cost }}/BTU (COP {{ cop }}).
             {% endif %}
-          heat_pump_usd_per_btu: "{{ states('sensor.heat_pump_usd_per_btu') }}"
-          boiler_usd_per_btu: "{{ states('sensor.boiler_usd_per_btu') }}"
+          heat_pump_cost_per_btu: "{{ states('sensor.heat_pump_cost_per_btu') }}"
+          boiler_cost_per_btu: "{{ states('sensor.boiler_cost_per_btu') }}"
           heat_pump_cop: "{{ states('sensor.heat_pump_cop') }}"
           outside_temperature: "{{ states('sensor.outside_temperature') }}"
 

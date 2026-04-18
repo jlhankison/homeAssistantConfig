@@ -30,8 +30,8 @@ views:
           {{ state_attr('sensor.preferred_heat_source', 'reason') }}
 
 
-          Heat pump: **${{ states('sensor.heat_pump_usd_per_btu') }}/BTU**
-          · Boiler: **${{ states('sensor.boiler_usd_per_btu') }}/BTU**
+          Heat pump: **${{ states('sensor.heat_pump_cost_per_btu') }}/BTU**
+          · Boiler: **${{ states('sensor.boiler_cost_per_btu') }}/BTU**
 
       # Main + Rental side by side
       - type: horizontal-stack
@@ -141,8 +141,8 @@ views:
           - entity: input_number.heat_pump_safety_floor_f
           - type: divider
           - entity: sensor.heat_pump_cop
-          - entity: sensor.heat_pump_usd_per_btu
-          - entity: sensor.boiler_usd_per_btu
+          - entity: sensor.heat_pump_cost_per_btu
+          - entity: sensor.boiler_cost_per_btu
           - entity: sensor.preferred_heat_source
           - entity: binary_sensor.heat_pump_economical
 
