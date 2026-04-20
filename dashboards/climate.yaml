@@ -8,10 +8,10 @@ views:
     path: overview
     icon: mdi:home-thermometer
     cards:
-      # Top strip: outside conditions + economic decision summary
+      # Top strip: outside conditions + shared HP economics
       - type: glance
-        title: Outside & Economics
-        columns: 5
+        title: Outside & Heat Pump
+        columns: 4
         entities:
           - entity: sensor.outside_temperature
             name: Outside
@@ -19,19 +19,15 @@ views:
             name: Humidity
           - entity: sensor.heat_pump_cop
             name: HP COP
-          - entity: sensor.preferred_heat_source
-            name: Preferred
-          - entity: binary_sensor.heat_pump_economical
-            name: HP Wins?
+          - entity: sensor.heat_pump_cost_per_btu
+            name: HP $/BTU
 
       - type: markdown
         content: >
-          **Economic decision** —
-          {{ state_attr('sensor.preferred_heat_source', 'reason') }}
+          **Main (Burnham P-204A):** {{ state_attr('sensor.main_preferred_heat_source', 'reason') }}
 
 
-          Heat pump: **${{ states('sensor.heat_pump_cost_per_btu') }}/BTU**
-          · Boiler: **${{ states('sensor.boiler_cost_per_btu') }}/BTU**
+          **Rental (New Yorker CG30F):** {{ state_attr('sensor.rental_preferred_heat_source', 'reason') }}
 
       # Main + Rental side by side
       - type: horizontal-stack
@@ -54,6 +50,10 @@ views:
                   - entity: sensor.main_warmest_room
                   - entity: binary_sensor.main_heating_required
                   - entity: binary_sensor.main_cooling_required
+                  - type: divider
+                  - entity: sensor.main_preferred_heat_source
+                  - entity: sensor.main_boiler_cost_per_btu
+                  - entity: binary_sensor.main_heat_pump_economical
 
               - type: glance
                 title: Main — per-room
@@ -99,6 +99,10 @@ views:
                   - entity: sensor.rental_warmest_room
                   - entity: binary_sensor.rental_heating_required
                   - entity: binary_sensor.rental_cooling_required
+                  - type: divider
+                  - entity: sensor.rental_preferred_heat_source
+                  - entity: sensor.rental_boiler_cost_per_btu
+                  - entity: binary_sensor.rental_heat_pump_economical
 
               - type: glance
                 title: Rental — per-room
@@ -133,18 +137,27 @@ views:
     icon: mdi:tune
     cards:
       - type: entities
-        title: Utility marginal rates & economics
+        title: Utility rates & shared economics
         entities:
           - entity: input_number.marginal_electricity_rate
           - entity: input_number.marginal_gas_rate
-          - entity: input_number.boiler_afue_percent
           - entity: input_number.heat_pump_safety_floor_f
           - type: divider
           - entity: sensor.heat_pump_cop
           - entity: sensor.heat_pump_cost_per_btu
-          - entity: sensor.boiler_cost_per_btu
-          - entity: sensor.preferred_heat_source
-          - entity: binary_sensor.heat_pump_economical
+
+      - type: entities
+        title: Per-unit boiler efficiency & decision
+        entities:
+          - entity: input_number.main_boiler_afue_percent
+          - entity: sensor.main_boiler_cost_per_btu
+          - entity: sensor.main_preferred_heat_source
+          - entity: binary_sensor.main_heat_pump_economical
+          - type: divider
+          - entity: input_number.rental_boiler_afue_percent
+          - entity: sensor.rental_boiler_cost_per_btu
+          - entity: sensor.rental_preferred_heat_source
+          - entity: binary_sensor.rental_heat_pump_economical
 
       - type: gauge
         entity: sensor.heat_pump_cop

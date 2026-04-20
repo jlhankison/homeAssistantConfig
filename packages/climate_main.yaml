@@ -30,6 +30,15 @@ input_number:
     icon: mdi:home-thermometer-outline
     initial: 66
 
+  main_boiler_afue_percent:
+    name: Main — Burnham P-204A AFUE (%)
+    min: 70
+    max: 99
+    step: 1
+    unit_of_measurement: "%"
+    icon: mdi:water-boiler
+    initial: 80
+
 input_boolean:
   main_auto_mode_enabled:
     name: Main — auto heat/cool switching
@@ -59,6 +68,52 @@ template:
           {{ states('sensor.2354_kitchen_h_o_sensor_temperature') | float(0) > 0
              or states('sensor.2354_dining_h_o_sensor_temp') | float(0) > 0
              or states('sensor.2354_living_h_o_sensor_temperature') | float(0) > 0 }}
+
+      - name: Main Boiler Cost per BTU
+        unique_id: main_boiler_cost_per_btu
+        unit_of_measurement: "$/BTU"
+        state_class: measurement
+        icon: mdi:currency-usd
+        state: >
+          {% set rate = states('input_number.marginal_gas_rate') | float(0.73) %}
+          {% set afue = states('input_number.main_boiler_afue_percent') | float(80) %}
+          {{ (rate / (100000 * (afue / 100))) | round(8) }}
+
+      - name: Main Preferred Heat Source
+        unique_id: main_preferred_heat_source
+        icon: mdi:thermostat
+        state: >
+          {% set hp_cost = states('sensor.heat_pump_cost_per_btu') | float(999) %}
+          {% set boiler_cost = states('sensor.main_boiler_cost_per_btu') | float(999) %}
+          {% set outside = states('sensor.outside_temperature') | float(0) %}
+          {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
+          {% if outside < floor %}
+            boiler
+          {% elif hp_cost < boiler_cost %}
+            heat_pump
+          {% else %}
+            boiler
+          {% endif %}
+        attributes:
+          reason: >
+            {% set hp_cost = states('sensor.heat_pump_cost_per_btu') | float(999) %}
+            {% set boiler_cost = states('sensor.main_boiler_cost_per_btu') | float(999) %}
+            {% set outside = states('sensor.outside_temperature') | float(0) %}
+            {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
+            {% set cop = states('sensor.heat_pump_cop') | float(1.0) %}
+            {% set afue = states('input_number.main_boiler_afue_percent') | float(80) %}
+            {% if outside < floor %}
+              Outside {{ outside }}°F below {{ floor }}°F safety floor — boiler only.
+            {% elif hp_cost < boiler_cost %}
+              HP at COP {{ cop }} = ${{ hp_cost }}/BTU beats Burnham at AFUE {{ afue }}% = ${{ boiler_cost }}/BTU.
+            {% else %}
+              Burnham at AFUE {{ afue }}% = ${{ boiler_cost }}/BTU beats HP at COP {{ cop }} = ${{ hp_cost }}/BTU.
+            {% endif %}
+          heat_pump_cost_per_btu: "{{ states('sensor.heat_pump_cost_per_btu') }}"
+          boiler_cost_per_btu: "{{ states('sensor.main_boiler_cost_per_btu') }}"
+          heat_pump_cop: "{{ states('sensor.heat_pump_cop') }}"
+          boiler_afue: "{{ states('input_number.main_boiler_afue_percent') }}"
+          outside_temperature: "{{ states('sensor.outside_temperature') }}"
 
       - name: Main Warmest Room
         unique_id: main_warmest_room
@@ -95,6 +150,15 @@ template:
           {% set target = state_attr('climate.main_controller', 'temperature') | float(72) %}
           {{ indoor > (target + 0.5) }}
 
+      - name: Main Heat Pump Economical
+        unique_id: main_heat_pump_economical
+        device_class: heat
+        icon: mdi:heat-pump
+        state: >
+          {{ states('sensor.main_preferred_heat_source') == 'heat_pump' }}
+        attributes:
+          reason: "{{ state_attr('sensor.main_preferred_heat_source', 'reason') }}"
+
 climate:
   - platform: climate_template
     name: Main Controller
@@ -115,11 +179,11 @@ climate:
 
     set_hvac_mode:
       - choose:
-          # HEAT: route to cheapest source per binary_sensor.heat_pump_economical
+          # HEAT: route to cheapest source per binary_sensor.main_heat_pump_economical
           - conditions: "{{ hvac_mode == 'heat' }}"
             sequence:
               - choose:
-                  - conditions: "{{ states('binary_sensor.heat_pump_economical') == 'on' }}"
+                  - conditions: "{{ states('binary_sensor.main_heat_pump_economical') == 'on' }}"
                     sequence:
                       - service: climate.set_hvac_mode
                         target:
@@ -218,7 +282,7 @@ climate:
           - conditions: "{{ states('climate.main_controller') == 'heat' }}"
             sequence:
               - choose:
-                  - conditions: "{{ states('binary_sensor.heat_pump_economical') == 'on' }}"
+                  - conditions: "{{ states('binary_sensor.main_heat_pump_economical') == 'on' }}"
                     sequence:
                       - service: climate.set_temperature
                         target:
@@ -301,7 +365,7 @@ automation:
     description: Re-applies heat routing when preferred source changes.
     trigger:
       - platform: state
-        entity_id: binary_sensor.heat_pump_economical
+        entity_id: binary_sensor.main_heat_pump_economical
     condition:
       - condition: state
         entity_id: climate.main_controller
@@ -316,8 +380,8 @@ automation:
         data:
           name: Main Climate
           message: >
-            Economic flip — now preferring {{ states('sensor.preferred_heat_source') }}.
-            {{ state_attr('sensor.preferred_heat_source', 'reason') }}
+            Economic flip — now preferring {{ states('sensor.main_preferred_heat_source') }}.
+            {{ state_attr('sensor.main_preferred_heat_source', 'reason') }}
     mode: single
     max_exceeded: silent
 
@@ -342,6 +406,6 @@ automation:
           message: >
             Indoor {{ states('sensor.main_average_indoor_temperature') }}°F vs target
             {{ state_attr('climate.main_controller', 'temperature') }}°F — >3°F drift for 30min.
-            Source: {{ states('sensor.preferred_heat_source') }}.
+            Source: {{ states('sensor.main_preferred_heat_source') }}.
     mode: single
     max_exceeded: silent
