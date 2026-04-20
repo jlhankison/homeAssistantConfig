@@ -133,10 +133,19 @@ views:
     icon: mdi:tune
     cards:
       - type: entities
-        title: Utility rates & economics
+        title: Last WE Energies bill
         entities:
-          - entity: input_number.electricity_rate_usd_per_kwh
-          - entity: input_number.gas_rate_usd_per_therm
+          - entity: input_number.last_bill_electricity_kwh
+          - entity: input_number.last_bill_electricity_charges
+          - entity: input_number.last_bill_gas_therms
+          - entity: input_number.last_bill_gas_charges
+          - type: divider
+          - entity: sensor.effective_electricity_rate
+          - entity: sensor.effective_gas_rate
+
+      - type: entities
+        title: Equipment & economics
+        entities:
           - entity: input_number.boiler_afue_percent
           - entity: input_number.heat_pump_safety_floor_f
           - type: divider

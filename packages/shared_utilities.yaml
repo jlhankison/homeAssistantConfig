@@ -1,30 +1,53 @@
 # Utility rates, heat-pump COP curve, and cost-per-BTU decision logic.
-# All tunable values are input_number helpers so the user can adjust via UI.
 #
-# The economic decision: for each BTU of heat delivered,
-#   heat_pump_$/BTU = electricity_rate / (3412 BTU/kWh × COP(outdoor_temp))
-#   boiler_$/BTU    = gas_rate / (100000 BTU/therm × (AFUE/100))
+# Rates are derived from the most recent WE Energies bill (kWh + $ and
+# therms + $). This captures generation + delivery + fixed charges + taxes
+# — the actual effective per-unit cost — instead of a published tariff rate
+# that ignores fees. Update the four last_bill_* input_numbers each month
+# when the new bill arrives and the effective rate sensors update.
+#
+# Economic decision: for each BTU of heat delivered,
+#   heat_pump_$/BTU = effective_electricity_rate / (3412 BTU/kWh × COP(outdoor_temp))
+#   boiler_$/BTU    = effective_gas_rate / (100000 BTU/therm × (AFUE/100))
 # Heat pump wins when its $/BTU is lower AND outdoor temp is above the safety
 # floor (below which the Gree units can't deliver reliably regardless of cost).
 
 input_number:
-  electricity_rate_usd_per_kwh:
-    name: Electricity rate ($/kWh)
-    min: 0.05
-    max: 0.50
-    step: 0.001
-    unit_of_measurement: "$/kWh"
-    icon: mdi:lightning-bolt
-    initial: 0.18
+  last_bill_electricity_kwh:
+    name: Last bill — electricity used (kWh)
+    min: 1
+    max: 5000
+    step: 1
+    unit_of_measurement: "kWh"
+    icon: mdi:lightning-bolt-outline
+    initial: 350
 
-  gas_rate_usd_per_therm:
-    name: Natural gas rate ($/therm)
-    min: 0.30
-    max: 3.00
+  last_bill_electricity_charges:
+    name: Last bill — electric charges ($)
+    min: 0
+    max: 2000
     step: 0.01
-    unit_of_measurement: "$/therm"
+    unit_of_measurement: "$"
+    icon: mdi:cash
+    initial: 89.32
+
+  last_bill_gas_therms:
+    name: Last bill — natural gas used (therms)
+    min: 0
+    max: 500
+    step: 0.1
+    unit_of_measurement: "therms"
     icon: mdi:fire
-    initial: 0.95
+    initial: 115.9
+
+  last_bill_gas_charges:
+    name: Last bill — gas charges ($)
+    min: 0
+    max: 2000
+    step: 0.01
+    unit_of_measurement: "$"
+    icon: mdi:cash
+    initial: 94.99
 
   boiler_afue_percent:
     name: Boiler AFUE (%)
@@ -46,6 +69,37 @@ input_number:
 
 template:
   - sensor:
+      # Effective electricity rate = last bill's electric charges / kWh used.
+      # Includes fixed charges + delivery + taxes — the real marginal-ish cost.
+      - name: Effective Electricity Rate
+        unique_id: effective_electricity_rate
+        unit_of_measurement: "$/kWh"
+        state_class: measurement
+        icon: mdi:lightning-bolt
+        state: >
+          {% set kwh = states('input_number.last_bill_electricity_kwh') | float(0) %}
+          {% set charges = states('input_number.last_bill_electricity_charges') | float(0) %}
+          {% if kwh > 0 %}
+            {{ (charges / kwh) | round(4) }}
+          {% else %}
+            0.25
+          {% endif %}
+
+      # Effective natural gas rate = last bill's gas charges / therms used.
+      - name: Effective Gas Rate
+        unique_id: effective_gas_rate
+        unit_of_measurement: "$/therm"
+        state_class: measurement
+        icon: mdi:fire
+        state: >
+          {% set therms = states('input_number.last_bill_gas_therms') | float(0) %}
+          {% set charges = states('input_number.last_bill_gas_charges') | float(0) %}
+          {% if therms > 0 %}
+            {{ (charges / therms) | round(4) }}
+          {% else %}
+            1.00
+          {% endif %}
+
       # Generic cold-climate mini-split COP curve. Piecewise linear between
       # (T=47°F, COP=3.8) and (T=-5°F, COP=1.0). Clamped outside the range.
       # Refine with actual Gree model datasheet when available.
@@ -71,7 +125,7 @@ template:
         state_class: measurement
         icon: mdi:currency-usd
         state: >
-          {% set rate = states('input_number.electricity_rate_usd_per_kwh') | float(0.18) %}
+          {% set rate = states('sensor.effective_electricity_rate') | float(0.25) %}
           {% set cop = states('sensor.heat_pump_cop') | float(1.0) %}
           {{ (rate / (3412 * cop)) | round(8) }}
         availability: >
@@ -83,7 +137,7 @@ template:
         state_class: measurement
         icon: mdi:currency-usd
         state: >
-          {% set rate = states('input_number.gas_rate_usd_per_therm') | float(0.95) %}
+          {% set rate = states('sensor.effective_gas_rate') | float(1.00) %}
           {% set afue = states('input_number.boiler_afue_percent') | float(90) %}
           {{ (rate / (100000 * (afue / 100))) | round(8) }}
 
@@ -109,17 +163,21 @@ template:
             {% set outside = states('sensor.outside_temperature') | float(0) %}
             {% set floor = states('input_number.heat_pump_safety_floor_f') | float(15) %}
             {% set cop = states('sensor.heat_pump_cop') | float(1.0) %}
+            {% set er = states('sensor.effective_electricity_rate') | float(0) %}
+            {% set gr = states('sensor.effective_gas_rate') | float(0) %}
             {% if outside < floor %}
               Outside {{ outside }}°F below {{ floor }}°F safety floor — boiler only.
             {% elif hp_cost < boiler_cost %}
-              Heat pump at COP {{ cop }} costs ${{ hp_cost }}/BTU vs boiler ${{ boiler_cost }}/BTU.
+              HP at COP {{ cop }} (elec ${{ er }}/kWh) = ${{ hp_cost }}/BTU; boiler (gas ${{ gr }}/therm) = ${{ boiler_cost }}/BTU.
             {% else %}
-              Boiler at ${{ boiler_cost }}/BTU beats heat pump at ${{ hp_cost }}/BTU (COP {{ cop }}).
+              Boiler (gas ${{ gr }}/therm) = ${{ boiler_cost }}/BTU beats HP at COP {{ cop }} (elec ${{ er }}/kWh) = ${{ hp_cost }}/BTU.
             {% endif %}
           heat_pump_cost_per_btu: "{{ states('sensor.heat_pump_cost_per_btu') }}"
           boiler_cost_per_btu: "{{ states('sensor.boiler_cost_per_btu') }}"
           heat_pump_cop: "{{ states('sensor.heat_pump_cop') }}"
           outside_temperature: "{{ states('sensor.outside_temperature') }}"
+          effective_electricity_rate: "{{ states('sensor.effective_electricity_rate') }}"
+          effective_gas_rate: "{{ states('sensor.effective_gas_rate') }}"
 
   - binary_sensor:
       - name: Heat Pump Economical
