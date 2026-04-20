@@ -64,9 +64,16 @@ input_number:
 
 template:
   - sensor:
-      # Generic cold-climate mini-split COP curve. Piecewise linear between
-      # (T=47°F, COP=3.8) and (T=-5°F, COP=1.0). Clamped outside the range.
-      # Refine with actual Gree model datasheet when available.
+      # COP curve for Gree Vireo Gen3 12k BTU mini-split
+      # (indoor 3VIR12HP230V1AH + outdoor 3VIR12HP230V1AO).
+      # AHRI: 13,000 BTU/hr @ 47°F, COP 3.61, HSPF 11.5, min op -4°F.
+      # Detailed low-temp performance isn't publicly tabled by Gree, so the
+      # sub-47°F points are modeled on typical inverter-compressor drop-off
+      # for an HSPF-11.5-class unit. Refine if a full capacity table surfaces.
+      #   47°F → 3.61   17°F → 2.32   5°F → 1.86   -4°F → 1.57
+      # Below -4°F the compressor is not rated to run — curve clamps, and
+      # input_number.heat_pump_safety_floor_f should kick the decision to
+      # boiler long before then.
       - name: Heat Pump COP
         unique_id: heat_pump_cop
         state_class: measurement
@@ -74,11 +81,15 @@ template:
         state: >
           {% set T = states('sensor.outside_temperature') | float(32) %}
           {% if T >= 47 %}
-            3.80
-          {% elif T <= -5 %}
-            1.00
+            3.61
+          {% elif T >= 17 %}
+            {{ (2.32 + (T - 17) * 0.043) | round(2) }}
+          {% elif T >= 5 %}
+            {{ (1.86 + (T - 5) * 0.038) | round(2) }}
+          {% elif T >= -4 %}
+            {{ (1.57 + (T + 4) * 0.032) | round(2) }}
           {% else %}
-            {{ (1.0 + (T + 5) * 0.0538) | round(2) }}
+            1.57
           {% endif %}
         availability: >
           {{ states('sensor.outside_temperature') not in ['unknown', 'unavailable', 'none'] }}
