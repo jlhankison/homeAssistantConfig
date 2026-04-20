@@ -64,16 +64,18 @@ input_number:
 
 template:
   - sensor:
-      # COP curve for Gree Vireo Gen3 12k BTU mini-split
-      # (indoor 3VIR12HP230V1AH + outdoor 3VIR12HP230V1AO).
-      # AHRI: 13,000 BTU/hr @ 47°F, COP 3.61, HSPF 11.5, min op -4°F.
-      # Detailed low-temp performance isn't publicly tabled by Gree, so the
-      # sub-47°F points are modeled on typical inverter-compressor drop-off
-      # for an HSPF-11.5-class unit. Refine if a full capacity table surfaces.
-      #   47°F → 3.61   17°F → 2.32   5°F → 1.86   -4°F → 1.57
-      # Below -4°F the compressor is not rated to run — curve clamps, and
-      # input_number.heat_pump_safety_floor_f should kick the decision to
-      # boiler long before then.
+      # COP curve for Gree Multi21+ 2-zone system:
+      #   outdoor  MULTI24HP230V1CO (24k BTU, serves both kitchen + dining)
+      #   indoor   2× 3VIR12HP230V1AH cassettes (12k each)
+      # AHRI: 24,000 BTU/hr @ 47°F nominal, SEER2 21, HSPF2 9.0.
+      # Multi-zone condensers run lower efficiency than 1:1 single-zone
+      # systems because of inverter staging across heads.
+      # Confirmed anchor: COP 1.81 @ -8°C (17.6°F), 16,600 BTU/hr output.
+      # Other anchors interpolated from HSPF2 9.0 rating:
+      #   47°F → 3.10   17°F → 1.81 (confirmed)   5°F → 1.50   -4°F → 1.30
+      # Below -4°F the curve clamps. The input_number.heat_pump_safety_floor_f
+      # (default 15°F) should kick the decision to boiler well before then.
+      # Refine anchors if the Gree submittal PDF yields a full capacity table.
       - name: Heat Pump COP
         unique_id: heat_pump_cop
         state_class: measurement
@@ -81,15 +83,15 @@ template:
         state: >
           {% set T = states('sensor.outside_temperature') | float(32) %}
           {% if T >= 47 %}
-            3.61
+            3.10
           {% elif T >= 17 %}
-            {{ (2.32 + (T - 17) * 0.043) | round(2) }}
+            {{ (1.81 + (T - 17) * 0.043) | round(2) }}
           {% elif T >= 5 %}
-            {{ (1.86 + (T - 5) * 0.038) | round(2) }}
+            {{ (1.50 + (T - 5) * 0.026) | round(2) }}
           {% elif T >= -4 %}
-            {{ (1.57 + (T + 4) * 0.032) | round(2) }}
+            {{ (1.30 + (T + 4) * 0.022) | round(2) }}
           {% else %}
-            1.57
+            1.30
           {% endif %}
         availability: >
           {{ states('sensor.outside_temperature') not in ['unknown', 'unavailable', 'none'] }}
